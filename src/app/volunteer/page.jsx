@@ -5,24 +5,32 @@ import SiteHeader from '@/components/site-header'
 
 const WAYS_TO_HELP = [
   {
-    title: 'Door-knock your block',
-    body: 'The strongest data we have is a neighbor looking another neighbor in the eye. Two hours on a Saturday covers more ground than a week of ads.',
-    accent: 'ochre',
+    title: 'Donate',
+    body: 'Every dollar comes from a person with a name. No corporate PAC, no AIPAC, no special interest money.',
+    accent: 'rust',
+    href: 'https://secure.actblue.com/donate/clevelandq12026',
+    cta: 'Donate',
   },
   {
-    title: 'Host a living-room event',
-    body: "Five chairs, a pot of coffee, and four of your neighbors is a perfect campaign stop. We\u2019ll bring the candidate \u2014 you bring the room.",
+    title: 'Volunteer',
+    body: 'Help us reach Montanans in every county. Sign up with the form above to join the field team.',
+    accent: 'ochre',
+    href: '#signup',
+    cta: 'Sign up',
+  },
+  {
+    title: 'Join the mailing &amp; events list',
+    body: 'Get event notifications, campaign updates, and early invites in your inbox.',
     accent: 'sage',
+    href: '#signup',
+    cta: 'Subscribe',
   },
   {
-    title: 'Text bank from anywhere',
-    body: 'Help us reach Montanans in every county without leaving your kitchen table. Training takes about fifteen minutes.',
+    title: 'View the event calendar',
+    body: 'See where Russ will be next — town halls, meet & greets, and community events across Montana.',
     accent: 'ink',
-  },
-  {
-    title: 'Write a letter to the editor',
-    body: 'Local papers still carry weight in MT-01. We\u2019ll help you draft it and send it to the right desk.',
-    accent: 'ochre',
+    href: 'https://calendar.google.com/calendar/embed?src=c_1a09e4c3ac92bc619c2488f5620fc4517beb60820abef2c8d90bd155a640ebdc%40group.calendar.google.com&ctz=America%2FDenver',
+    cta: 'View calendar',
   },
 ]
 
@@ -39,6 +47,7 @@ const ACCENT_MAP = {
   ochre: 'before:bg-ochre-500',
   sage: 'before:bg-sage',
   ink: 'before:bg-ink-900',
+  rust: 'before:bg-rust',
 }
 
 export const metadata = {
@@ -79,18 +88,18 @@ const VolunteerPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16">
             <div className="md:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Sign up
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
-                Pick one thing.{' '}
-                <em className="font-italic not-italic text-ochre-600">Do it Saturday.</em>
+                Tell us how you want to{' '}
+                <em className="font-italic not-italic text-ochre-600">help</em>.
               </h2>
               <p className="mt-6 max-w-[42ch] text-base md:text-lg leading-[1.65] text-stone-600">
-                Tell us where you are and how you want to help. A field organizer from your
-                county will be in touch within two days.
+                Join our mailing and events list, and let us know how you&rsquo;d like to pitch
+                in.
               </p>
             </div>
 
@@ -209,11 +218,11 @@ const VolunteerPage = () => {
           <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32 lg:px-16">
             <div className="max-w-3xl">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Pick your lane
+                — Four ways to help
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
-                Four ways to{' '}
-                <em className="font-italic not-italic text-ochre-600">show up</em>.
+                Donate. Volunteer. Join the{' '}
+                <em className="font-italic not-italic text-ochre-600">list</em>.
               </h2>
             </div>
 
@@ -221,14 +230,24 @@ const VolunteerPage = () => {
               {WAYS_TO_HELP.map((way) => (
                 <article
                   key={way.title}
-                  className={`relative bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 before:content-[''] before:absolute before:top-0 before:left-0 before:h-[3px] before:w-12 ${ACCENT_MAP[way.accent]}`}
+                  className={`relative bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 flex flex-col gap-4 before:content-[''] before:absolute before:top-0 before:left-0 before:h-[3px] before:w-12 ${ACCENT_MAP[way.accent]}`}
                 >
                   <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.1] tracking-[-0.015em] text-ink-900">
-                    {way.title}
+                    {way.title.replace('&amp;', '&')}
                   </h3>
-                  <p className="mt-4 text-base leading-[1.65] text-stone-600 max-w-[42ch]">
+                  <p className="text-base leading-[1.65] text-stone-600 max-w-[42ch]">
                     {way.body}
                   </p>
+                  <Link
+                    href={way.href}
+                    {...(way.href.startsWith('http')
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className="mt-auto inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-900 hover:text-ochre-600 w-fit"
+                  >
+                    {way.cta}
+                    <span aria-hidden="true">→</span>
+                  </Link>
                 </article>
               ))}
             </div>

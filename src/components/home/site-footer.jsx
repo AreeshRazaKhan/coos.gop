@@ -5,18 +5,16 @@ const NAV_COLUMNS = [
   {
     label: 'Campaign',
     links: [
+      { href: '/about', text: 'About Russ' },
       { href: '#platform', text: 'Platform' },
-      { href: '#meet-russ', text: 'Meet Russ' },
-      { href: '#events', text: 'Events' },
-      { href: '/endorsements', text: 'Endorsements' },
+      { href: '/events', text: 'Events' },
+      { href: '/volunteer', text: 'Join Movement' },
     ],
   },
   {
-    label: 'Join In',
+    label: 'Give',
     links: [
-      { href: '#donate', text: 'Donate' },
-      { href: '#join', text: 'Volunteer' },
-      { href: '/events', text: 'Events' },
+      { href: 'https://secure.actblue.com/donate/clevelandq12026', text: 'Donate' },
       { href: 'https://secure.actblue.com/donate/russclevelandstore', text: 'Store' },
     ],
   },
@@ -24,9 +22,11 @@ const NAV_COLUMNS = [
     label: 'Connect',
     links: [
       { href: 'mailto:connect@russellcleveland.org', text: 'Email' },
-      { href: 'https://instagram.com', text: 'Instagram' },
-      { href: 'https://facebook.com', text: 'Facebook' },
-      { href: 'https://tiktok.com', text: 'TikTok' },
+      { href: 'https://www.instagram.com/cleveland4mt_01/', text: 'Instagram' },
+      { href: 'https://www.facebook.com/cleveland4mt01/', text: 'Facebook' },
+      { href: 'https://www.tiktok.com/@cleveland4mt_01', text: 'TikTok' },
+      { href: 'https://x.com/Cleveland4MT_01', text: 'X / Twitter' },
+      { href: 'https://www.youtube.com/@ClevelandforMontana', text: 'YouTube' },
     ],
   },
 ]
@@ -62,7 +62,7 @@ const SiteFooter = () => {
                 <span aria-hidden="true">→</span>
               </a>
               <Link
-                href="#join"
+                href="/volunteer"
                 className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-moonlight/60 px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-moonlight transition-colors hover:bg-moonlight hover:text-ink-900"
               >
                 Join the movement
@@ -95,11 +95,11 @@ const SiteFooter = () => {
           ))}
 
           <div className="md:col-span-1 flex md:flex-col gap-4 md:justify-start md:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
-            <Link href="/privacy" className="hover:text-ochre-400">
-              Privacy
+            <Link href="/ask" className="hover:text-ochre-400">
+              Ask Russ
             </Link>
-            <Link href="/press" className="hover:text-ochre-400">
-              Press
+            <Link href="/contact" className="hover:text-ochre-400">
+              Contact
             </Link>
           </div>
         </div>
@@ -113,7 +113,7 @@ const SiteFooter = () => {
             Cleveland for Congress.
           </p>
           <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
-            © 2026 · The Montana Way
+            © 2026 Cleveland for Congress &apos;26
           </p>
         </div>
       </div>

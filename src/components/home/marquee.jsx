@@ -1,11 +1,11 @@
 const MARQUEE_CONTENT = (
   <>
     The Montana Way <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    <em className="font-italic italic">people-first</em> politics
+    <em className="font-italic italic">Independent Spirit, Democratic Values</em>
     <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    no corporate PAC money
+    Not Bought. Not Backing Down.
     <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    Stevensville to D.C.
+    No Corporate PAC · No AIPAC
     <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
   </>
 )

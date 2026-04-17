@@ -26,7 +26,8 @@
       "Bash(cp -f public/logo-trim.webp public/logo.webp)",
       "Bash(node -e \"const sharp = require\\('sharp'\\); sharp\\('./public/logo.webp'\\).metadata\\(\\).then\\(m => console.log\\('Final:', m.width + 'x' + m.height\\)\\)\")",
       "Bash(PORT=3001 npx playwright test screenshots.spec.js --project=desktop --project=mobile --grep=home --reporter=list)",
-      "Bash(git *)"
+      "Bash(git *)",
+      "Bash(npx next *)"
     ]
   }
 }

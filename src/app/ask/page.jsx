@@ -54,8 +54,8 @@ const TOPICS = [
   },
   {
     topic: 'Montana First',
-    q: 'What is your position on data centers?',
-    a: "Montanans should decide what gets built on our land, using OUR water and energy, not D.C. agencies or wealthy tech corporations looking to cash in.",
+    q: 'What is your position on data centers and AI?',
+    a: "The issue with Artificial Intelligence (AI) and data centers isn\u2019t technology, it\u2019s who controls the decisions and how is our privacy protected. I support ending an AI moratorium to pause development of data centers until guard rails are established that protect Montanans' privacy, water, and energy.",
   },
   {
     topic: 'Leadership',

@@ -2,10 +2,10 @@ import Image from 'next/image'
 
 const BIO_FACTS = [
   { label: 'Service', value: 'U.S. Navy Veteran' },
-  { label: 'Family', value: '07 Children' },
-  { label: 'Home', value: 'Stevensville, MT' },
+  { label: 'Family', value: 'Father of seven' },
+  { label: 'Home', value: 'Saint Regis, MT' },
   { label: 'Roles', value: 'Finance · Child care · Coach' },
-  { label: 'Raised', value: 'Small family farm, Stevensville' },
+  { label: 'Raised', value: 'Small farm in Stevensville' },
 ]
 
 const MeetRuss = () => {
@@ -18,8 +18,8 @@ const MeetRuss = () => {
         <div className="md:col-span-5 md:order-2 relative">
           <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-900">
             <Image
-              src="https://picsum.photos/seed/russ-archive-navy-1993/800/1000"
-              alt="Placeholder archival portrait, 1993 Navy service"
+              src="https://picsum.photos/seed/russ-archive-navy/800/1000"
+              alt="Placeholder archival portrait, U.S. Navy service"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover grayscale"
@@ -46,7 +46,7 @@ const MeetRuss = () => {
                   — Archival · Duotone
                 </span>
                 <span className="mt-2 block font-display text-2xl font-black leading-tight text-moonlight tracking-[-0.015em]">
-                  Russ, 1993 · Navy
+                  U.S. Navy · HM-14
                 </span>
               </div>
             </div>
@@ -57,7 +57,7 @@ const MeetRuss = () => {
           </div>
 
           <div className="absolute -top-2 -left-2 md:-top-4 md:-left-6">
-            <span className="paper-stamp">Veteran-Owned Campaign</span>
+            <span className="paper-stamp">Navy Veteran</span>
           </div>
         </div>
 
@@ -66,23 +66,20 @@ const MeetRuss = () => {
             — 03 · Meet Russ
           </span>
           <h2 className="mt-8 font-display font-black leading-[0.98] tracking-[-0.025em] text-[clamp(2.2rem,6vw,5rem)]">
-            Grown in the Bitterroot.{' '}
-            <em className="font-italic not-italic text-ochre-600">Built for the fight.</em>
+            From Montana,{' '}
+            <em className="font-italic not-italic text-ochre-600">for Montana</em>.
           </h2>
 
-          <p className="mt-8 max-w-[58ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
-            Russ grew up on a small farm in Stevensville, Montana. He served in the U.S. Navy,
-            built a career as a finance professional, and is raising seven children in the
-            Bitterroot Valley.
+          <p className="mt-8 max-w-[60ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
+            Russ Cleveland is a father, coach, finance professional, and child care expert who
+            grew up on a small farm in Stevensville, Montana. He is also a proud U.S. Navy
+            veteran who deeply values the oath he once took to defend our constitution.
           </p>
 
-          <p className="mt-6 max-w-[58ch] text-base md:text-lg leading-[1.65] text-stone-600">
-            He is a coach, a child care expert, and an entrepreneur. His Navy oath was to the
-            Constitution of the United States.
-          </p>
-
-          <p className="mt-4 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-            Facts summarized from russellcleveland.org · Full bio link forthcoming
+          <p className="mt-6 max-w-[60ch] text-base md:text-lg leading-[1.65] text-stone-600">
+            He has since dedicated a life in service to others both through career and community,
+            driven most recently by the loss of his oldest daughter Madison to leukemia at the
+            age of thirteen.
           </p>
 
           <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[58ch] border-t border-bone-200 pt-8">

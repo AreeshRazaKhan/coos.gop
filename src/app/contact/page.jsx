@@ -4,12 +4,12 @@ import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 
 const SOCIAL_LINKS = [
-  { href: 'https://instagram.com/russellcleveland', label: 'Instagram' },
-  { href: 'https://facebook.com/russellcleveland', label: 'Facebook' },
-  { href: 'https://tiktok.com/@russellcleveland', label: 'TikTok' },
-  { href: 'https://x.com/russellcleveland', label: 'X / Twitter' },
-  { href: 'https://youtube.com/@russellcleveland', label: 'YouTube' },
-  { href: 'https://bsky.app/profile/russellcleveland', label: 'Bluesky' },
+  { href: 'https://www.instagram.com/cleveland4mt_01/', label: 'Instagram' },
+  { href: 'https://www.facebook.com/cleveland4mt01/', label: 'Facebook' },
+  { href: 'https://www.tiktok.com/@cleveland4mt_01', label: 'TikTok' },
+  { href: 'https://x.com/Cleveland4MT_01', label: 'X / Twitter' },
+  { href: 'https://www.youtube.com/@ClevelandforMontana', label: 'YouTube' },
+  { href: 'https://bsky.app/profile/russellcleveland.org', label: 'Bluesky' },
 ]
 
 export const metadata = {
@@ -34,8 +34,8 @@ const ContactPage = () => {
                 <em className="font-italic not-italic text-ochre-600">We answer.</em>
               </h1>
               <p className="mt-10 max-w-[52ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
-                Questions, story tips, press requests, or just saying hello &mdash; every message
-                lands in a human&rsquo;s inbox. We try to reply within two business days.
+                Questions, story tips, press requests, or just saying hello &mdash; email us at
+                the addresses below.
               </p>
             </div>
             <aside className="md:col-span-5 md:col-start-8">
@@ -46,7 +46,7 @@ const ContactPage = () => {
                 <dl className="mt-6 flex flex-col gap-6">
                   <div>
                     <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                      — Email
+                      — General
                     </dt>
                     <dd className="mt-2">
                       <a
@@ -54,6 +54,19 @@ const ContactPage = () => {
                         className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
                       >
                         connect@russellcleveland.org
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                      — Press
+                    </dt>
+                    <dd className="mt-2">
+                      <a
+                        href="mailto:press@russellcleveland.org"
+                        className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+                      >
+                        press@russellcleveland.org
                       </a>
                     </dd>
                   </div>

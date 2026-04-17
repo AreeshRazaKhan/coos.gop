@@ -64,11 +64,10 @@ const AboutPage = () => {
                 From Montana,{' '}
                 <em className="font-italic not-italic text-ochre-400">For Montana</em>.
               </h1>
-              <p className="mt-10 max-w-[54ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
-                Russ Cleveland is a Montanan through and through &mdash; a Navy veteran,
-                entrepreneur, high school coach, husband and father of seven. He&rsquo;s running
-                for the U.S. House to honor his late daughter&rsquo;s memory and to fight for a
-                stronger, healthier and more affordable future for every Montana family.
+              <p className="mt-10 max-w-[60ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
+                Russ Cleveland is a father, coach, finance professional, and child care expert
+                who grew up on a small farm in Stevensville, Montana. He is also a proud U.S.
+                Navy veteran who deeply values the oath he once took to defend our constitution.
               </p>
             </div>
 

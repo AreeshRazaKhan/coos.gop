@@ -51,8 +51,8 @@ const Manifesto = () => {
               <em className="font-italic not-italic text-ochre-400">Top versus bottom.</em>
             </p>
             <p className="mt-6 text-sm leading-[1.65] text-moonlight/75">
-              The people making the decisions aren&apos;t the people paying the price. That
-              changes in 2026.
+              This campaign isn&apos;t about expensive ads or hollow endorsements. It&apos;s about
+              real conversations driven by shared struggle and shared values.
             </p>
             <div
               aria-hidden="true"
@@ -65,10 +65,11 @@ const Manifesto = () => {
               — The promise
             </span>
             <p className="font-display text-xl font-extrabold leading-tight text-ink-900">
-              $0 corporate PAC money.
+              No Corporate PAC. No AIPAC.
             </p>
             <p className="text-sm leading-[1.55] text-stone-600">
-              Every dollar comes from a person with a name. We publish the list quarterly.
+              A truly grassroots campaign, refusing corporate PAC, AIPAC, and other special
+              interest money.
             </p>
           </div>
         </aside>

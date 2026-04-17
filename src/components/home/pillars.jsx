@@ -10,12 +10,12 @@ const Pillars = () => {
             — 02 · The Platform
           </span>
           <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(2.2rem,6vw,5rem)]">
-            Three things.{' '}
-            <em className="font-italic not-italic text-ochre-600">That&apos;s the job.</em>
+            Healthcare. Affordability.{' '}
+            <em className="font-italic not-italic text-ochre-600">Corruption.</em>
           </h2>
           <p className="mt-6 font-display text-xl md:text-2xl font-normal leading-[1.35] text-stone-600 max-w-[64ch]">
-            Healthcare we can afford. Wages that keep up. An end to the corruption that keeps
-            them broken.
+            Russ is committed to fixing healthcare, improving affordability, and ending
+            corruption.
           </p>
         </div>
 
@@ -26,14 +26,13 @@ const Pillars = () => {
                 Pillar 01 / Healthcare
               </span>
               <h3 className="mt-8 font-display font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(2rem,4vw,3.5rem)] max-w-[20ch]">
-                Madison&apos;s fight is{' '}
-                <em className="font-italic not-italic text-ochre-400">every family&apos;s fight</em>.
+                Healthcare is a{' '}
+                <em className="font-italic not-italic text-ochre-400">human right</em>.
               </h3>
             </div>
-            <p className="mt-10 max-w-[44ch] text-base md:text-lg leading-[1.65] text-moonlight/80">
-              Our daughter Madison was thirteen when leukemia took her. We know the bills, the
-              denials, the 2 a.m. phone calls. No family in Ravalli County should lose a home to
-              keep someone they love alive.
+            <p className="mt-10 max-w-[48ch] text-base md:text-lg leading-[1.65] text-moonlight/80">
+              &ldquo;Too many Montanans skip the doctor because they are forced to choose between
+              paying for healthcare and keeping a roof over their heads.&rdquo;
             </p>
             <div
               aria-hidden="true"
@@ -63,14 +62,14 @@ const Pillars = () => {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
                 Pillar 02 / Affordability
               </span>
-              <h3 className="mt-6 font-display text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] max-w-[14ch]">
-                Wages up. Rent, groceries, gas{' '}
-                <em className="font-italic not-italic text-ochre-600">down</em>.
+              <h3 className="mt-6 font-display text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] max-w-[16ch]">
+                Housing squeezed from{' '}
+                <em className="font-italic not-italic text-ochre-600">both ends</em>.
               </h3>
             </div>
-            <p className="text-sm leading-[1.65] text-stone-600 max-w-[34ch]">
-              Real raises for real work. Housing you can afford on Montana wages — not Denver
-              speculation.
+            <p className="text-sm leading-[1.65] text-stone-600 max-w-[38ch]">
+              Rising housing costs and wages that haven&rsquo;t kept up — because the system
+              rewards the top at everyone else&rsquo;s expense.
             </p>
           </article>
 
@@ -79,14 +78,14 @@ const Pillars = () => {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-moonlight/80">
                 Pillar 03 / End Corruption
               </span>
-              <h3 className="mt-8 font-display font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(2rem,4.5vw,4rem)] max-w-[22ch]">
-                No PACs. No lobbyists.{' '}
-                <em className="font-italic not-italic text-paper">Just you.</em>
+              <h3 className="mt-8 font-display font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(2rem,4.5vw,4rem)] max-w-[24ch]">
+                End Citizens United.{' '}
+                <em className="font-italic not-italic text-paper">Ban dark money.</em>
               </h3>
             </div>
-            <p className="md:max-w-[30ch] text-base md:text-lg leading-[1.65] text-moonlight/85">
-              Every dollar accepted comes from a person with a name — not a shell and a suit.
-              Published quarterly. Full receipts.
+            <p className="md:max-w-[34ch] text-base md:text-lg leading-[1.65] text-moonlight/85">
+              &ldquo;I do not believe our country&rsquo;s billionaires and corporations should be
+              able to buy our democracy.&rdquo;
             </p>
             <div
               aria-hidden="true"

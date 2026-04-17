@@ -1,9 +1,9 @@
 const CREDENTIALS = [
   'U.S. Navy Veteran',
-  '07 Children',
-  'Stevensville, MT',
-  '$0 Corporate PAC',
-  '23 Counties',
+  'Father of Seven',
+  'Saint Regis, MT',
+  'No Corporate PAC',
+  'FEC ID C00902395',
 ]
 
 const CredentialStrip = () => {

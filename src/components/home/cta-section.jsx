@@ -3,10 +3,10 @@ import Link from 'next/link'
 const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
 
 const DONATE_TIERS = [
-  { amount: 27, label: '$27', note: 'One neighbor' },
-  { amount: 50, label: '$50', note: 'A week of gas' },
-  { amount: 100, label: '$100', note: 'Door knocks' },
-  { amount: 500, label: '$500', note: 'A whole precinct' },
+  { amount: 27, label: '$27' },
+  { amount: 50, label: '$50' },
+  { amount: 100, label: '$100' },
+  { amount: 500, label: '$500' },
 ]
 
 const CtaSection = () => {
@@ -27,12 +27,12 @@ const CtaSection = () => {
             — 05 · Join In
           </span>
           <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(2.5rem,7vw,6.5rem)]">
-            Join the{' '}
-            <em className="font-italic not-italic text-ochre-400">Montana Way</em>.
+            The time is{' '}
+            <em className="font-italic not-italic text-ochre-400">now</em>.
           </h2>
-          <p className="mt-8 max-w-[54ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
-            Twenty-three counties. Seven kids. Zero corporate PAC dollars. This one runs on
-            neighbors — and you&apos;re one of them.
+          <p className="mt-8 max-w-[58ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
+            Join the Cleveland for Congress grassroots movement by donating, volunteering, and
+            joining our mailing and events list.
           </p>
 
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
@@ -47,13 +47,10 @@ const CtaSection = () => {
                     href={`${DONATE_URL}?amount=${tier.amount}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex flex-col gap-1 rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-5 transition-colors hover:border-ochre-400 hover:bg-ink-700"
+                    className="group flex items-center justify-center rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-6 transition-colors hover:border-ochre-400 hover:bg-ink-700"
                   >
-                    <span className="font-display text-2xl font-extrabold text-moonlight tracking-[-0.01em]">
+                    <span className="font-display text-2xl font-extrabold text-moonlight tracking-[-0.01em] group-hover:text-ochre-400">
                       {tier.label}
-                    </span>
-                    <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.18em] text-moonlight/60 group-hover:text-ochre-400">
-                      {tier.note}
                     </span>
                   </a>
                 ))}
