@@ -1,0 +1,124 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
+const NAV_COLUMNS = [
+  {
+    label: 'Campaign',
+    links: [
+      { href: '#platform', text: 'Platform' },
+      { href: '#meet-russ', text: 'Meet Russ' },
+      { href: '#events', text: 'Events' },
+      { href: '/endorsements', text: 'Endorsements' },
+    ],
+  },
+  {
+    label: 'Join In',
+    links: [
+      { href: '#donate', text: 'Donate' },
+      { href: '#join', text: 'Volunteer' },
+      { href: '/events', text: 'Events' },
+      { href: 'https://secure.actblue.com/donate/russclevelandstore', text: 'Store' },
+    ],
+  },
+  {
+    label: 'Connect',
+    links: [
+      { href: 'mailto:connect@russellcleveland.org', text: 'Email' },
+      { href: 'https://instagram.com', text: 'Instagram' },
+      { href: 'https://facebook.com', text: 'Facebook' },
+      { href: 'https://tiktok.com', text: 'TikTok' },
+    ],
+  },
+]
+
+const SiteFooter = () => {
+  return (
+    <footer className="bg-ink-900 text-moonlight border-t border-ink-700">
+      <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 pt-24 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="md:col-span-5">
+            <Link href="/" aria-label="Russ Cleveland for U.S. House MT-01" className="inline-flex">
+              <Image
+                src="/logo.webp"
+                alt="Russ Cleveland · U.S. House MT-01"
+                width={320}
+                height={192}
+                className="w-40 md:w-40 h-auto"
+              />
+            </Link>
+
+            <p className="mt-6 max-w-[42ch] font-italic italic text-lg leading-[1.4] text-moonlight/80">
+              Independent spirit, democratic values.
+            </p>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a
+                href="https://secure.actblue.com/donate/clevelandq12026"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-rust border-[1.5px] border-rust px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-paper transition-transform hover:-translate-y-0.5"
+              >
+                Chip in
+                <span aria-hidden="true">→</span>
+              </a>
+              <Link
+                href="#join"
+                className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-moonlight/60 px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-moonlight transition-colors hover:bg-moonlight hover:text-ink-900"
+              >
+                Join the movement
+              </Link>
+            </div>
+          </div>
+
+          {NAV_COLUMNS.map((col) => (
+            <nav
+              key={col.label}
+              aria-label={col.label}
+              className="md:col-span-2 flex flex-col gap-4"
+            >
+              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
+                — {col.label}
+              </span>
+              <ul className="flex flex-col gap-3">
+                {col.links.map((link) => (
+                  <li key={link.text}>
+                    <Link
+                      href={link.href}
+                      className="font-display text-base font-medium text-moonlight/85 hover:text-ochre-400 transition-colors"
+                    >
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+
+          <div className="md:col-span-1 flex md:flex-col gap-4 md:justify-start md:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
+            <Link href="/privacy" className="hover:text-ochre-400">
+              Privacy
+            </Link>
+            <Link href="/press" className="hover:text-ochre-400">
+              Press
+            </Link>
+          </div>
+        </div>
+
+        <hr className="mt-16 border-t border-ink-700" />
+
+        <div className="mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          <p className="font-mono text-[11px] leading-[1.65] text-moonlight/60 max-w-[60ch]">
+            Paid for by Cleveland for Congress · FEC ID C00902395 · P.O. Box 691, Saint Regis,
+            MT 59866. Not authorized by any candidate or candidate&apos;s committee other than
+            Cleveland for Congress.
+          </p>
+          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
+            © 2026 · The Montana Way
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default SiteFooter

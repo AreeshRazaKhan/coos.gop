@@ -5,7 +5,28 @@
       "Read(//c/Users/Dev/Documents/**)",
       "Bash(npx --yes create-next-app@latest . --js --tailwind --app --eslint --src-dir --import-alias \"@/*\" --use-npm --yes)",
       "Bash(npm install *)",
-      "Bash(npx --yes shadcn@latest init -d --yes)"
+      "Bash(npx --yes shadcn@latest init -d --yes)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:3001)",
+      "Bash(curl -s \"http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__0_conzi._.css\")",
+      "Read(//tmp/**)",
+      "Bash(curl -s \"http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__0_conzi._.css\" -o \"C:/tmp-compiled.css\")",
+      "Read(//c//**)",
+      "Bash(curl -s \"http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__0_conzi._.css\" -o \"/c/Users/Dev/Documents/GitHub/russellcleveland/.next/compiled-check.css\")",
+      "Bash(curl -s \"http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__0_conzi._.css\" -o \"C:/Users/Dev/Documents/GitHub/russellcleveland/.next/compiled-check.css\")",
+      "WebFetch(domain:russellcleveland.org)",
+      "Bash(curl *)",
+      "Bash(npx playwright *)",
+      "Bash(PORT=3001 npx playwright test --reporter=list)",
+      "Bash(PORT=3001 npx playwright test responsive.spec.js --reporter=list)",
+      "Bash(PORT=3001 npx playwright test screenshots.spec.js --reporter=list)",
+      "Bash(PORT=3001 npx playwright test mobile-menu.spec.js --reporter=list)",
+      "Bash(node scripts/trim-logo.mjs)",
+      "Bash(node -e \"const sharp = require\\('sharp'\\); sharp\\('./public/logo-trim.webp'\\).metadata\\(\\).then\\(m => console.log\\(m.width + 'x' + m.height\\)\\)\")",
+      "Bash(cp -f public/logo-trim.webp public/logo.webp)",
+      "Bash(node -e \"const sharp = require\\('sharp'\\); sharp\\('./public/logo.webp'\\).metadata\\(\\).then\\(m => console.log\\('Final:', m.width + 'x' + m.height\\)\\)\")",
+      "Bash(PORT=3001 npx playwright test screenshots.spec.js --project=desktop --project=mobile --grep=home --reporter=list)",
+      "Bash(git *)"
     ]
   }
 }

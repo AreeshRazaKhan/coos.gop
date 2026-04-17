@@ -18,23 +18,38 @@
 | Voice | Plainspoken, steady, rural-literate, morally serious, never performative |
 | Avoid | Corporate jargon, manufactured outrage, stock patriotism, partisan talking points |
 
-Three platform pillars drive all copy priority: **(1) Healthcare** (personal — Madison) · **(2) Affordability** · **(3) End corruption** (no corporate PAC).
+Three platform pillars drive all copy priority: **(1) Healthcare** (personal — Madison, the candidate's 13-year-old daughter who died of leukemia) · **(2) Affordability** · **(3) End corruption** (no corporate PAC).
+
+### Design principles (six, in order of priority)
+
+1. **Montana First** — Every visual choice roots in place. Color echoes Big Sky dusk; imagery lives in ranches, diners, and public-land horizons. Nothing should feel exportable to another state.
+2. **Deliberate Asymmetry** — Layouts break the grid on purpose. 7/5 and 8/4 splits, portraits that bleed past sections, bento tiles of unequal span. Confidence without symmetry's stiffness.
+3. **Restraint as Signal** — Ochre is a *moment*, not a *mood* — CTAs, italic accents, tagline underline only. Rust is reserved strictly for urgency. Whitespace does the rest.
+4. **Accessible by Default** — WCAG 2.2 AA minimum on every pair, AAA on every primary combination. 16px body floor. 1.65 line-height. Every Montanan experiences the message with equal clarity.
+5. **Grounded, Not Glossy** — Documentary photography, available light, analog warmth. No stock handshakes, no soft-focus waving flags, no eagle graphics. Credibility is earned, not art-directed.
+6. **Editorial Modern** — Fraunces carries weight and warmth; Inter provides contemporary clarity; Instrument Serif italic adds human voice. The pairing reads as both heritage rural and unmistakably now.
+
+**Brand DNA:** Structurally inspired by contemporary editorial / creative-agency design (asymmetric hero compositions, marquee typography, bento grids, arched image masks), grounded in Montana landscape palette, Navy-veteran gravitas, and accessibility-first typography.
 
 ---
 
 ## 2. Color tokens
 
 ```css
+/* Primary Palette — Ink (Midnight Sky) */
 --ink-900:   #0E1B2C;  /* Midnight Ink — hero/nav/footer backgrounds, primary text on light */
 --ink-800:   #132338;  /* section alternates, card interiors on dark */
 --ink-700:   #1A2E49;  /* gradient stops, hover surfaces on dark */
 --ink-600:   #24405F;  /* rarely used; deep-tint only */
 
+/* Accent Palette — Ochre & Rust (moments, never moods) */
 --ochre-500: #C8732B;  /* Sunset Ochre — primary CTA, italic accents, stickers, logo rule */
 --ochre-600: #A65E1F;  /* Ochre Dark — hover, pressed, small-text ochre */
 --ochre-400: #D88A4A;  /* hover highlight only */
 --brass:     #8B4A12;  /* eyebrow labels on paper, icon strokes */
+--rust:      #8B2E1F;  /* Western Rust — URGENCY ONLY (donate, election-day, errors) */
 
+/* Neutral Palette — Paper & Bone */
 --paper:     #F3EDE1;  /* Montana Paper — primary page background */
 --paper-2:   #ECE4D3;  /* alt section, bento surface */
 --bone-100:  #E8DFCE;  /* card backgrounds on paper, slider surface */
@@ -42,13 +57,12 @@ Three platform pillars drive all copy priority: **(1) Healthcare** (personal —
 --stone-400: #A39B8A;  /* captions, meta, placeholders */
 --stone-600: #6B6760;  /* body copy on paper, secondary text */
 --ash:       #4A4A48;  /* emphasis body on paper */
+--moonlight: #EDE7D8;  /* body on ink, reversed text on dark surfaces */
+--white:     #FFFFFF;  /* card bases, print, form fills */
 
+/* Utility — Sage (trust / public-lands accent) */
 --sage:      #6B7A5A;  /* Rocky Sage — Veterans / Public-Lands tiles, badges */
 --sage-dark: #4E5C3F;  /* "Do" list accents, deep-sage gradient stops */
-
---rust:      #8B2E1F;  /* Western Rust — URGENCY ONLY (donate, election-day, errors) */
---moonlight: #EDE7D8;  /* body on ink, reversed text */
---white:     #FFFFFF;  /* card bases, print, form fills */
 ```
 
 **Usage ratio (target on every page):** 60% paper · 25% ink · 8% ochre · 4% sage · 3% rust.
@@ -244,7 +258,7 @@ Every pattern below must be reproducible from these parameters alone.
 `border-radius: 240px 240px 28px 28px`. Ratio 3/4 or 4/5. Never flipped horizontally. Used on portraits and community photography, never on landscape.
 
 ### Pattern 03 · Marquee watermark
-Fraunces 900, 200px, `opacity .05–.08`, italic accent word in Instrument Serif at `opacity .18`. Static on section transitions; `animation: scroll 40s linear infinite` on live marquee strips.
+Fraunces 900, 200px, `opacity .06` (static watermark) or `.05–.08` band background, italic accent word in Instrument Serif at `opacity .18`. Static on section transitions; `animation: scroll 40s linear infinite` on live marquee strips.
 
 ### Pattern 04 · Paper stamp badge
 Circular or pill, `--paper` bg, `2px solid --ink-900` border, `transform: rotate(+5deg)`, Mono 600. Max 2 per page. Used as credentials ("Navy Veteran", "Veteran-Owned Campaign", "Est. '25").
@@ -335,4 +349,52 @@ html,body{background:var(--paper);color:var(--ink-900);font-family:var(--ff-body
 3. Asymmetry over symmetry. Editorial restraint over campaign bombast.
 4. Escalate ambiguity to the campaign creative lead before shipping — do not invent new variants.
 
-_Version 1.0 · Issued 2026-04-18 · Paid for by Cleveland for Congress · FEC ID C00902395_
+---
+
+## 14. Quick reference (cheat sheet)
+
+### Colors (essential)
+| Token | Hex | Use |
+|---|---|---|
+| `--ink-900` | `#0E1B2C` | Hero / nav / footer / primary text |
+| `--ochre-500` | `#C8732B` | CTA, italic accents, stickers |
+| `--rust` | `#8B2E1F` | Donate / urgency only |
+| `--paper` | `#F3EDE1` | Primary page background |
+| `--paper-2` | `#ECE4D3` | Alt section background |
+| `--bone-200` | `#D9CFB8` | Borders, hairlines |
+| `--stone-600` | `#6B6760` | Body on paper (secondary) |
+| `--sage` | `#6B7A5A` | Veterans / public-lands tiles |
+| `--moonlight` | `#EDE7D8` | Body on ink |
+
+### Typography (essential)
+- H1 hero: `clamp(3rem, 12.5vw, 11.5rem)` / 0.88 / −.03em / Fraunces 900
+- H1 section: `clamp(2.2rem, 6vw, 5rem)` / .96 / −.025em / Fraunces 900
+- H2: 52px / 1.02 / Fraunces 800
+- Body: 16px / 1.65 / Inter 400 — **never smaller**
+- Eyebrow: 12px / .22em UPPER / JetBrains Mono 600
+- Stat numeral: 96px / .9 / Fraunces 900 / ochre
+
+### Spacing & grid (essential)
+- Base unit: 8px. Grid: 12 col / 24 gutter / 1440 max
+- Section Y padding: 96 mobile / 140 desktop
+- Card interior padding: 32–40px
+- Radius: 4 (sm) · 28 (tile) · 999 (pill)
+- Default split: **7/5 or 8/4 — never 6/6**
+- Bento sub-grid: 6 col / 180px row min
+- Color usage ratio: **60 paper · 25 ink · 8 ochre · 4 sage · 3 rust**
+
+### Key rules
+1. Lead with paper & ink. Reserve ochre for moments.
+2. Rust = urgency only (donate / election-day / errors).
+3. Gradients only on hero and bento tiles — never on type, never decorative.
+4. No drop shadows on type. Shadows on stickers only.
+5. Italic accent is always emotionally loaded, never a neutral noun.
+6. ✦ is the only sanctioned ornament.
+7. FEC disclosure always in Mono, never inside the logo.
+8. Body ≥ 16px. Focus ring = 2px ochre, 2px offset.
+9. Failed accessibility audits block release.
+10. When in doubt: more paper, more whitespace, less ochre.
+
+---
+
+_Version 1.1 · Issued 2026-04-18 · Paid for by Cleveland for Congress · FEC ID C00902395_
