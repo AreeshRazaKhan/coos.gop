@@ -1,8 +1,8 @@
 const CREDENTIALS = [
   'U.S. Navy Veteran',
   'Father of Seven',
-  'Saint Regis, MT',
   'No Corporate PAC',
+  'No AIPAC',
   'FEC ID C00902395',
 ]
 

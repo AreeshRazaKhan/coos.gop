@@ -8,45 +8,33 @@ const SECTIONS = [
   {
     eyebrow: '— 01 · Loss',
     title: 'A mission driven by loss',
-    body: "When Russ and his wife Kate lost their oldest daughter, Madison, to leukemia at the age of 13, they saw firsthand how broken the American healthcare system was. The pain of watching her suffer was matched only by the anger of watching politicians slash critical funding for medical research in the pursuit of more tax breaks for billionaires. That moment changed everything. Russ is running for Congress because no parent should ever have to watch their child fight a deadly disease in a system rigged against them.",
+    body: 'Russ lost his oldest daughter, Madison, to leukemia at the age of thirteen. That loss drives this campaign. No parent should ever have to watch their child fight a deadly disease in a system rigged against them.',
     accent: 'ochre',
   },
   {
     eyebrow: '— 02 · Roots',
-    title: 'Roots in a purple Montana',
-    body: 'Russ grew up on a farm in the Bitterroot Valley with a deep respect for hard work and community. Always an athlete, he went on to play football and study electrical engineering at Montana Tech, until his desire to serve his country led him to enlist in the U.S. Navy as an Aviation Electrician. Russ is proud to have deep family roots in a once purple Montana, with parents from Townsend, MT and grandparents and great grandparents from the Flathead Valley.',
+    title: 'From a small farm in Stevensville',
+    body: 'Russ grew up on a small farm in Stevensville, Montana, with a deep respect for hard work and community. He is a father of seven, a coach, a finance professional, and a child care expert.',
     accent: 'sage',
   },
   {
     eyebrow: '— 03 · Service',
     title: 'Service to our country',
-    body: 'Russ proudly served as an Aviation Electrician for the MH-53E squadron HM-14 out of Norfolk, Virginia. He graduated at the top of his class in technical training and served honorably until 2009 on active duty, and 2013 in the reserves. This experience taught him what it means to be accountable to something larger than himself, a value that has guided his life ever since.',
+    body: 'Russ is a proud U.S. Navy veteran who deeply values the oath he once took to defend our constitution. That experience taught him what it means to be accountable to something larger than himself, a value that has guided his life ever since.',
     accent: 'ink',
   },
   {
-    eyebrow: '— 04 · Business',
-    title: 'Entrepreneurship & business',
-    body: 'In 2013, Russ married his best friend and soulmate, Dr. Kate Cleveland, and together they built a family and a business rooted in service to their community. After his military service, Russ spent nearly a decade in banking at a Fortune 500 company, working in lending and helping small businesses get started and grow. He later co-founded Rocky Mountain Kids, a startup child care company that quickly expanded to serve thousands of children across dozens of locations throughout the region. When the pandemic shut down schools across the state, Russ led the company in pivoting quickly to open remote learning centers, the first program of its kind in the nation. These centers provided safe, supervised spaces where children could continue their schooling while parents, especially essential workers, could keep showing up for their jobs. Through this work, Russ also helped the state launch Universal Pre-K programs, expanding access to early childhood education and supporting working families across the state.',
-    accent: 'ochre',
-  },
-  {
-    eyebrow: '— 05 · Home',
-    title: 'Coming home to Montana',
-    body: "After the loss of their eldest daughter in 2020, Russ and Kate knew they needed to come home. They returned to Montana the next year and, like many working-class families, quickly found that the place that raised Russ had priced their growing family out of most options. So, true to his blue collar roots, Russ rolled up his sleeves and made it work. He planted new roots in Saint Regis, MT and built their family\u2019s homestead and cattle ranch with his own hands, naming it Madison Ranch in honor of their daughter. Russ also spent his first three years back in Montana building multi-family affordable housing units in Saint Regis, aimed at meeting the needs of teachers and working class families in his community. Today, Russ and Kate coach at their local high school and raise their children with the same sense of purpose that has carried them through tragedy and triumph alike.",
-    accent: 'sage',
-  },
-  {
-    eyebrow: '— 06 · Why',
+    eyebrow: '— 04 · Why',
     title: 'Why Congress?',
-    body: "Russ grew up in a purple Montana, at a time when Montanans were neighbors first, not political adversaries. Russ is committed to a campaign that isn\u2019t about right versus left, but instead top versus bottom. Russ\u2019s campaign is focused on fixing the things that negatively impact all Montanans: Healthcare, Affordability, and Corruption. This fight ahead is for the land we grew up on, the people who raised us, and the children who\u2019ll inherit what we leave behind. For Russ, this campaign is for Montana\u2019s rural towns as much as it is for the blue cities. It\u2019s for the hardworking people of this state, for this nation, and for the next generation.",
-    accent: 'ink',
+    body: 'Russ is committed to a campaign that isn\u2019t about right versus left, but instead top versus bottom. His campaign is focused on fixing the things that negatively impact all Montanans: Healthcare, Affordability, and Corruption. This fight ahead is for the land we grew up on, the people who raised us, and the children who\u2019ll inherit what we leave behind. For Russ, this campaign is for Montana\u2019s rural towns as much as it is for the blue cities.',
+    accent: 'ochre',
   },
 ]
 
 export const metadata = {
   title: 'About Russ Cleveland — From Montana, For Montana',
   description:
-    'Navy veteran. Father of seven. Entrepreneur. Raised on a Bitterroot farm. Why Russ Cleveland is running for Congress in Montana MT-01.',
+    'Navy veteran. Father of seven. Finance professional and child care expert. Raised on a small farm in Stevensville, Montana. Why Russ Cleveland is running for Congress in MT-01.',
 }
 
 const AboutPage = () => {
@@ -88,7 +76,7 @@ const AboutPage = () => {
                 <div className="absolute inset-0 flex items-end p-8">
                   <div>
                     <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                      — Bitterroot Valley
+                      — Stevensville, MT
                     </span>
                     <span className="mt-2 block font-display text-3xl font-black leading-tight text-moonlight tracking-[-0.02em]">
                       Russ Cleveland
@@ -152,7 +140,7 @@ const AboutPage = () => {
             <div className="relative mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40 lg:px-16">
               <div className="max-w-[72ch]">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                  — 07 · The pledge
+                  — 05 · The pledge
                 </span>
                 <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(3rem,8vw,7rem)]">
                   Not bought.{' '}

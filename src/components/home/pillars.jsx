@@ -31,8 +31,8 @@ const Pillars = () => {
               </h3>
             </div>
             <p className="mt-10 max-w-[48ch] text-base md:text-lg leading-[1.65] text-moonlight/80">
-              &ldquo;Too many Montanans skip the doctor because they are forced to choose between
-              paying for healthcare and keeping a roof over their heads.&rdquo;
+              Too many Montanans are forced to choose between paying for healthcare and keeping a
+              roof overhead. That is a broken system.
             </p>
             <div
               aria-hidden="true"
@@ -84,8 +84,8 @@ const Pillars = () => {
               </h3>
             </div>
             <p className="tablet:max-w-[34ch] text-base md:text-lg leading-[1.65] text-moonlight/85">
-              &ldquo;I do not believe our country&rsquo;s billionaires and corporations should be
-              able to buy our democracy.&rdquo;
+              Billionaires and corporations should not be able to buy our democracy. A truly
+              grassroots campaign refuses corporate PAC, AIPAC, and special interest money.
             </p>
             <div
               aria-hidden="true"

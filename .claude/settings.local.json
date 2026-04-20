@@ -37,7 +37,9 @@
       "Bash(cp -r /tmp/playwright-skill-temp/skills/playwright-skill \"C:/Users/Dev/Documents/GitHub/russellcleveland/.claude/skills/\")",
       "Bash(node *)",
       "Bash(netstat -ano)",
-      "Bash(taskkill *)"
+      "Bash(taskkill *)",
+      "Bash(grep -E \"LISTENING\\\\s+[0-9]+$\")",
+      "Bash(wait)"
     ]
   }
 }

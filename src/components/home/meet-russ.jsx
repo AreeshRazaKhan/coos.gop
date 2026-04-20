@@ -3,7 +3,6 @@ import Image from 'next/image'
 const BIO_FACTS = [
   { label: 'Service', value: 'U.S. Navy Veteran' },
   { label: 'Family', value: 'Father of seven' },
-  { label: 'Home', value: 'Saint Regis, MT' },
   { label: 'Roles', value: 'Finance · Child care · Coach' },
   { label: 'Raised', value: 'Small farm in Stevensville' },
 ]
@@ -46,7 +45,7 @@ const MeetRuss = () => {
                   — Archival · Duotone
                 </span>
                 <span className="mt-2 block font-display text-2xl font-black leading-tight text-moonlight tracking-[-0.015em]">
-                  U.S. Navy · HM-14
+                  U.S. Navy Veteran
                 </span>
               </div>
             </div>

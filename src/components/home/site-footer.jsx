@@ -112,9 +112,22 @@ const SiteFooter = () => {
             MT 59866. Not authorized by any candidate or candidate&apos;s committee other than
             Cleveland for Congress.
           </p>
-          <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
-            © 2026 Cleveland for Congress &apos;26
-          </p>
+          <div className="flex flex-col tablet:items-end gap-2">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
+              © 2026 Cleveland for Congress &apos;26
+            </p>
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
+              Powered by{' '}
+              <a
+                href="https://op1776.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-moonlight/70 hover:text-ochre-400 transition-colors"
+              >
+                Operation 1776
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
