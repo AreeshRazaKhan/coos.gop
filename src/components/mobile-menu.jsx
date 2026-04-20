@@ -40,11 +40,11 @@ const MobileMenu = ({ open, onClose, links }) => {
           className="flex items-center"
         >
           <Image
-            src="/logo.webp"
+            src="/mt-us-house-logo.webp"
             alt="Russ Cleveland · U.S. House MT-01"
-            width={140}
-            height={84}
-            className="h-10 w-auto"
+            width={1060}
+            height={630}
+            className="h-auto w-full max-w-[96px]"
           />
         </Link>
         <button

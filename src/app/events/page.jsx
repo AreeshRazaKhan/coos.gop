@@ -16,8 +16,8 @@ const EventsPage = () => {
       <SiteHeader />
       <main id="main" className="flex-1">
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-40">
-            <div className="md:col-span-8">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+            <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Events
               </span>
@@ -30,7 +30,7 @@ const EventsPage = () => {
                 meet &amp; greets and community events across Montana.
               </p>
             </div>
-            <aside className="md:col-span-4 md:col-start-9 flex flex-col gap-4 justify-end">
+            <aside className="tablet:col-span-4 tablet:col-start-9 flex flex-col gap-4 justify-end">
               <a
                 href={CALENDAR_URL}
                 target="_blank"

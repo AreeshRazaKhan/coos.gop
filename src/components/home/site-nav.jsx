@@ -28,12 +28,12 @@ const SiteNav = () => {
       >
         <Link href="/" aria-label="Russ Cleveland for U.S. House MT-01" className="flex items-center">
           <Image
-            src="/logo.webp"
+            src="/mt-us-house-logo.webp"
             alt="Russ Cleveland · U.S. House MT-01"
-            width={160}
-            height={96}
+            width={1060}
+            height={630}
             priority
-            className="h-16 w-auto"
+            className="h-auto w-full max-w-[72px] md:max-w-[80px] lg:max-w-[90px]"
           />
         </Link>
 

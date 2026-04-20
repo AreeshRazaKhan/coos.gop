@@ -13,8 +13,8 @@ const Manifesto = () => {
         </span>
       </div>
 
-      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 md:grid-cols-12 gap-10">
-        <div className="md:col-span-8 relative">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 gap-10 tablet:grid-cols-12">
+        <div className="tablet:col-span-8 relative">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
             — 01 · Why I&apos;m running
           </span>
@@ -41,7 +41,7 @@ const Manifesto = () => {
           </div>
         </div>
 
-        <aside className="md:col-span-4 md:pt-20 flex flex-col gap-6">
+        <aside className="tablet:col-span-4 tablet:pt-20 flex flex-col gap-6">
           <div className="relative bg-ink-900 text-moonlight rounded-[28px] p-8 lg:p-10 overflow-hidden">
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
               — The frame

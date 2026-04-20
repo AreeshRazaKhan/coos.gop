@@ -16,7 +16,7 @@ const Marquee = () => {
       className="overflow-hidden bg-ink-900 text-moonlight py-8 border-y border-ink-700"
       aria-label="Campaign themes"
     >
-      <div className="marquee-track flex whitespace-nowrap font-display text-4xl md:text-6xl font-black tracking-[-0.02em]">
+      <div className="marquee-track flex whitespace-nowrap font-display text-4xl tablet:text-5xl lg:text-6xl font-black tracking-[-0.02em]">
         <span className="flex shrink-0 items-center pr-12">{MARQUEE_CONTENT}</span>
         <span className="flex shrink-0 items-center pr-12" aria-hidden="true">
           {MARQUEE_CONTENT}

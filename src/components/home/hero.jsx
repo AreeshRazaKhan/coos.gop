@@ -7,11 +7,11 @@ const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
 
 const Hero = () => {
   return (
-    <section className="hero-gradient text-moonlight relative overflow-hidden md:min-h-screen md:flex md:flex-col md:justify-center">
+    <section className="hero-gradient text-moonlight relative overflow-hidden tablet:min-h-screen tablet:flex tablet:flex-col tablet:justify-center">
       <SiteNav />
 
-      <div className="relative w-full mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 pt-6 pb-16 md:grid-cols-12 md:gap-12 md:px-12 md:py-10 lg:px-16 lg:gap-16 lg:py-14">
-        <div className="md:col-span-7 relative flex flex-col justify-center">
+      <div className="relative w-full mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 pt-6 pb-16 md:gap-12 md:px-12 md:py-10 tablet:grid-cols-12 tablet:gap-14 lg:px-16 lg:gap-16 lg:py-14">
+        <div className="tablet:col-span-7 relative flex flex-col justify-center">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
             — The Montana Way
           </span>
@@ -51,8 +51,8 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="relative mt-2 md:mt-0 md:col-span-5 md:flex md:items-center">
-          <div className="arch-mask relative w-full max-w-[380px] md:max-w-none md:ml-auto md:w-[82%] aspect-[4/5] bg-ink-700 overflow-hidden ring-1 ring-moonlight/10">
+        <div className="relative mt-2 tablet:mt-0 tablet:col-span-5 tablet:flex tablet:items-center">
+          <div className="arch-mask relative w-full max-w-[380px] tablet:max-w-none tablet:ml-auto tablet:w-[82%] aspect-[4/5] bg-ink-700 overflow-hidden ring-1 ring-moonlight/10">
             <Image
               src="https://picsum.photos/seed/russ-cleveland-mt/800/1000"
               alt="Placeholder portrait of Russ Cleveland"
@@ -65,12 +65,12 @@ const Hero = () => {
               aria-hidden="true"
               className="absolute inset-0 bg-gradient-to-t from-ink-900 via-ink-900/40 to-transparent"
             />
-            <div className="absolute inset-0 flex items-end p-8 md:p-10">
+            <div className="absolute inset-0 flex items-end p-8 tablet:p-10">
               <div className="flex flex-col">
                 <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
                   — Saint Regis, Montana
                 </span>
-                <span className="mt-3 font-display text-3xl md:text-4xl font-black leading-tight text-moonlight tracking-[-0.02em]">
+                <span className="mt-3 font-display text-3xl tablet:text-4xl font-black leading-tight text-moonlight tracking-[-0.02em]">
                   Russ Cleveland
                 </span>
                 <span className="mt-1 font-italic italic text-moonlight/80">
@@ -85,7 +85,7 @@ const Hero = () => {
             />
           </div>
 
-          <div className="absolute top-4 right-4 md:-top-2 md:-right-6 z-10">
+          <div className="absolute top-4 right-4 tablet:-top-2 tablet:-right-6 z-10">
             <span className="paper-stamp">Navy Veteran · Est. &apos;25</span>
           </div>
         </div>

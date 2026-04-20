@@ -19,8 +19,8 @@ const Pillars = () => {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-6 gap-5 md:gap-6 md:auto-rows-[minmax(320px,auto)]">
-          <article className="md:col-span-4 md:row-span-2 relative overflow-hidden rounded-[28px] bg-ink-900 text-moonlight p-10 lg:p-14 flex flex-col justify-between min-h-[420px]">
+        <div className="mt-16 grid grid-cols-1 gap-5 tablet:grid-cols-6 tablet:gap-6 tablet:auto-rows-[minmax(320px,auto)]">
+          <article className="tablet:col-span-4 tablet:row-span-2 relative overflow-hidden rounded-[28px] bg-ink-900 text-moonlight p-10 lg:p-14 flex flex-col justify-between min-h-[420px]">
             <div>
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Pillar 01 / Healthcare
@@ -40,7 +40,7 @@ const Pillars = () => {
             />
           </article>
 
-          <article className="md:col-span-2 relative overflow-hidden rounded-[28px] bg-ochre-500 text-ink-900 p-10 flex flex-col justify-between min-h-[320px]">
+          <article className="tablet:col-span-2 relative overflow-hidden rounded-[28px] bg-ochre-500 text-ink-900 p-10 flex flex-col justify-between min-h-[320px]">
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-900/80">
               — No Corporate PAC
             </span>
@@ -57,7 +57,7 @@ const Pillars = () => {
             </span>
           </article>
 
-          <article className="md:col-span-2 relative overflow-hidden rounded-[28px] bg-paper border border-bone-200 text-ink-900 p-10 flex flex-col justify-between min-h-[320px]">
+          <article className="tablet:col-span-2 relative overflow-hidden rounded-[28px] bg-paper border border-bone-200 text-ink-900 p-10 flex flex-col justify-between min-h-[320px]">
             <div>
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
                 Pillar 02 / Affordability
@@ -73,8 +73,8 @@ const Pillars = () => {
             </p>
           </article>
 
-          <article className="md:col-span-6 relative overflow-hidden rounded-[28px] bg-gradient-to-br from-sage to-sage-dark text-moonlight p-10 lg:p-14 flex flex-col md:flex-row md:items-end md:justify-between gap-10 min-h-[320px]">
-            <div className="md:max-w-[62%]">
+          <article className="tablet:col-span-6 relative overflow-hidden rounded-[28px] bg-gradient-to-br from-sage to-sage-dark text-moonlight p-10 lg:p-14 flex flex-col tablet:flex-row tablet:items-end tablet:justify-between gap-10 min-h-[320px]">
+            <div className="tablet:max-w-[62%]">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-moonlight/80">
                 Pillar 03 / End Corruption
               </span>
@@ -83,7 +83,7 @@ const Pillars = () => {
                 <em className="font-italic not-italic text-paper">Ban dark money.</em>
               </h3>
             </div>
-            <p className="md:max-w-[34ch] text-base md:text-lg leading-[1.65] text-moonlight/85">
+            <p className="tablet:max-w-[34ch] text-base md:text-lg leading-[1.65] text-moonlight/85">
               &ldquo;I do not believe our country&rsquo;s billionaires and corporations should be
               able to buy our democracy.&rdquo;
             </p>

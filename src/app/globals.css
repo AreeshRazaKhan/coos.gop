@@ -29,6 +29,8 @@
   --font-italic: var(--ff-italic), Georgia, serif;
   --font-body: var(--ff-body), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--ff-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --breakpoint-tablet: 56.25rem;
 }
 
 @theme inline {
@@ -117,9 +119,11 @@
     font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.65;
+    overflow-x: clip;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
   }
   ::selection {
     background: var(--color-ochre-500);

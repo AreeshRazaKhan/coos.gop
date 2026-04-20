@@ -9,8 +9,8 @@ const Events = () => {
       className="bg-paper-2 text-ink-900 border-y border-bone-200 relative overflow-hidden"
     >
       <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
-          <div className="md:col-span-7">
+        <div className="grid grid-cols-1 gap-10 tablet:grid-cols-12 tablet:gap-12">
+          <div className="tablet:col-span-7">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               — 05 · Events
             </span>
@@ -19,14 +19,14 @@ const Events = () => {
               <em className="font-italic not-italic text-ochre-600">event calendar</em>.
             </h2>
           </div>
-          <p className="md:col-span-5 md:pt-14 font-display text-xl md:text-2xl font-normal leading-[1.35] text-stone-600 max-w-[48ch]">
+          <p className="tablet:col-span-5 tablet:pt-14 font-display text-xl md:text-2xl font-normal leading-[1.35] text-stone-600 max-w-[48ch]">
             Real conversations, in person. Subscribe to the campaign calendar for meet &amp; greets,
             town halls, and community events across Montana.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-6">
-          <article className="md:col-span-8 relative overflow-hidden rounded-[28px] bg-ink-900 text-moonlight p-10 lg:p-14 flex flex-col justify-between min-h-[360px]">
+        <div className="mt-16 grid grid-cols-1 gap-6 tablet:grid-cols-12">
+          <article className="tablet:col-span-8 relative overflow-hidden rounded-[28px] bg-ink-900 text-moonlight p-10 lg:p-14 flex flex-col justify-between min-h-[360px]">
             <div>
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 — Google Calendar
@@ -57,7 +57,7 @@ const Events = () => {
             />
           </article>
 
-          <aside className="md:col-span-4 rounded-[28px] bg-paper border border-bone-200 p-8 flex flex-col gap-4 justify-between">
+          <aside className="tablet:col-span-4 rounded-[28px] bg-paper border border-bone-200 p-8 flex flex-col gap-4 justify-between">
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
               — Can&apos;t make it?
             </span>

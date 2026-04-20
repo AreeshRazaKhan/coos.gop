@@ -70,8 +70,8 @@ const VolunteerPage = () => {
               THE TIME IS NOW
             </span>
           </div>
-          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-40">
-            <div className="md:col-span-8">
+          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+            <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 — Join the movement
               </span>
@@ -88,8 +88,8 @@ const VolunteerPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16">
-            <div className="md:col-span-5">
+          <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+            <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Sign up
               </span>
@@ -104,7 +104,7 @@ const VolunteerPage = () => {
             </div>
 
             <form
-              className="md:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
+              className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
               action="/api/volunteer"
               method="post"
             >
@@ -255,8 +255,8 @@ const VolunteerPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16">
-            <div className="md:col-span-4">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+            <div className="tablet:col-span-4">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Donor disclosure
               </span>
@@ -265,7 +265,7 @@ const VolunteerPage = () => {
                 <em className="font-italic not-italic text-ochre-600">you confirm that</em>:
               </h2>
             </div>
-            <ol className="md:col-span-8 flex flex-col divide-y divide-bone-200 border-y border-bone-200">
+            <ol className="tablet:col-span-8 flex flex-col divide-y divide-bone-200 border-y border-bone-200">
               {DONOR_RULES.map((rule, i) => (
                 <li key={rule} className="py-5 flex items-start gap-6">
                   <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-600 w-8 shrink-0">
@@ -281,7 +281,7 @@ const VolunteerPage = () => {
         </section>
 
         <section className="bg-ink-900 text-moonlight">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-8">
             <p className="font-display text-2xl md:text-[32px] font-extrabold leading-[1.15] max-w-[34ch] tracking-[-0.015em]">
               Already in?{' '}
               <em className="font-italic not-italic text-ochre-400">Chip in a dollar.</em>

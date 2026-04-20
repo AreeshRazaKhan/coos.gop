@@ -14,8 +14,8 @@ const MeetRuss = () => {
       id="meet-russ"
       className="bg-paper text-ink-900 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44"
     >
-      <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-        <div className="md:col-span-5 md:order-2 relative">
+      <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-12 tablet:grid-cols-12 tablet:gap-16">
+        <div className="relative tablet:col-span-5 tablet:order-2 max-w-[460px] tablet:max-w-none">
           <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-900">
             <Image
               src="https://picsum.photos/seed/russ-archive-navy/800/1000"
@@ -56,12 +56,12 @@ const MeetRuss = () => {
             />
           </div>
 
-          <div className="absolute -top-2 -left-2 md:-top-4 md:-left-6">
+          <div className="absolute -top-2 -left-2 tablet:-top-4 tablet:-left-6">
             <span className="paper-stamp">Navy Veteran</span>
           </div>
         </div>
 
-        <div className="md:col-span-7 md:order-1 flex flex-col justify-center">
+        <div className="tablet:col-span-7 tablet:order-1 flex flex-col justify-center">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
             — 03 · Meet Russ
           </span>
@@ -82,7 +82,7 @@ const MeetRuss = () => {
             age of thirteen.
           </p>
 
-          <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[58ch] border-t border-bone-200 pt-8">
+          <dl className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 tablet:grid-cols-2 gap-x-10 gap-y-6 max-w-[58ch] border-t border-bone-200 pt-8">
             {BIO_FACTS.map((fact) => (
               <div key={fact.label} className="flex flex-col gap-1">
                 <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">

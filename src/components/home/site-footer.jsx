@@ -35,15 +35,15 @@ const SiteFooter = () => {
   return (
     <footer className="bg-ink-900 text-moonlight border-t border-ink-700">
       <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 pt-24 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          <div className="md:col-span-5">
+        <div className="grid grid-cols-2 gap-10 tablet:grid-cols-12 tablet:gap-12">
+          <div className="col-span-2 tablet:col-span-5">
             <Link href="/" aria-label="Russ Cleveland for U.S. House MT-01" className="inline-flex">
               <Image
-                src="/logo.webp"
+                src="/mt-us-house-logo.webp"
                 alt="Russ Cleveland · U.S. House MT-01"
-                width={320}
-                height={192}
-                className="w-40 md:w-40 h-auto"
+                width={1060}
+                height={630}
+                className="h-auto w-full max-w-[96px] md:max-w-[110px] lg:max-w-[120px]"
               />
             </Link>
 
@@ -74,7 +74,7 @@ const SiteFooter = () => {
             <nav
               key={col.label}
               aria-label={col.label}
-              className="md:col-span-2 flex flex-col gap-4"
+              className="tablet:col-span-2 flex flex-col gap-4"
             >
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 — {col.label}
@@ -94,7 +94,7 @@ const SiteFooter = () => {
             </nav>
           ))}
 
-          <div className="md:col-span-1 flex md:flex-col gap-4 md:justify-start md:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
+          <div className="col-span-2 tablet:col-span-1 flex tablet:flex-col gap-4 tablet:justify-start tablet:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
             <Link href="/ask" className="hover:text-ochre-400">
               Ask Russ
             </Link>
@@ -106,7 +106,7 @@ const SiteFooter = () => {
 
         <hr className="mt-16 border-t border-ink-700" />
 
-        <div className="mt-8 flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div className="mt-8 flex flex-col tablet:flex-row tablet:items-start tablet:justify-between gap-6">
           <p className="font-mono text-[11px] leading-[1.65] text-moonlight/60 max-w-[60ch]">
             Paid for by Cleveland for Congress · FEC ID C00902395 · P.O. Box 691, Saint Regis,
             MT 59866. Not authorized by any candidate or candidate&apos;s committee other than

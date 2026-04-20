@@ -24,8 +24,8 @@ const ContactPage = () => {
       <SiteHeader />
       <main id="main" className="flex-1">
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-40">
-            <div className="md:col-span-7">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+            <div className="tablet:col-span-7">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Contact
               </span>
@@ -38,7 +38,7 @@ const ContactPage = () => {
                 the addresses below.
               </p>
             </div>
-            <aside className="md:col-span-5 md:col-start-8">
+            <aside className="tablet:col-span-5 tablet:col-start-8">
               <div className="bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 relative before:content-[''] before:absolute before:top-0 before:left-10 before:right-10 before:h-[3px] before:bg-ochre-500">
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
                   — Direct
@@ -51,7 +51,7 @@ const ContactPage = () => {
                     <dd className="mt-2">
                       <a
                         href="mailto:connect@russellcleveland.org"
-                        className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+                        className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
                         connect@russellcleveland.org
                       </a>
@@ -64,7 +64,7 @@ const ContactPage = () => {
                     <dd className="mt-2">
                       <a
                         href="mailto:press@russellcleveland.org"
-                        className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+                        className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
                         press@russellcleveland.org
                       </a>
@@ -89,8 +89,8 @@ const ContactPage = () => {
         </section>
 
         <section className="bg-paper-2 text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-24 md:px-12 md:py-32 lg:px-16">
-            <div className="md:col-span-5">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-32 tablet:grid-cols-12 lg:px-16">
+            <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Send a message
               </span>
@@ -105,7 +105,7 @@ const ContactPage = () => {
             </div>
 
             <form
-              className="md:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
+              className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
               action="/api/contact"
               method="post"
             >
@@ -201,8 +201,8 @@ const ContactPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16">
-            <div className="md:col-span-5">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+            <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 — Social
               </span>
@@ -211,7 +211,7 @@ const ContactPage = () => {
                 <em className="font-italic not-italic text-ochre-600">road</em>.
               </h2>
             </div>
-            <ul className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <ul className="tablet:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
               {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
                   <Link

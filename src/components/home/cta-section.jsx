@@ -21,8 +21,8 @@ const CtaSection = () => {
         </span>
       </div>
 
-      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 md:grid-cols-12 gap-12">
-        <div className="md:col-span-8">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 gap-12 tablet:grid-cols-12">
+        <div className="tablet:col-span-8">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
             — 05 · Join In
           </span>
@@ -114,7 +114,7 @@ const CtaSection = () => {
 
         <aside
           id="contact"
-          className="md:col-span-4 md:col-start-9 rounded-[28px] bg-ink-800 p-8 lg:p-10 border border-ink-700 flex flex-col gap-6 h-fit md:mt-20"
+          className="tablet:col-span-4 tablet:col-start-9 rounded-[28px] bg-ink-800 p-8 lg:p-10 border border-ink-700 flex flex-col gap-6 h-fit tablet:mt-20"
         >
           <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
             — Mailing Address

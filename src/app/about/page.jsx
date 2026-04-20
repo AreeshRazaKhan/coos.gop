@@ -55,8 +55,8 @@ const AboutPage = () => {
       <SiteHeader />
       <main id="main" className="flex-1">
         <section className="bg-ink-900 text-moonlight relative overflow-hidden">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-40">
-            <div className="md:col-span-7 flex flex-col justify-center">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+            <div className="tablet:col-span-7 flex flex-col justify-center">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 — About · MT-01 · 2026
               </span>
@@ -71,7 +71,7 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="md:col-span-5 relative md:flex md:items-end">
+            <div className="relative tablet:col-span-5 tablet:flex tablet:items-end max-w-[460px] tablet:max-w-none">
               <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-700">
                 <Image
                   src="https://picsum.photos/seed/russ-about-portrait/800/1000"
@@ -99,7 +99,7 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute top-4 right-4 md:-top-2 md:-right-4 z-10">
+              <div className="absolute top-4 right-4 tablet:-top-2 tablet:-right-4 z-10">
                 <span className="paper-stamp">Navy Veteran · Est. &apos;25</span>
               </div>
             </div>
@@ -121,8 +121,8 @@ const AboutPage = () => {
                 key={section.title}
                 className={`${bg} text-ink-900 border-b border-bone-200`}
               >
-                <div className="mx-auto max-w-[1440px] grid grid-cols-1 md:grid-cols-12 gap-10 px-6 py-20 md:px-12 md:py-28 lg:px-16 lg:py-32">
-                  <aside className={`md:col-span-4 ${reversed ? 'md:order-2' : ''} md:sticky md:top-32 md:self-start`}>
+                <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-32">
+                  <aside className={`tablet:col-span-4 ${reversed ? 'tablet:order-2' : ''} tablet:sticky tablet:top-32 tablet:self-start`}>
                     <span className={`font-mono text-xs font-semibold uppercase tracking-[0.22em] ${eyebrowColor}`}>
                       {section.eyebrow}
                     </span>
@@ -130,7 +130,7 @@ const AboutPage = () => {
                       {section.title}
                     </h2>
                   </aside>
-                  <div className={`md:col-span-8 ${reversed ? 'md:order-1' : ''}`}>
+                  <div className={`tablet:col-span-8 ${reversed ? 'tablet:order-1' : ''}`}>
                     <p className="font-display text-lg md:text-[22px] font-normal leading-[1.55] text-ash max-w-[68ch]">
                       {section.body}
                     </p>
