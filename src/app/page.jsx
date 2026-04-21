@@ -1,12 +1,14 @@
 import CredentialStrip from '@/components/home/credential-strip'
 import CtaSection from '@/components/home/cta-section'
 import Events from '@/components/home/events'
+import FAQ from '@/components/home/faq'
 import Hero from '@/components/home/hero'
 import Manifesto from '@/components/home/manifesto'
 import Marquee from '@/components/home/marquee'
 import MeetRuss from '@/components/home/meet-russ'
 import Pillars from '@/components/home/pillars'
 import SiteFooter from '@/components/home/site-footer'
+import Values from '@/components/home/values'
 
 const Home = () => {
   return (
@@ -17,8 +19,10 @@ const Home = () => {
         <Marquee />
         <Manifesto />
         <Pillars />
+        <Values />
         <MeetRuss />
         <Events />
+        <FAQ />
         <CtaSection />
       </main>
       <SiteFooter />

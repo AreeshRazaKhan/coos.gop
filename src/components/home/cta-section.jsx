@@ -14,9 +14,9 @@ const CtaSection = () => {
     <section id="donate" className="bg-ink-900 text-moonlight relative overflow-hidden">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center"
+        className="pointer-events-none absolute inset-x-0 top-0 flex items-center overflow-hidden h-32 md:h-44 lg:h-56"
       >
-        <span className="font-display font-black text-[220px] md:text-[360px] leading-none tracking-[-0.04em] text-moonlight/[.03] whitespace-nowrap -translate-x-10">
+        <span className="font-display font-black text-[140px] md:text-[220px] lg:text-[280px] leading-[0.88] tracking-[-0.04em] text-moonlight/[.05] whitespace-nowrap -translate-x-10 -translate-y-4">
           THE MONTANA WAY
         </span>
       </div>

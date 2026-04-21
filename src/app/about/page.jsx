@@ -62,8 +62,8 @@ const AboutPage = () => {
             <div className="relative tablet:col-span-5 tablet:flex tablet:items-end max-w-[460px] tablet:max-w-none">
               <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-700">
                 <Image
-                  src="https://picsum.photos/seed/russ-about-portrait/800/1000"
-                  alt="Placeholder portrait of Russ Cleveland"
+                  src="/russ-portrait.webp"
+                  alt="Portrait of Russ Cleveland"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority

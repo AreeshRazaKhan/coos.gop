@@ -54,8 +54,8 @@ const Hero = () => {
         <div className="relative mt-2 tablet:mt-0 tablet:col-span-5 tablet:flex tablet:items-center">
           <div className="arch-mask relative w-full max-w-[380px] tablet:max-w-none tablet:ml-auto tablet:w-[82%] aspect-[4/5] bg-ink-700 overflow-hidden ring-1 ring-moonlight/10">
             <Image
-              src="https://picsum.photos/seed/russ-cleveland-mt/800/1000"
-              alt="Placeholder portrait of Russ Cleveland"
+              src="/russ-portrait.webp"
+              alt="Portrait of Russ Cleveland"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
