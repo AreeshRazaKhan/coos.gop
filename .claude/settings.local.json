@@ -39,7 +39,10 @@
       "Bash(netstat -ano)",
       "Bash(taskkill *)",
       "Bash(grep -E \"LISTENING\\\\s+[0-9]+$\")",
-      "Bash(wait)"
+      "Bash(wait)",
+      "Bash(rm public/file.svg public/globe.svg public/next.svg public/vercel.svg public/window.svg scripts/trim-logo.mjs .claude/skills/playwright-skill/.temp-execution-1776711637374.js)",
+      "Bash(rm -rf test-results)",
+      "Bash(rmdir scripts *)"
     ]
   }
 }
