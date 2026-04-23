@@ -8,7 +8,6 @@ const NAV_COLUMNS = [
     label: 'Campaign',
     links: [
       { href: '/about', text: 'About Russ' },
-      { href: '#platform', text: 'Platform' },
       { href: '/events', text: 'Events' },
       { href: '/volunteer', text: 'Join Movement' },
     ],
