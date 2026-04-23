@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import FormField from '@/components/ui/form-field'
+import FormLegalLine from '@/components/ui/form-legal-line'
 import MagneticButton from '@/components/ui/magnetic-button'
 import { ISSUE_CATEGORIES } from '@/constants/issues'
 import { formatPhoneInput } from '@/lib/phone'
@@ -14,8 +15,6 @@ const SMS_UPDATES_COPY =
 
 const SMS_PROMO_COPY =
   'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
-
-const CONSENT_HELPER = 'Enter a phone number above to opt in to SMS messages.'
 
 const INITIAL_STATE = {
   name: '',
@@ -133,11 +132,11 @@ const IssueForm = () => {
           — Question received
         </span>
         <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.15] tracking-[-0.02em] text-ink-900">
-          On the record.
+          Thanks for reaching out.
         </h3>
         <p className="text-base leading-[1.65] text-stone-600 max-w-[52ch]">
-          Russ reviews questions weekly. Answers show up on this page with full
-          attribution when they&rsquo;re recorded.
+          Russ reads every question. The team may follow up directly if we need more
+          context.
         </p>
       </div>
     )
@@ -225,14 +224,6 @@ const IssueForm = () => {
       </div>
 
       <div className="md:col-span-2 flex flex-col gap-3 border-t border-bone-200 pt-5">
-        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-          — SMS Consent
-        </span>
-        {!hasPhone && (
-          <p className="font-mono text-[11px] italic leading-[1.5] text-stone-400">
-            {CONSENT_HELPER}
-          </p>
-        )}
         <label
           className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
             hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
@@ -281,6 +272,8 @@ const IssueForm = () => {
           {submitting ? 'Submitting…' : 'Submit question'}
         </MagneticButton>
       </div>
+
+      <FormLegalLine />
     </form>
   )
 }

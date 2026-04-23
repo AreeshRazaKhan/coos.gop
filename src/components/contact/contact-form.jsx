@@ -3,6 +3,7 @@
 import { useState } from 'react'
 
 import FormField from '@/components/ui/form-field'
+import FormLegalLine from '@/components/ui/form-legal-line'
 import MagneticButton from '@/components/ui/magnetic-button'
 import { formatPhoneInput } from '@/lib/phone'
 
@@ -13,8 +14,6 @@ const SMS_UPDATES_COPY =
 
 const SMS_PROMO_COPY =
   'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
-
-const CONSENT_HELPER = 'Enter a phone number above to opt in to SMS messages.'
 
 const INITIAL_STATE = {
   firstName: '',
@@ -190,14 +189,6 @@ const ContactForm = () => {
       </div>
 
       <div className="md:col-span-2 flex flex-col gap-3 border-t border-bone-200 pt-5">
-        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-          — SMS Consent
-        </span>
-        {!hasPhone && (
-          <p className="font-mono text-[11px] italic leading-[1.5] text-stone-400">
-            {CONSENT_HELPER}
-          </p>
-        )}
         <label
           className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
             hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
@@ -246,6 +237,8 @@ const ContactForm = () => {
           {submitting ? 'Sending…' : 'Send message'}
         </MagneticButton>
       </div>
+
+      <FormLegalLine />
     </form>
   )
 }
