@@ -1,0 +1,17 @@
+export const ISSUE_CATEGORIES = [
+  'Healthcare',
+  'Affordability & Housing',
+  'Public Lands & Water',
+  'Corruption & Campaign Finance',
+  'Veterans',
+  'Agriculture & Ranching',
+  'Education',
+  'Energy & Environment',
+  'Immigration',
+  'LGBTQIA+ Rights',
+  'Gun Policy',
+  'Tribal Sovereignty',
+  'Workers’ Rights',
+  'Economy & Jobs',
+  'Other',
+]

@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import MagneticButton from '@/components/ui/magnetic-button'
+
 const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
 
 const DONATE_TIERS = [
@@ -55,15 +57,11 @@ const CtaSection = () => {
                   </a>
                 ))}
               </div>
-              <a
-                href={DONATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-rust border-[1.5px] border-rust px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-paper transition-transform hover:-translate-y-0.5"
-              >
-                Custom amount
-                <span aria-hidden="true">→</span>
-              </a>
+              <div className="mt-4">
+                <MagneticButton href={DONATE_URL} variant="rust" size="lg" external>
+                  Custom amount
+                </MagneticButton>
+              </div>
             </div>
 
             <form
@@ -98,13 +96,11 @@ const CtaSection = () => {
                 placeholder="ZIP (59866)"
                 className="rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-[14px] font-body text-[15px] text-moonlight placeholder:text-moonlight/40 focus:outline-none focus:border-ochre-500"
               />
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-ochre-500 border-[1.5px] border-ochre-500 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400"
-              >
-                Sign me up
-                <span aria-hidden="true">→</span>
-              </button>
+              <div className="w-fit">
+                <MagneticButton type="submit" variant="ochre" size="lg">
+                  Sign me up
+                </MagneticButton>
+              </div>
               <p className="font-mono text-[10px] leading-[1.6] text-moonlight/50">
                 No spam. No selling. We&apos;ll text about events in your county.
               </p>

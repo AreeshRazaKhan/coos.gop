@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 import SiteNav from '@/components/home/site-nav'
+import MagneticButton from '@/components/ui/magnetic-button'
 
 const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
 
@@ -27,22 +27,12 @@ const Hero = () => {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-3">
-            <Link
-              href="/join-the-movement"
-              className="inline-flex items-center gap-2 rounded-full bg-ochre-500 border-[1.5px] border-ochre-500 px-6 py-3 font-body font-semibold text-xs uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400 hover:border-ochre-400"
-            >
+            <MagneticButton href="/join-the-movement" variant="ochre" size="md">
               Join the movement
-              <span aria-hidden="true">→</span>
-            </Link>
-            <a
-              href={DONATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-moonlight/70 px-6 py-3 font-body font-semibold text-xs uppercase tracking-[0.14em] text-moonlight transition-colors hover:bg-moonlight hover:text-ink-900"
-            >
+            </MagneticButton>
+            <MagneticButton href={DONATE_URL} variant="ghost-light" size="md" external>
               Donate
-              <span aria-hidden="true">→</span>
-            </a>
+            </MagneticButton>
           </div>
 
           <p className="mt-6 font-mono text-[11px] font-medium uppercase tracking-[0.18em] text-moonlight/60">

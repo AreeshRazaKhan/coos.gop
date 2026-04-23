@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import MagneticButton from '@/components/ui/magnetic-button'
+
 const NAV_COLUMNS = [
   {
     label: 'Campaign',
@@ -52,21 +54,17 @@ const SiteFooter = () => {
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
-              <a
+              <MagneticButton
                 href="https://secure.actblue.com/donate/clevelandq12026"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-rust border-[1.5px] border-rust px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-paper transition-transform hover:-translate-y-0.5"
+                variant="rust"
+                size="md"
+                external
               >
                 Chip in
-                <span aria-hidden="true">→</span>
-              </a>
-              <Link
-                href="/volunteer"
-                className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-moonlight/60 px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-moonlight transition-colors hover:bg-moonlight hover:text-ink-900"
-              >
+              </MagneticButton>
+              <MagneticButton href="/volunteer" variant="ghost-light" size="md">
                 Join the movement
-              </Link>
+              </MagneticButton>
             </div>
           </div>
 

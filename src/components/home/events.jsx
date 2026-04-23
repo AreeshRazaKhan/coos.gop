@@ -1,5 +1,4 @@
-import Link from 'next/link'
-
+import MagneticButton from '@/components/ui/magnetic-button'
 import { CALENDAR_URL } from '@/lib/events'
 
 const Events = () => {
@@ -40,15 +39,9 @@ const Events = () => {
             </div>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <a
-                href={CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-ochre-500 border-[1.5px] border-ochre-500 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400"
-              >
+              <MagneticButton href={CALENDAR_URL} variant="ochre" size="lg" external>
                 View event calendar
-                <span aria-hidden="true">→</span>
-              </a>
+              </MagneticButton>
             </div>
 
             <div
@@ -65,13 +58,15 @@ const Events = () => {
               Host a living-room event in{' '}
               <em className="font-italic not-italic text-ochre-600">your county</em>.
             </p>
-            <Link
-              href="mailto:connect@russellcleveland.org?subject=Host%20an%20event"
-              className="mt-2 inline-flex items-center gap-2 rounded-full border-[1.5px] border-ink-900 px-6 py-3 font-body font-semibold text-[11px] uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ink-900 hover:text-paper w-fit"
-            >
-              Start one
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className="mt-2 w-fit">
+              <MagneticButton
+                href="mailto:connect@russellcleveland.org?subject=Host%20an%20event"
+                variant="ghost"
+                size="md"
+              >
+                Start one
+              </MagneticButton>
+            </div>
           </aside>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+import ContactForm from '@/components/contact/contact-form'
 import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 
@@ -104,99 +105,7 @@ const ContactPage = () => {
               </p>
             </div>
 
-            <form
-              className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
-              action="/api/contact"
-              method="post"
-            >
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="fullName"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Full name
-                </label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="zip"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  ZIP code
-                </label>
-                <input
-                  id="zip"
-                  name="zip"
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]{5}"
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="topic"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Topic
-                </label>
-                <select
-                  id="topic"
-                  name="topic"
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                >
-                  <option>Press request</option>
-                  <option>Policy question</option>
-                  <option>Host an event</option>
-                  <option>Story tip</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div className="flex flex-col gap-2 md:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={6}
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] leading-[1.6] text-ink-900 focus:outline-none focus:border-ochre-500 resize-vertical"
-                />
-              </div>
-              <button
-                type="submit"
-                className="md:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-ink-900 border-[1.5px] border-ink-900 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-paper transition-colors hover:bg-ochre-500 hover:border-ochre-500 hover:text-ink-900 w-fit"
-              >
-                Send message
-                <span aria-hidden="true">→</span>
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
 

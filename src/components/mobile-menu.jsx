@@ -5,6 +5,8 @@ import Link from 'next/link'
 import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 
+import MagneticButton from '@/components/ui/magnetic-button'
+
 const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
 
 const MobileMenu = ({ open, onClose, links }) => {
@@ -90,24 +92,18 @@ const MobileMenu = ({ open, onClose, links }) => {
         </ul>
 
         <div className="mt-10 flex flex-col gap-3">
-          <a
+          <MagneticButton
             href={DONATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            variant="rust"
+            size="lg"
+            external
             onClick={onClose}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-rust border-[1.5px] border-rust px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-paper transition-transform hover:-translate-y-0.5"
           >
             Chip in
-            <span aria-hidden="true">→</span>
-          </a>
-          <Link
-            href="/volunteer"
-            onClick={onClose}
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-ochre-500 border-[1.5px] border-ochre-500 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400"
-          >
+          </MagneticButton>
+          <MagneticButton href="/volunteer" variant="ochre" size="lg" onClick={onClose}>
             Join the movement
-            <span aria-hidden="true">→</span>
-          </Link>
+          </MagneticButton>
         </div>
 
         <p className="mt-10 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-moonlight/60">

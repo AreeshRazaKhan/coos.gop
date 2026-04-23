@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import MobileMenu from '@/components/mobile-menu'
+import MagneticButton from '@/components/ui/magnetic-button'
 
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
@@ -48,15 +49,9 @@ const SiteNav = () => {
         </ul>
 
         <div className="flex items-center gap-3">
-          <a
-            href={DONATE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-ochre-500 px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400"
-          >
+          <MagneticButton href={DONATE_URL} variant="ochre" size="md" external>
             Donate
-            <span aria-hidden="true">→</span>
-          </a>
+          </MagneticButton>
           <button
             type="button"
             aria-label="Open menu"

@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
+import MagneticButton from '@/components/ui/magnetic-button'
+import VolunteerSignup from '@/components/volunteer/volunteer-signup'
 
 const WAYS_TO_HELP = [
   {
@@ -103,114 +105,7 @@ const VolunteerPage = () => {
               </p>
             </div>
 
-            <form
-              className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
-              action="/api/volunteer"
-              method="post"
-            >
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="fullName"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Full name
-                </label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="email"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="phone"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  Phone (optional)
-                </label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label
-                  htmlFor="zip"
-                  className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass"
-                >
-                  ZIP code
-                </label>
-                <input
-                  id="zip"
-                  name="zip"
-                  type="text"
-                  inputMode="numeric"
-                  pattern="[0-9]{5}"
-                  required
-                  className="bg-paper border border-bone-200 rounded-[4px] px-4 py-[14px] font-body text-[15px] text-ink-900 focus:outline-none focus:border-ochre-500"
-                />
-              </div>
-
-              <fieldset className="md:col-span-2 flex flex-col gap-3">
-                <legend className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-brass">
-                  I can help with
-                </legend>
-                <div className="grid grid-cols-2 gap-3">
-                  {['Door-knock', 'Text bank', 'Host an event', 'Sign waving', 'Write letters', 'Phone bank'].map(
-                    (item) => (
-                      <label
-                        key={item}
-                        className="flex items-center gap-3 rounded-[4px] border border-bone-200 bg-paper px-4 py-3 font-body text-[14px] text-ink-900 hover:border-ochre-500 cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          name="help"
-                          value={item}
-                          className="accent-ochre-500"
-                        />
-                        {item}
-                      </label>
-                    ),
-                  )}
-                </div>
-              </fieldset>
-
-              <label className="md:col-span-2 flex items-start gap-3 font-mono text-[11px] leading-[1.6] text-stone-600">
-                <input type="checkbox" name="sms" required className="mt-1 accent-ochre-500" />
-                <span>
-                  By submitting your phone number, you are consenting to receive texts from
-                  Cleveland For Congress. You can revoke your consent to receive texts at any
-                  time by replying &ldquo;stop&rdquo; to the text.
-                </span>
-              </label>
-
-              <button
-                type="submit"
-                className="md:col-span-2 inline-flex items-center justify-center gap-2 rounded-full bg-ochre-500 border-[1.5px] border-ochre-500 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-ink-900 transition-colors hover:bg-ochre-400 w-fit"
-              >
-                Sign me up
-                <span aria-hidden="true">→</span>
-              </button>
-            </form>
+            <VolunteerSignup />
           </div>
         </section>
 
@@ -287,22 +182,17 @@ const VolunteerPage = () => {
               <em className="font-italic not-italic text-ochre-400">Chip in a dollar.</em>
             </p>
             <div className="flex flex-wrap gap-4">
-              <a
+              <MagneticButton
                 href="https://secure.actblue.com/donate/clevelandq12026"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-rust border-[1.5px] border-rust px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-paper transition-transform hover:-translate-y-0.5"
+                variant="rust"
+                size="lg"
+                external
               >
                 Donate
-                <span aria-hidden="true">→</span>
-              </a>
-              <Link
-                href="/events"
-                className="inline-flex items-center gap-2 rounded-full border-[1.5px] border-moonlight/70 px-8 py-4 font-body font-semibold text-xs uppercase tracking-[0.14em] text-moonlight transition-colors hover:bg-moonlight hover:text-ink-900"
-              >
+              </MagneticButton>
+              <MagneticButton href="/events" variant="ghost-light" size="lg">
                 See events
-                <span aria-hidden="true">→</span>
-              </Link>
+              </MagneticButton>
             </div>
           </div>
         </section>
