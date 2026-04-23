@@ -1,6 +1,11 @@
-const GHL_WEBHOOK_URL =
+import { normalizePhoneForSubmit } from '@/lib/phone'
+
+const WEBHOOK_URLS = [
   process.env.GHL_CONTACT_WEBHOOK ||
-  'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/cf2eced9-14ad-4109-ba4f-fd244858af10'
+    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/cf2eced9-14ad-4109-ba4f-fd244858af10',
+  process.env.GHL_COMPLIANCE_WEBHOOK ||
+    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/00000000-0000-0000-0000-000000000000',
+]
 
 export async function POST(request) {
   try {
@@ -8,7 +13,6 @@ export async function POST(request) {
     const firstName = (body.firstName || '').toString().trim()
     const lastName = (body.lastName || '').toString().trim()
     const email = (body.email || '').toString().trim()
-    const phone = (body.phone || '').toString().trim()
     const message = (body.message || '').toString().trim()
     const smsUpdates = body.sms_updates === 'Yes' ? 'Yes' : 'No'
     const smsPromo = body.sms_promo === 'Yes' ? 'Yes' : 'No'
@@ -22,7 +26,7 @@ export async function POST(request) {
       firstName,
       lastName,
       email,
-      phone,
+      phone: normalizePhoneForSubmit(body.phone),
       message,
       sms_updates: smsUpdates,
       sms_promo: smsPromo,
@@ -30,15 +34,21 @@ export async function POST(request) {
       submitted_at: new Date().toISOString(),
     }
 
-    const upstream = await fetch(GHL_WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    })
+    const results = await Promise.all(
+      WEBHOOK_URLS.map((url) =>
+        fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch((error) => {
+          console.error('[api/contact]: webhook error', url, error)
+          return { ok: false }
+        }),
+      ),
+    )
 
-    if (!upstream.ok) {
-      console.error('[api/contact]: upstream webhook failed', upstream.status)
-      return Response.json({ error: 'Upstream webhook failed' }, { status: 502 })
+    if (!results.some((response) => response.ok)) {
+      return Response.json({ error: 'Webhook delivery failed' }, { status: 502 })
     }
 
     return Response.json({ success: true })

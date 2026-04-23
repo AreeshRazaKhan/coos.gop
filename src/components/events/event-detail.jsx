@@ -5,14 +5,25 @@ import PropTypes from 'prop-types'
 
 import FormField from '@/components/ui/form-field'
 import MagneticButton from '@/components/ui/magnetic-button'
+import { formatPhoneInput } from '@/lib/phone'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+const SMS_UPDATES_COPY =
+  'By checking this box, I consent to receive campaign updates from Cleveland for Congress via automated text messages at the phone number provided. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help. View our Privacy Policy and Terms of Service.'
+
+const SMS_PROMO_COPY =
+  'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
+
+const CONSENT_HELPER = 'Enter a phone number above to opt in to SMS messages.'
 
 const INITIAL_RSVP_STATE = {
   firstName: '',
   lastName: '',
   email: '',
   phone: '',
+  smsUpdates: false,
+  smsPromo: false,
 }
 
 const validate = (values) => {
@@ -34,9 +45,24 @@ const RsvpForm = ({ event }) => {
   const [success, setSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
+  const hasPhone = values.phone.trim().length > 0
+
   const handleChange = (changeEvent) => {
-    const { name, value } = changeEvent.target
-    setValues((prev) => ({ ...prev, [name]: value }))
+    const { name, value, type, checked } = changeEvent.target
+    setValues((prev) => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value,
+    }))
+  }
+
+  const handlePhoneChange = (changeEvent) => {
+    const formatted = formatPhoneInput(changeEvent.target.value)
+    setValues((prev) => {
+      if (formatted.trim().length === 0) {
+        return { ...prev, phone: formatted, smsUpdates: false, smsPromo: false }
+      }
+      return { ...prev, phone: formatted }
+    })
   }
 
   const handleSubmit = async (submitEvent) => {
@@ -58,11 +84,13 @@ const RsvpForm = ({ event }) => {
           firstName: values.firstName.trim(),
           lastName: values.lastName.trim(),
           email: values.email.trim(),
-          phone: values.phone.trim(),
+          phone: values.phone,
           eventName: event.name,
           eventDate: event.date,
           eventTime: event.time,
           eventCategory: event.category,
+          sms_updates: values.smsUpdates ? 'Yes' : 'No',
+          sms_promo: values.smsPromo ? 'Yes' : 'No',
         }),
       })
 
@@ -105,7 +133,6 @@ const RsvpForm = ({ event }) => {
 
   return (
     <form
-      noValidate
       onSubmit={handleSubmit}
       className="bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
     >
@@ -113,7 +140,7 @@ const RsvpForm = ({ event }) => {
         name="firstName"
         label="First name"
         required
-        placeholder="Jane"
+        placeholder="First name"
         autoComplete="given-name"
         value={values.firstName}
         onChange={handleChange}
@@ -123,7 +150,7 @@ const RsvpForm = ({ event }) => {
         name="lastName"
         label="Last name"
         required
-        placeholder="Cleveland"
+        placeholder="Last name"
         autoComplete="family-name"
         value={values.lastName}
         onChange={handleChange}
@@ -147,12 +174,55 @@ const RsvpForm = ({ event }) => {
           name="phone"
           type="tel"
           label="Contact number (optional)"
-          placeholder="(406) 555-1234"
+          placeholder="+1 (406) 555-0123"
           autoComplete="tel"
           value={values.phone}
-          onChange={handleChange}
+          onChange={handlePhoneChange}
           error={errors.phone}
         />
+      </div>
+
+      <div className="md:col-span-2 flex flex-col gap-3 border-t border-bone-200 pt-5">
+        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
+          — SMS Consent
+        </span>
+        {!hasPhone && (
+          <p className="font-mono text-[11px] italic leading-[1.5] text-stone-400">
+            {CONSENT_HELPER}
+          </p>
+        )}
+        <label
+          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
+            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
+          }`}
+        >
+          <input
+            type="checkbox"
+            name="smsUpdates"
+            checked={values.smsUpdates}
+            onChange={handleChange}
+            disabled={!hasPhone}
+            required={hasPhone}
+            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
+          />
+          <span>{SMS_UPDATES_COPY}</span>
+        </label>
+        <label
+          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
+            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
+          }`}
+        >
+          <input
+            type="checkbox"
+            name="smsPromo"
+            checked={values.smsPromo}
+            onChange={handleChange}
+            disabled={!hasPhone}
+            required={hasPhone}
+            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
+          />
+          <span>{SMS_PROMO_COPY}</span>
+        </label>
       </div>
 
       {submitError && (

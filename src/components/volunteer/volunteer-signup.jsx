@@ -12,6 +12,7 @@ import {
   MONTANA_REGIONS,
   REGISTERED_VOTER_OPTIONS,
 } from '@/constants/montana'
+import { formatPhoneInput } from '@/lib/phone'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -20,6 +21,8 @@ const SMS_UPDATES_COPY =
 
 const SMS_PROMO_COPY =
   'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
+
+const CONSENT_HELPER = 'Enter a phone number above to opt in to SMS messages.'
 
 const INITIAL_STATE = {
   firstName: '',
@@ -75,12 +78,24 @@ const VolunteerSignup = () => {
   const [success, setSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
+  const hasPhone = values.phone.trim().length > 0
+
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
     setValues((prev) => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value,
     }))
+  }
+
+  const handlePhoneChange = (event) => {
+    const formatted = formatPhoneInput(event.target.value)
+    setValues((prev) => {
+      if (formatted.trim().length === 0) {
+        return { ...prev, phone: formatted, smsUpdates: false, smsPromo: false }
+      }
+      return { ...prev, phone: formatted }
+    })
   }
 
   const handleHelpToggle = (option) => {
@@ -114,7 +129,7 @@ const VolunteerSignup = () => {
           firstName: values.firstName.trim(),
           lastName: values.lastName.trim(),
           email: values.email.trim(),
-          phone: values.phone.trim(),
+          phone: values.phone,
           zipCode: values.zipCode.trim(),
           county: values.county,
           region: values.region,
@@ -168,7 +183,6 @@ const VolunteerSignup = () => {
 
   return (
     <form
-      noValidate
       onSubmit={handleSubmit}
       className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 grid grid-cols-1 md:grid-cols-2 gap-5"
     >
@@ -177,6 +191,7 @@ const VolunteerSignup = () => {
         label="First name"
         required
         autoComplete="given-name"
+        placeholder="First name"
         value={values.firstName}
         onChange={handleChange}
         error={errors.firstName}
@@ -186,6 +201,7 @@ const VolunteerSignup = () => {
         label="Last name"
         required
         autoComplete="family-name"
+        placeholder="Last name"
         value={values.lastName}
         onChange={handleChange}
         error={errors.lastName}
@@ -196,6 +212,7 @@ const VolunteerSignup = () => {
         label="Email"
         required
         autoComplete="email"
+        placeholder="you@email.com"
         value={values.email}
         onChange={handleChange}
         error={errors.email}
@@ -205,8 +222,9 @@ const VolunteerSignup = () => {
         type="tel"
         label="Phone (optional)"
         autoComplete="tel"
+        placeholder="+1 (406) 555-0123"
         value={values.phone}
-        onChange={handleChange}
+        onChange={handlePhoneChange}
         error={errors.phone}
       />
       <FormField
@@ -318,6 +336,7 @@ const VolunteerSignup = () => {
           rows={3}
           label="What issue(s) matter most to you?"
           required
+          placeholder="Healthcare, affordability, public lands — whatever drives you."
           value={values.issues}
           onChange={handleChange}
           error={errors.issues}
@@ -330,6 +349,7 @@ const VolunteerSignup = () => {
           as="textarea"
           rows={3}
           label="Anything else to share? (optional)"
+          placeholder="Skills, schedule quirks, questions — anything helpful."
           value={values.anythingElse}
           onChange={handleChange}
           error={errors.anythingElse}
@@ -338,25 +358,42 @@ const VolunteerSignup = () => {
 
       <div className="md:col-span-2 flex flex-col gap-3 border-t border-bone-200 pt-5">
         <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-          — SMS Consent (optional)
+          — SMS Consent
         </span>
-        <label className="flex items-start gap-3 font-mono text-[11px] leading-[1.6] text-stone-600 cursor-pointer">
+        {!hasPhone && (
+          <p className="font-mono text-[11px] italic leading-[1.5] text-stone-400">
+            {CONSENT_HELPER}
+          </p>
+        )}
+        <label
+          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
+            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
+          }`}
+        >
           <input
             type="checkbox"
             name="smsUpdates"
             checked={values.smsUpdates}
             onChange={handleChange}
-            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500"
+            disabled={!hasPhone}
+            required={hasPhone}
+            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
           />
           <span>{SMS_UPDATES_COPY}</span>
         </label>
-        <label className="flex items-start gap-3 font-mono text-[11px] leading-[1.6] text-stone-600 cursor-pointer">
+        <label
+          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
+            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
+          }`}
+        >
           <input
             type="checkbox"
             name="smsPromo"
             checked={values.smsPromo}
             onChange={handleChange}
-            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500"
+            disabled={!hasPhone}
+            required={hasPhone}
+            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
           />
           <span>{SMS_PROMO_COPY}</span>
         </label>

@@ -1,3 +1,5 @@
+import { normalizePhoneForSubmit } from '@/lib/phone'
+
 const WEBHOOK_URLS = [
   process.env.GHL_VOLUNTEER_WEBHOOK_1 ||
     'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/23834100-4e00-4579-82e7-f9ec69ed8542',
@@ -5,6 +7,8 @@ const WEBHOOK_URLS = [
     'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/df947411-0c7e-4a6c-8c2e-7f20291c333f',
   process.env.GHL_VOLUNTEER_WEBHOOK_3 ||
     'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/19e7758c-f5c5-44fa-a770-5c18cefa0645',
+  process.env.GHL_COMPLIANCE_WEBHOOK ||
+    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/00000000-0000-0000-0000-000000000000',
 ]
 
 export async function POST(request) {
@@ -23,7 +27,7 @@ export async function POST(request) {
       firstName,
       lastName,
       email,
-      phone: (body.phone || '').toString().trim(),
+      phone: normalizePhoneForSubmit(body.phone),
       zipCode: (body.zipCode || '').toString().trim(),
       county: (body.county || '').toString(),
       region: (body.region || '').toString(),
@@ -46,15 +50,14 @@ export async function POST(request) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         }).catch((error) => {
-          console.error('[api/volunteer]: webhook fetch failed', url, error)
-          return null
+          console.error('[api/volunteer]: webhook error', url, error)
+          return { ok: false }
         }),
       ),
     )
 
-    const anySuccess = results.some((response) => response && response.ok)
-    if (!anySuccess) {
-      return Response.json({ error: 'Upstream webhook failed' }, { status: 502 })
+    if (!results.some((response) => response.ok)) {
+      return Response.json({ error: 'Webhook delivery failed' }, { status: 502 })
     }
 
     return Response.json({ success: true })
