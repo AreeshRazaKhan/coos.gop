@@ -9,10 +9,14 @@ import MagneticButton from '@/components/ui/magnetic-button'
 
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
-  { href: '#platform', label: 'Platform' },
   { href: '/events', label: 'Events' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/ask', label: 'Ask Russ' },
+  {
+    href: 'https://secure.actblue.com/donate/russclevelandstore',
+    label: 'Store',
+    external: true,
+  },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -41,7 +45,13 @@ const SiteNav = () => {
         <ul className="hidden lg:flex items-center gap-8 font-mono text-[11px] font-semibold uppercase tracking-[0.18em]">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className="hover:text-ochre-400 transition-colors">
+              <Link
+                href={link.href}
+                {...(link.external
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                className="hover:text-ochre-400 transition-colors"
+              >
                 {link.label}
               </Link>
             </li>

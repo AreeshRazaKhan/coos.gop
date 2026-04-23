@@ -80,6 +80,9 @@ const MobileMenu = ({ open, onClose, links }) => {
               <Link
                 href={link.href}
                 onClick={onClose}
+                {...(link.external
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
                 className="flex items-center justify-between py-5 font-display text-3xl font-extrabold leading-none tracking-[-0.02em] text-moonlight transition-colors hover:text-ochre-400"
               >
                 {link.label}
@@ -121,6 +124,7 @@ MobileMenu.propTypes = {
     PropTypes.shape({
       href: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
+      external: PropTypes.bool,
     }),
   ).isRequired,
 }

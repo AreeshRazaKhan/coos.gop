@@ -37,74 +37,30 @@ const CtaSection = () => {
             joining our mailing and events list.
           </p>
 
-          <div className="mt-14 grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
-            <div className="lg:col-span-3">
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400 block mb-4">
-                — Chip in
-              </span>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {DONATE_TIERS.map((tier) => (
-                  <a
-                    key={tier.amount}
-                    href={`${DONATE_URL}?amount=${tier.amount}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex items-center justify-center rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-6 transition-colors hover:border-ochre-400 hover:bg-ink-700"
-                  >
-                    <span className="font-display text-2xl font-extrabold text-moonlight tracking-[-0.01em] group-hover:text-ochre-400">
-                      {tier.label}
-                    </span>
-                  </a>
-                ))}
-              </div>
-              <div className="mt-4">
-                <MagneticButton href={DONATE_URL} variant="rust" size="lg" external>
-                  Custom amount
-                </MagneticButton>
-              </div>
+          <div className="mt-14">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400 block mb-4">
+              — Chip in
+            </span>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-[520px]">
+              {DONATE_TIERS.map((tier) => (
+                <a
+                  key={tier.amount}
+                  href={`${DONATE_URL}?amount=${tier.amount}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-center rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-6 transition-colors hover:border-ochre-400 hover:bg-ink-700"
+                >
+                  <span className="font-display text-2xl font-extrabold text-moonlight tracking-[-0.01em] group-hover:text-ochre-400">
+                    {tier.label}
+                  </span>
+                </a>
+              ))}
             </div>
-
-            <form
-              id="join"
-              className="lg:col-span-2 flex flex-col gap-3"
-              action="/api/join"
-              method="post"
-            >
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                — Or join the movement
-              </span>
-              <label htmlFor="email" className="sr-only">
-                Email address
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                placeholder="you@montana.example"
-                className="rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-[14px] font-body text-[15px] text-moonlight placeholder:text-moonlight/40 focus:outline-none focus:border-ochre-500"
-              />
-              <label htmlFor="zip" className="sr-only">
-                Zip code
-              </label>
-              <input
-                id="zip"
-                name="zip"
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]{5}"
-                placeholder="ZIP (59866)"
-                className="rounded-[4px] border border-ink-700 bg-ink-800 px-4 py-[14px] font-body text-[15px] text-moonlight placeholder:text-moonlight/40 focus:outline-none focus:border-ochre-500"
-              />
-              <div className="w-fit">
-                <MagneticButton type="submit" variant="ochre" size="lg">
-                  Sign me up
-                </MagneticButton>
-              </div>
-              <p className="font-mono text-[10px] leading-[1.6] text-moonlight/50">
-                No spam. No selling. We&apos;ll text about events in your county.
-              </p>
-            </form>
+            <div className="mt-4">
+              <MagneticButton href={DONATE_URL} variant="rust" size="lg" external>
+                Custom amount
+              </MagneticButton>
+            </div>
           </div>
         </div>
 

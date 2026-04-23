@@ -9,10 +9,14 @@ import MagneticButton from '@/components/ui/magnetic-button'
 
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
-  { href: '/#platform', label: 'Platform' },
   { href: '/events', label: 'Events' },
   { href: '/volunteer', label: 'Volunteer' },
   { href: '/ask', label: 'Ask Russ' },
+  {
+    href: 'https://secure.actblue.com/donate/russclevelandstore',
+    label: 'Store',
+    external: true,
+  },
   { href: '/contact', label: 'Contact' },
 ]
 
@@ -42,6 +46,9 @@ const SiteHeader = () => {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    {...(link.external
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
                     className="text-ink-900 transition-colors hover:text-ochre-600"
                   >
                     {link.label}

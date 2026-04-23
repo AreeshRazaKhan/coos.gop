@@ -111,6 +111,18 @@ const SiteFooter = () => {
             Cleveland for Congress.
           </p>
           <div className="flex flex-col tablet:items-end gap-2">
+            <Link
+              href="/terms-and-conditions"
+              className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/70 hover:text-ochre-400 transition-colors"
+            >
+              Terms &amp; Conditions
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/70 hover:text-ochre-400 transition-colors"
+            >
+              Privacy Policy
+            </Link>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
               © 2026 Cleveland for Congress &apos;26
             </p>
