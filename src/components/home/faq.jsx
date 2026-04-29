@@ -135,7 +135,7 @@ const FAQ = () => {
   return (
     <section
       id="faq"
-      className="bg-ink-900 text-moonlight px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44"
+      className="bg-ink-900 text-moonlight px-6 py-16 md:px-12 md:py-28 lg:px-16 lg:py-32"
     >
       <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-12 tablet:grid-cols-12 tablet:gap-16">
         <header className="tablet:col-span-5 tablet:sticky tablet:top-32 tablet:self-start">

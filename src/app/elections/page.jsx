@@ -172,7 +172,7 @@ const ElectionsPage = () => {
               MAY 2026
             </span>
           </div>
-          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Next Election · May 2026
@@ -191,7 +191,7 @@ const ElectionsPage = () => {
         </section>
 
         <section className="bg-ochre-500 text-paper relative overflow-hidden">
-          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-12 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16">
+          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-12 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-4">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-paper/80">
                 Timeline
@@ -277,7 +277,7 @@ const ElectionsPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-28 lg:px-16">
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div className="max-w-3xl">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
@@ -369,7 +369,7 @@ const ElectionsPage = () => {
         </section>
 
         <section className="bg-ink-900 text-moonlight">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-8">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-8">
             <p className="font-display text-2xl md:text-[32px] font-extrabold leading-[1.15] max-w-[40ch] tracking-[-0.015em]">
               Want to run for office or volunteer for a candidate?{' '}
               <em className="font-italic not-italic text-ochre-400">Talk to us.</em>

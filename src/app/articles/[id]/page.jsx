@@ -188,7 +188,7 @@ const ArticleDetailPage = async ({ params }) => {
 
         {related.length > 0 && (
           <section className="bg-paper-2 border-y border-bone-200">
-            <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+            <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
               <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                 <div>
                   <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">

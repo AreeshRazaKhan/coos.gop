@@ -46,7 +46,7 @@ const PrivacyPolicyPage = () => {
       <SiteHeader />
       <main id="main" className="flex-1 bg-paper text-ink-900">
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-32 tablet:grid-cols-12 lg:px-16 lg:py-36">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-24 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Legal
@@ -63,7 +63,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <div className="max-w-[72ch]">
               <p className="text-base md:text-[17px] leading-[1.75] text-ash">
                 Coos County Republican Central Committee (&ldquo;the
@@ -77,7 +77,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               I
             </span>
@@ -105,7 +105,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               II
             </span>
@@ -134,7 +134,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               III
             </span>
@@ -160,7 +160,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               IV
             </span>
@@ -194,7 +194,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               V
             </span>
@@ -218,7 +218,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section className="border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               VI
             </span>
@@ -251,7 +251,7 @@ const PrivacyPolicyPage = () => {
         </section>
 
         <section>
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
             <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               VII
             </span>

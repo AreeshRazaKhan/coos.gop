@@ -72,7 +72,7 @@ const GetInvolvedPage = () => {
               THE TIME IS NOW
             </span>
           </div>
-          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Join the fight
@@ -91,7 +91,7 @@ const GetInvolvedPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+          <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-20 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Sign up
@@ -111,7 +111,7 @@ const GetInvolvedPage = () => {
         </section>
 
         <section className="bg-paper-2 text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32 lg:px-16">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-24 lg:px-16">
             <div className="max-w-3xl">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Four ways to help
@@ -151,7 +151,7 @@ const GetInvolvedPage = () => {
         </section>
 
         <section className="bg-paper text-ink-900">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-20 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-4">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Donor disclosure
@@ -177,7 +177,7 @@ const GetInvolvedPage = () => {
         </section>
 
         <section className="bg-ink-900 text-moonlight">
-          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-8">
+          <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16 flex flex-col tablet:flex-row tablet:items-center tablet:justify-between gap-8">
             <p className="font-display text-2xl md:text-[32px] font-extrabold leading-[1.15] max-w-[34ch] tracking-[-0.015em]">
               Already in?{' '}
               <em className="font-italic not-italic text-ochre-400">Chip in a dollar.</em>

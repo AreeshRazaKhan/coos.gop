@@ -43,7 +43,7 @@ const AboutPage = () => {
       <SiteHeader />
       <main id="main" className="flex-1">
         <section className="bg-ink-900 text-moonlight relative overflow-hidden">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-7 flex flex-col justify-center">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 About · Coos County · 2026
@@ -116,7 +116,7 @@ const AboutPage = () => {
                 key={section.title}
                 className={`${bg} text-ink-900 border-b border-bone-200`}
               >
-                <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 lg:py-32">
+                <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24">
                   <span
                     className={`block font-mono text-xs font-semibold uppercase tracking-[0.22em] ${eyebrowColor}`}
                   >
@@ -152,7 +152,7 @@ const AboutPage = () => {
                 TAKE BACK
               </span>
             </div>
-            <div className="relative mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40 lg:px-16">
+            <div className="relative mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
               <div className="max-w-[100ch]">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                   05 · The pledge

@@ -23,7 +23,7 @@ const ArticlesPage = async () => {
       <SiteHeader />
       <main id="main" className="flex-1">
         <section className="bg-paper text-ink-900 border-b border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Articles
@@ -55,7 +55,7 @@ const ArticlesPage = async () => {
 
         {articles.length === 0 ? (
           <section className="bg-paper-2 text-ink-900 border-b border-bone-200">
-            <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32 lg:px-16">
+            <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-24 lg:px-16">
               <div className="rounded-[4px] border border-bone-200 bg-white p-10 max-w-[60ch]">
                 <p className="font-display text-lg leading-[1.5] text-stone-600">
                   No articles published yet. Check back soon, or subscribe to the committee
@@ -67,7 +67,7 @@ const ArticlesPage = async () => {
         ) : (
           <>
             <section className="bg-paper-2 text-ink-900 border-b border-bone-200">
-              <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+              <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-20 lg:px-16">
                 <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                   <div>
                     <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
@@ -138,7 +138,7 @@ const ArticlesPage = async () => {
 
             {rest.length > 0 && (
               <section className="bg-paper text-ink-900">
-                <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32 lg:px-16">
+                <div className="mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-24 lg:px-16">
                   <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                     <div>
                       <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">

@@ -4,7 +4,7 @@ const Pillars = () => {
   return (
     <section
       id="platform"
-      className="bg-paper-2 text-ink-900 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44"
+      className="bg-paper-2 text-ink-900 px-6 py-16 md:px-12 md:py-28 lg:px-16 lg:py-32"
     >
       <div className="max-w-[1440px] mx-auto">
         <div className="max-w-3xl">

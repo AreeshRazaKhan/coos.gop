@@ -23,7 +23,7 @@ const CtaSection = () => {
         </span>
       </div>
 
-      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 gap-12 tablet:grid-cols-12">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-28 lg:px-16 lg:py-32 grid grid-cols-1 gap-12 tablet:grid-cols-12">
         <div className="tablet:col-span-8">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-paper/90">
             05 · Join In

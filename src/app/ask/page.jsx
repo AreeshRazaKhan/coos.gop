@@ -22,7 +22,7 @@ const AskPage = () => {
               ASK US <em className="font-italic not-italic text-ochre-500/[.18]">on the record</em>
             </span>
           </div>
-          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
+          <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Ask us
@@ -41,7 +41,7 @@ const AskPage = () => {
         </section>
 
         <section className="bg-paper-2 text-ink-900 border-y border-bone-200">
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-32 tablet:grid-cols-12 lg:px-16">
+          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-24 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Submit a question

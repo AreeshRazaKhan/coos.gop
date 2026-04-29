@@ -11,7 +11,7 @@ const Events = async () => {
       id="events"
       className="bg-paper-2 text-ink-900 border-y border-bone-200 relative overflow-hidden"
     >
-      <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-16 md:px-12 md:py-28 lg:px-16 lg:py-32">
         <div className="grid grid-cols-1 gap-10 tablet:grid-cols-12 tablet:gap-12">
           <div className="tablet:col-span-7">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">

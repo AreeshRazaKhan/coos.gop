@@ -240,7 +240,7 @@ const EventDetail = ({ event }) => {
   const timeLabel = event.endTime ? `${event.time} – ${event.endTime}` : event.time
 
   return (
-    <article className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
+    <article className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-20 tablet:grid-cols-12 lg:px-16">
       <div className="tablet:col-span-7">
         {event.type && (
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">

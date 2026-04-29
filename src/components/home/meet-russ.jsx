@@ -11,7 +11,7 @@ const MeetCommittee = () => {
   return (
     <section
       id="meet-committee"
-      className="bg-paper text-ink-900 px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44"
+      className="bg-paper text-ink-900 px-6 py-16 md:px-12 md:py-16 lg:px-16 lg:py-20"
     >
       <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-12 tablet:grid-cols-12 tablet:gap-16">
         <div className="relative tablet:col-span-5 tablet:order-2 max-w-[460px] tablet:max-w-none">
