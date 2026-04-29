@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import SiteNav from '@/components/home/site-nav'
+import SiteHeader from '@/components/site-header'
 import MagneticButton from '@/components/ui/magnetic-button'
 
 const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
@@ -8,7 +8,7 @@ const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans
 const Hero = () => {
   return (
     <section className="hero-gradient text-moonlight relative overflow-hidden tablet:min-h-screen tablet:flex tablet:flex-col tablet:justify-center">
-      <SiteNav />
+      <SiteHeader />
 
       <div className="relative w-full mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 pt-6 pb-16 md:gap-12 md:px-12 md:py-10 tablet:grid-cols-12 tablet:gap-14 lg:px-16 lg:gap-16 lg:py-14">
         <div className="tablet:col-span-7 relative flex flex-col justify-center">

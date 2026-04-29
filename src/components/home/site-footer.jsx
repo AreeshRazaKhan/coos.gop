@@ -38,10 +38,10 @@ const SiteFooter = () => {
           <div className="col-span-2 tablet:col-span-5">
             <Link href="/" aria-label="Coos County Republicans" className="inline-flex">
               <Image
-                src="/mt-us-house-logo.webp"
+                src="/coos-county-republicans-logo-white.webp"
                 alt="Coos County Republicans"
-                width={1060}
-                height={630}
+                width={4167}
+                height={3505}
                 className="h-auto w-full max-w-[96px] md:max-w-[110px] lg:max-w-[120px]"
               />
             </Link>

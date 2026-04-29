@@ -8,7 +8,7 @@ const WEBHOOK_URLS = [
   process.env.GHL_GET_INVOLVED_WEBHOOK_3 ||
     'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/19e7758c-f5c5-44fa-a770-5c18cefa0645',
   process.env.GHL_COMPLIANCE_WEBHOOK ||
-    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/00000000-0000-0000-0000-000000000000',
+    'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/VdldWHSDeAJebFb0qFG2',
 ]
 
 export async function POST(request) {

@@ -30,10 +30,10 @@ const SiteNav = () => {
       >
         <Link href="/" aria-label="Coos County Republicans" className="flex items-center">
           <Image
-            src="/mt-us-house-logo.webp"
+            src="/coos-county-republicans-logo.webp"
             alt="Coos County Republicans"
-            width={1060}
-            height={630}
+            width={4167}
+            height={3464}
             priority
             className="h-auto w-full max-w-[72px] md:max-w-[80px] lg:max-w-[90px]"
           />
