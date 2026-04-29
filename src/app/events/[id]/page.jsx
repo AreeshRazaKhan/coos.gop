@@ -4,27 +4,31 @@ import { notFound } from 'next/navigation'
 import EventDetail from '@/components/events/event-detail'
 import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
-import { EVENTS, getEventById } from '@/constants/events'
+import { fetchGHLEvent } from '@/lib/ghl'
 
-export const generateStaticParams = () => EVENTS.map((event) => ({ id: event.id }))
+export const revalidate = 60
+
+const formatDate = (date) =>
+  date && date.month && date.day && date.year
+    ? `${date.month} ${date.day}, ${date.year}`
+    : ''
 
 export const generateMetadata = async ({ params }) => {
   const { id } = await params
-  const event = getEventById(id)
+  const event = await fetchGHLEvent(id)
   if (!event) {
-    return {
-      title: 'Event not found · Coos County Republicans',
-    }
+    return { title: 'Event not found · Coos County Republicans' }
   }
   return {
-    title: `${event.name} · Coos County Republicans`,
-    description: event.description || `${event.name} on ${event.date} in ${event.location}.`,
+    title: `${event.title} · Coos County Republicans`,
+    description:
+      event.description || `${event.title} on ${formatDate(event.date)} in ${event.location}.`,
   }
 }
 
 const EventDetailPage = async ({ params }) => {
   const { id } = await params
-  const event = getEventById(id)
+  const event = await fetchGHLEvent(id)
   if (!event) notFound()
 
   return (

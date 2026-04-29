@@ -84,10 +84,10 @@ const RsvpForm = ({ event }) => {
           lastName: values.lastName.trim(),
           email: values.email.trim(),
           phone: values.phone,
-          eventName: event.name,
-          eventDate: event.date,
+          eventName: event.title,
+          eventDate: event.date?.raw || '',
           eventTime: event.time,
-          eventCategory: event.category,
+          eventCategory: event.type,
           sms_updates: values.smsUpdates ? 'Yes' : 'No',
           sms_promo: values.smsPromo ? 'Yes' : 'No',
         }),
@@ -238,40 +238,62 @@ const RsvpForm = ({ event }) => {
 
 RsvpForm.propTypes = {
   event: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    date: PropTypes.shape({
+      month: PropTypes.string,
+      day: PropTypes.string,
+      year: PropTypes.string,
+      raw: PropTypes.string,
+    }).isRequired,
+    time: PropTypes.string,
+    type: PropTypes.string,
   }).isRequired,
 }
 
+const formatDate = (date) =>
+  date && date.month && date.day && date.year
+    ? `${date.month} ${date.day}, ${date.year}`
+    : ''
+
 const EventDetail = ({ event }) => {
+  const dateLabel = formatDate(event.date)
+  const endDateLabel = formatDate(event.endDate)
+  const timeLabel = event.endTime ? `${event.time} – ${event.endTime}` : event.time
+
   return (
     <article className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
       <div className="tablet:col-span-7">
-        <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-          {event.category}
-        </span>
+        {event.type && (
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
+            {event.type}
+          </span>
+        )}
         <h1 className="mt-6 font-display font-black leading-[0.96] tracking-[-0.03em] text-[clamp(2.5rem,7vw,5.5rem)] text-ink-900">
-          {event.name}
+          {event.title}
         </h1>
         <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[58ch] border-t border-bone-200 pt-8">
-          <div className="flex flex-col gap-1">
-            <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-              Date
-            </dt>
-            <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
-              {event.date}
-            </dd>
-          </div>
-          <div className="flex flex-col gap-1">
-            <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-              Time
-            </dt>
-            <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
-              {event.time}
-            </dd>
-          </div>
+          {dateLabel && (
+            <div className="flex flex-col gap-1">
+              <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
+                Date
+              </dt>
+              <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
+                {endDateLabel && endDateLabel !== dateLabel
+                  ? `${dateLabel} – ${endDateLabel}`
+                  : dateLabel}
+              </dd>
+            </div>
+          )}
+          {timeLabel && (
+            <div className="flex flex-col gap-1">
+              <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
+                Time
+              </dt>
+              <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
+                {timeLabel}
+              </dd>
+            </div>
+          )}
           {event.location && (
             <div className="flex flex-col gap-1 sm:col-span-2">
               <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
@@ -284,7 +306,7 @@ const EventDetail = ({ event }) => {
           )}
         </dl>
         {event.description && (
-          <p className="mt-10 max-w-[60ch] text-base md:text-lg leading-[1.65] text-stone-600">
+          <p className="mt-10 max-w-[60ch] text-base md:text-lg leading-[1.65] text-stone-600 whitespace-pre-line">
             {event.description}
           </p>
         )}
@@ -309,10 +331,22 @@ const EventDetail = ({ event }) => {
 
 EventDetail.propTypes = {
   event: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    date: PropTypes.shape({
+      month: PropTypes.string,
+      day: PropTypes.string,
+      year: PropTypes.string,
+      raw: PropTypes.string,
+    }).isRequired,
+    endDate: PropTypes.shape({
+      month: PropTypes.string,
+      day: PropTypes.string,
+      year: PropTypes.string,
+      raw: PropTypes.string,
+    }),
+    time: PropTypes.string,
+    endTime: PropTypes.string,
+    type: PropTypes.string,
     location: PropTypes.string,
     description: PropTypes.string,
   }).isRequired,

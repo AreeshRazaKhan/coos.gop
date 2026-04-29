@@ -59,7 +59,11 @@
       "WebFetch(domain:cooscountyconservatives.com)",
       "Read(//c/tmp/**)",
       "Bash(find /c -name \"coos-elections.txt\")",
-      "Bash(find /c -name \"coos-elections.json\")"
+      "Bash(find /c -name \"coos-elections.json\")",
+      "Bash(where gh *)",
+      "Read(//c/Program Files/GitHub CLI/**)",
+      "Read(//c/Users/Dev/AppData/Local/GitHubCLI/**)",
+      "Read(//c/Program Files \\(x86\\)/GitHub CLI/**)"
     ]
   }
 }
