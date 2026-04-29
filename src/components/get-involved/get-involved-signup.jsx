@@ -71,8 +71,6 @@ const GetInvolvedSignup = () => {
   const [success, setSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
-  const hasPhone = values.phone.trim().length > 0
-
   const handleChange = (event) => {
     const { name, value, type, checked } = event.target
     setValues((prev) => ({
@@ -83,12 +81,7 @@ const GetInvolvedSignup = () => {
 
   const handlePhoneChange = (event) => {
     const formatted = formatPhoneInput(event.target.value)
-    setValues((prev) => {
-      if (formatted.trim().length === 0) {
-        return { ...prev, phone: formatted, smsUpdates: false }
-      }
-      return { ...prev, phone: formatted }
-    })
+    setValues((prev) => ({ ...prev, phone: formatted }))
   }
 
   const handleHelpToggle = (option) => {
@@ -353,18 +346,13 @@ const GetInvolvedSignup = () => {
         <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-600">
           SMS Consent
         </span>
-        <label
-          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
-            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
-          }`}
-        >
+        <label className="flex items-start gap-3 font-mono text-[11px] leading-[1.6] text-stone-600 cursor-pointer">
           <input
             type="checkbox"
             name="smsUpdates"
             checked={values.smsUpdates}
             onChange={handleChange}
-            disabled={!hasPhone}
-            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
+            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500"
           />
           <span>
             By providing your phone number, you consent to receive calls and text messages
