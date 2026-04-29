@@ -1,7 +1,11 @@
 import MagneticButton from '@/components/ui/magnetic-button'
 import { CALENDAR_URL } from '@/lib/events'
+import { fetchGHLEvents } from '@/lib/ghl'
 
-const Events = () => {
+const Events = async () => {
+  const events = await fetchGHLEvents()
+  if (events.length === 0) return null
+
   return (
     <section
       id="events"

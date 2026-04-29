@@ -2,11 +2,11 @@ import { normalizePhoneForSubmit } from '@/lib/phone'
 
 const WEBHOOK_URLS = [
   process.env.GHL_GET_INVOLVED_WEBHOOK_1 ||
-    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/23834100-4e00-4579-82e7-f9ec69ed8542',
+    'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/7o3STGRg75kYoo9dgSUe',
   process.env.GHL_GET_INVOLVED_WEBHOOK_2 ||
-    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/df947411-0c7e-4a6c-8c2e-7f20291c333f',
+    'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/StGGur6AIYC4pSC6jjP5',
   process.env.GHL_GET_INVOLVED_WEBHOOK_3 ||
-    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/19e7758c-f5c5-44fa-a770-5c18cefa0645',
+    'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/c89y5CC0Vn5CUp4Ak274',
   process.env.GHL_COMPLIANCE_WEBHOOK ||
     'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/VdldWHSDeAJebFb0qFG2',
 ]
