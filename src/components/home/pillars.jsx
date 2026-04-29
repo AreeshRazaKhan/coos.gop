@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 const Pillars = () => {
   return (
@@ -12,12 +12,14 @@ const Pillars = () => {
             02 · The Platform
           </span>
           <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(2.2rem,6vw,5rem)]">
-            Liberty. Safety.{' '}
-            <em className="font-italic not-italic text-ochre-600">Stewardship.</em>
+            Liberty. Safety.{" "}
+            <em className="font-italic not-italic text-ochre-600">
+              Stewardship.
+            </em>
           </h2>
           <p className="mt-6 font-display text-xl md:text-2xl font-normal leading-[1.35] text-stone-600 max-w-[64ch]">
-            Coos County Republicans fights for lower taxes, safer streets, and local control of
-            the lands and waters we depend on.
+            Coos County Republicans fights for lower taxes, safer streets, and
+            local control of the lands and waters we depend on.
           </p>
         </div>
 
@@ -28,13 +30,17 @@ const Pillars = () => {
                 Pillar 01 / Liberty
               </span>
               <h3 className="mt-8 font-display font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(2rem,4vw,3.5rem)] max-w-[20ch]">
-                Lower taxes. Smaller government.{' '}
-                <em className="font-italic not-italic text-ochre-400">Always</em>.
+                Lower taxes. Smaller government.{" "}
+                <em className="font-italic not-italic text-ochre-400">
+                  Always
+                </em>
+                .
               </h3>
             </div>
             <p className="mt-10 max-w-[48ch] text-base md:text-lg leading-[1.65] text-moonlight/80">
-              Oregon families are taxed out of their homes while PERS bleeds the budget. We back
-              leaders who cut spending, slash regulations, and keep dollars in Coos County.
+              Oregon families are taxed out of their homes while PERS bleeds the
+              budget. We back leaders who cut spending, slash regulations, and
+              keep dollars in Coos County.
             </p>
             <Image
               src="/coos-county-republicans-logo-white.webp"
@@ -55,8 +61,10 @@ const Pillars = () => {
                 300
               </span>
               <span className="mt-2 font-display text-xl md:text-2xl font-extrabold leading-[1.1] max-w-[16ch]">
-                Oregon PAC. Locally accountable.{' '}
-                <em className="font-italic not-italic text-ochre-400">Always.</em>
+                Oregon PAC. Locally accountable.{" "}
+                <em className="font-italic not-italic text-ochre-400">
+                  Always.
+                </em>
               </span>
             </div>
             <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-paper/85">
@@ -70,14 +78,17 @@ const Pillars = () => {
                 Pillar 02 / Safety
               </span>
               <h3 className="mt-6 font-display text-[30px] font-extrabold leading-[1.08] tracking-[-0.02em] max-w-[16ch]">
-                Back the badge. End{' '}
-                <em className="font-italic not-italic text-ochre-600">catch and release</em>.
+                Back the badge. End{" "}
+                <em className="font-italic not-italic text-ochre-600">
+                  catch and release
+                </em>
+                .
               </h3>
             </div>
             <p className="text-sm leading-[1.65] text-stone-600 max-w-[38ch]">
-              Sheriffs are the highest local authority in Coos County. We support recruitment
-              funding, proportional sentencing, and victims first. No more revolving door for
-              repeat offenders.
+              Sheriffs are the highest local authority in Coos County. We
+              support recruitment funding, proportional sentencing, and victims
+              first. No more revolving door for repeat offenders.
             </p>
           </article>
 
@@ -87,14 +98,17 @@ const Pillars = () => {
                 Pillar 03 / Stewardship
               </span>
               <h3 className="mt-8 font-display font-extrabold leading-[1.04] tracking-[-0.02em] text-[clamp(2rem,4.5vw,4rem)] max-w-[24ch]">
-                Active stewardship. Local control.{' '}
-                <em className="font-italic not-italic text-ochre-400">Period.</em>
+                Active stewardship. <br />
+                Local control.{" "}
+                <em className="font-italic not-italic text-ochre-400">
+                  Period.
+                </em>
               </h3>
             </div>
             <p className="tablet:max-w-[34ch] text-base md:text-lg leading-[1.65] text-moonlight/90">
-              Federal lockouts and dam-breaching threats kill Coos County jobs. We fight for
-              sustained timber harvests, private property rights, and returning federal lands to
-              local hands where they belong.
+              Federal lockouts and dam-breaching threats kill Coos County jobs.
+              We fight for sustained timber harvests, private property rights,
+              and returning federal lands to local hands where they belong.
             </p>
             <div
               aria-hidden="true"
@@ -106,7 +120,7 @@ const Pillars = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Pillars
+export default Pillars;

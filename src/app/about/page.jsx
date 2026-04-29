@@ -116,25 +116,27 @@ const AboutPage = () => {
                 key={section.title}
                 className={`${bg} text-ink-900 border-b border-bone-200`}
               >
-                <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-32">
-                  <aside
-                    className={`tablet:col-span-4 ${reversed ? "tablet:order-2" : ""} tablet:sticky tablet:top-32 tablet:self-start`}
+                <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16 lg:py-32">
+                  <span
+                    className={`block font-mono text-xs font-semibold uppercase tracking-[0.22em] ${eyebrowColor}`}
                   >
-                    <span
-                      className={`font-mono text-xs font-semibold uppercase tracking-[0.22em] ${eyebrowColor}`}
+                    {section.eyebrow}
+                  </span>
+                  <div className="mt-10 grid grid-cols-1 gap-10 tablet:grid-cols-12">
+                    <aside
+                      className={`tablet:col-span-4 ${reversed ? "tablet:order-2" : ""} tablet:sticky tablet:top-32 tablet:self-start`}
                     >
-                      {section.eyebrow}
-                    </span>
-                    <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3.25rem)]">
-                      {section.title}
-                    </h2>
-                  </aside>
-                  <div
-                    className={`tablet:col-span-8 ${reversed ? "tablet:order-1" : ""}`}
-                  >
-                    <p className="font-display text-lg md:text-[22px] font-normal leading-[1.55] text-ash max-w-[68ch]">
-                      {section.body}
-                    </p>
+                      <h2 className="font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3.25rem)]">
+                        {section.title}
+                      </h2>
+                    </aside>
+                    <div
+                      className={`tablet:col-span-8 ${reversed ? "tablet:order-1" : ""}`}
+                    >
+                      <p className="font-display text-lg md:text-[22px] font-normal leading-[1.55] text-ash max-w-[68ch]">
+                        {section.body}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -151,13 +153,13 @@ const AboutPage = () => {
               </span>
             </div>
             <div className="relative mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40 lg:px-16">
-              <div className="max-w-[72ch]">
+              <div className="max-w-[100ch]">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                   05 · The pledge
                 </span>
-                <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(3rem,8vw,7rem)]">
-                  Take back{" "}
-                  <em className="font-italic not-italic text-ochre-400">
+                <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(2.75rem,7vw,6rem)]">
+                  Take back{' '}
+                  <em className="font-italic not-italic text-ochre-400 whitespace-nowrap">
                     Coos County
                   </em>
                   .

@@ -45,7 +45,7 @@ const SMS_KEY_TERMS = [
   'Message frequency varies based on committee activity but typically ranges from 1 to 4 messages per week.',
   'Message and data rates may apply depending on your mobile carrier plan.',
   'You may opt out at any time by replying STOP to any message.',
-  'For assistance, reply HELP or contact us at chris.castleman@coos.gop or call (707) 357-6526.',
+  'For assistance, reply HELP or contact us at chris.castleman@coos.gop or call +1 541-982-6793.',
   'Consent to receive SMS messages is not a condition of any purchase, donation, or volunteering.',
   'Coos County Republican Central Committee does not sell or share mobile information or opt-in consent data with third parties for marketing or promotional purposes.',
 ]
@@ -67,17 +67,19 @@ const NumberedList = ({ items }) => (
 
 const Section = ({ romanNumeral, title, accent, children }) => (
   <section className="border-b border-bone-200">
-    <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
-      <header className="tablet:col-span-4">
-        <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-          {romanNumeral}
-        </span>
-        <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
-          {title ? `${title} ` : ''}
-          <em className="font-italic not-italic text-ochre-600">{accent}</em>.
-        </h2>
-      </header>
-      <div className="tablet:col-span-8 flex flex-col gap-6 max-w-[72ch]">{children}</div>
+    <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+      <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
+        {romanNumeral}
+      </span>
+      <div className="mt-10 grid grid-cols-1 gap-10 tablet:grid-cols-12">
+        <header className="tablet:col-span-4">
+          <h2 className="font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
+            {title ? `${title} ` : ''}
+            <em className="font-italic not-italic text-ochre-600">{accent}</em>.
+          </h2>
+        </header>
+        <div className="tablet:col-span-8 flex flex-col gap-6 max-w-[72ch]">{children}</div>
+      </div>
     </div>
   </section>
 )
@@ -367,34 +369,41 @@ const TermsOfServicesPage = () => {
         </Section>
 
         <section>
-          <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
-            <header className="tablet:col-span-4">
-              <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                XVIII
-              </span>
-              <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
-                Contact{' '}
-                <em className="font-italic not-italic text-ochre-600">us</em>.
-              </h2>
-            </header>
-            <div className="tablet:col-span-8 flex flex-col gap-6 max-w-[72ch]">
-              <Para>
-                Questions about these Terms of Services? Reach the Committee at:
-              </Para>
-              <address className="not-italic flex flex-col gap-1 font-mono text-[13px] leading-[1.7] text-ink-900">
-                <span className="font-display text-lg font-semibold leading-tight">
-                  Coos County Republican Central Committee
-                </span>
-                <span>PO Box 914</span>
-                <span>Coos Bay, OR 97420</span>
-                <a
-                  href="mailto:chris.castleman@coos.gop"
-                  className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
-                >
-                  chris.castleman@coos.gop
-                </a>
-                <span>(707) 357-6526</span>
-              </address>
+          <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
+            <span className="block font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
+              XVIII
+            </span>
+            <div className="mt-10 grid grid-cols-1 gap-10 tablet:grid-cols-12">
+              <header className="tablet:col-span-4">
+                <h2 className="font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
+                  Contact{' '}
+                  <em className="font-italic not-italic text-ochre-600">us</em>.
+                </h2>
+              </header>
+              <div className="tablet:col-span-8 flex flex-col gap-6 max-w-[72ch]">
+                <Para>
+                  Questions about these Terms of Services? Reach the Committee at:
+                </Para>
+                <address className="not-italic flex flex-col gap-1 font-mono text-[13px] leading-[1.7] text-ink-900">
+                  <span className="font-display text-lg font-semibold leading-tight">
+                    Coos County Republican Central Committee
+                  </span>
+                  <span>PO Box 914</span>
+                  <span>Coos Bay, OR 97420</span>
+                  <a
+                    href="mailto:chris.castleman@coos.gop"
+                    className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+                  >
+                    chris.castleman@coos.gop
+                  </a>
+                  <a
+                    href="tel:+15419826793"
+                    className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+                  >
+                    +1 541-982-6793
+                  </a>
+                </address>
+              </div>
             </div>
           </div>
         </section>
