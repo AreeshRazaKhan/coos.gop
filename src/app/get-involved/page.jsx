@@ -1,48 +1,48 @@
 import Link from 'next/link'
 
+import GetInvolvedSignup from '@/components/get-involved/get-involved-signup'
 import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 import MagneticButton from '@/components/ui/magnetic-button'
-import VolunteerSignup from '@/components/volunteer/volunteer-signup'
 
 const WAYS_TO_HELP = [
   {
     title: 'Donate',
-    body: 'Every dollar comes from a person with a name. No corporate PAC, no AIPAC, no special interest money.',
+    body: 'Every dollar comes from a person with a name. Locally raised, locally spent, on Coos County races and ground game.',
     accent: 'rust',
-    href: 'https://secure.actblue.com/donate/clevelandq12026',
+    href: 'https://secure.anedot.com/friends-of-coos-county-republicans/donate',
     cta: 'Donate',
   },
   {
     title: 'Volunteer',
-    body: 'Help us reach Montanans in every county. Sign up with the form above to join the field team.',
+    body: 'Help us reach voters in every precinct. Sign up with the form above to join the field team and trainings.',
     accent: 'ochre',
     href: '#signup',
     cta: 'Sign up',
   },
   {
-    title: 'Join the mailing &amp; events list',
-    body: 'Get event notifications, campaign updates, and early invites in your inbox.',
+    title: 'Join the mailing & events list',
+    body: 'Get event notifications, committee updates, candidate forums, and early invites delivered to your inbox.',
     accent: 'sage',
     href: '#signup',
     cta: 'Subscribe',
   },
   {
     title: 'View the event calendar',
-    body: 'See where Russ will be next — town halls, meet & greets, and community events across Montana.',
+    body: 'See where the committee will be next, weekly meetings at HQ, candidate forums, GOTV drives, and county events.',
     accent: 'ink',
-    href: 'https://calendar.google.com/calendar/embed?src=c_1a09e4c3ac92bc619c2488f5620fc4517beb60820abef2c8d90bd155a640ebdc%40group.calendar.google.com&ctz=America%2FDenver',
+    href: 'https://calendar.google.com/calendar/u/0?cid=Y29vc2NvdW50eXJlcHVibGljYW5z',
     cta: 'View calendar',
   },
 ]
 
 const DONOR_RULES = [
-  'You are a U.S. citizen or lawfully admitted permanent resident (green card holder).',
-  'The contribution is made from your own personal funds and is not being provided by another person or entity.',
+  'You are a United States citizen or a lawfully admitted permanent resident of the United States, commonly known as a green card holder.',
+  'The contribution is made from your own personal funds and is not being provided by another person, company, organization, or any other entity.',
   'You are at least 18 years old.',
   'You are not a federal contractor.',
-  'You are not using corporate, business, or foreign national funds.',
-  'If you are an American living abroad, you are making this contribution while physically located in the United States.',
+  'You are not using corporate, business, foreign national, or other restricted funds.',
+  'If you are an American citizen living abroad, you are making this contribution while physically located in the United States and from your own personal funds.',
 ]
 
 const ACCENT_MAP = {
@@ -53,12 +53,12 @@ const ACCENT_MAP = {
 }
 
 export const metadata = {
-  title: 'Join the Movement — Cleveland for Congress',
+  title: 'Get Involved · Coos County Republicans',
   description:
-    'Door-knock, host, text bank, or write. Join the Cleveland for Congress grassroots movement in Montana MT-01.',
+    'Donate, volunteer, host an event, or join the mailing list. Help take back Coos County, Oregon.',
 }
 
-const VolunteerPage = () => {
+const GetInvolvedPage = () => {
   return (
     <>
       <SiteHeader />
@@ -75,15 +75,16 @@ const VolunteerPage = () => {
           <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                — Join the movement
+                Join the fight
               </span>
               <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)]">
                 The time is{' '}
                 <em className="font-italic not-italic text-ochre-400">now</em>.
               </h1>
               <p className="mt-10 max-w-[54ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
-                Join the Cleveland for Congress grassroots movement by donating, volunteering
-                and then joining our mailing and events list.
+                Join Coos County Republicans by donating, volunteering, joining our mailing and
+                events list, or showing up to HQ in North Bend. Coos County won&rsquo;t take
+                itself back.
               </p>
             </div>
           </div>
@@ -93,19 +94,19 @@ const VolunteerPage = () => {
           <div id="signup" className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Sign up
+                Sign up
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
                 Tell us how you want to{' '}
                 <em className="font-italic not-italic text-ochre-600">help</em>.
               </h2>
               <p className="mt-6 max-w-[42ch] text-base md:text-lg leading-[1.65] text-stone-600">
-                Join our mailing and events list, and let us know how you&rsquo;d like to pitch
-                in.
+                Join our list and tell us how you&rsquo;d like to pitch in. We&rsquo;ll connect
+                you with the right team.
               </p>
             </div>
 
-            <VolunteerSignup />
+            <GetInvolvedSignup />
           </div>
         </section>
 
@@ -113,11 +114,11 @@ const VolunteerPage = () => {
           <div className="mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-32 lg:px-16">
             <div className="max-w-3xl">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Four ways to help
+                Four ways to help
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
-                Donate. Volunteer. Join the{' '}
-                <em className="font-italic not-italic text-ochre-600">list</em>.
+                Donate. Volunteer. Join.{' '}
+                <em className="font-italic not-italic text-ochre-600">Show up.</em>
               </h2>
             </div>
 
@@ -128,7 +129,7 @@ const VolunteerPage = () => {
                   className={`relative bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 flex flex-col gap-4 before:content-[''] before:absolute before:top-0 before:left-0 before:h-[3px] before:w-12 ${ACCENT_MAP[way.accent]}`}
                 >
                   <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.1] tracking-[-0.015em] text-ink-900">
-                    {way.title.replace('&amp;', '&')}
+                    {way.title}
                   </h3>
                   <p className="text-base leading-[1.65] text-stone-600 max-w-[42ch]">
                     {way.body}
@@ -153,7 +154,7 @@ const VolunteerPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-4">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Donor disclosure
+                Donor disclosure
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
                 By sending a contribution,{' '}
@@ -183,7 +184,7 @@ const VolunteerPage = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <MagneticButton
-                href="https://secure.actblue.com/donate/clevelandq12026"
+                href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
                 variant="rust"
                 size="lg"
                 external
@@ -202,4 +203,4 @@ const VolunteerPage = () => {
   )
 }
 
-export default VolunteerPage
+export default GetInvolvedPage

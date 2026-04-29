@@ -11,10 +11,10 @@ import { formatPhoneInput } from '@/lib/phone'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const SMS_UPDATES_COPY =
-  'By checking this box, I consent to receive campaign updates from Cleveland for Congress via automated text messages at the phone number provided. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help. View our Privacy Policy and Terms of Service.'
+  'By checking this box, I consent to receive recurring auto-dialed campaign updates from Coos County Republicans via text message at the phone number provided. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
 
 const SMS_PROMO_COPY =
-  'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
+  'By checking this box, I consent to receive recurring promotional messages, event invitations, and fundraising communications from Coos County Republicans via auto-dialed text messages. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
 
 const INITIAL_RSVP_STATE = {
   firstName: '',
@@ -118,7 +118,7 @@ const RsvpForm = ({ event }) => {
         className="bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 flex flex-col gap-4 relative before:content-[''] before:absolute before:top-0 before:left-10 before:right-10 before:h-[3px] before:bg-ochre-500"
       >
         <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
-          — RSVP confirmed
+          RSVP confirmed
         </span>
         <h3 className="font-display text-2xl font-extrabold leading-[1.15] tracking-[-0.02em] text-ink-900">
           See you there.
@@ -173,7 +173,7 @@ const RsvpForm = ({ event }) => {
           name="phone"
           type="tel"
           label="Contact number (optional)"
-          placeholder="+1 (406) 555-0123"
+          placeholder="+1 (541) 555-0123"
           autoComplete="tel"
           value={values.phone}
           onChange={handlePhoneChange}
@@ -250,7 +250,7 @@ const EventDetail = ({ event }) => {
     <article className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
       <div className="tablet:col-span-7">
         <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-          — {event.category}
+          {event.category}
         </span>
         <h1 className="mt-6 font-display font-black leading-[0.96] tracking-[-0.03em] text-[clamp(2.5rem,7vw,5.5rem)] text-ink-900">
           {event.name}
@@ -258,7 +258,7 @@ const EventDetail = ({ event }) => {
         <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6 max-w-[58ch] border-t border-bone-200 pt-8">
           <div className="flex flex-col gap-1">
             <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-              — Date
+              Date
             </dt>
             <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
               {event.date}
@@ -266,7 +266,7 @@ const EventDetail = ({ event }) => {
           </div>
           <div className="flex flex-col gap-1">
             <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-              — Time
+              Time
             </dt>
             <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
               {event.time}
@@ -275,7 +275,7 @@ const EventDetail = ({ event }) => {
           {event.location && (
             <div className="flex flex-col gap-1 sm:col-span-2">
               <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-                — Location
+                Location
               </dt>
               <dd className="font-display text-lg font-semibold leading-tight text-ink-900">
                 {event.location}
@@ -293,7 +293,7 @@ const EventDetail = ({ event }) => {
       <aside className="tablet:col-span-5">
         <div className="flex flex-col gap-4">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-            — Reserve your spot
+            Reserve your spot
           </span>
           <h2 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.15] tracking-[-0.02em] text-ink-900">
             RSVP below.

@@ -5,18 +5,14 @@ import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 
 const SOCIAL_LINKS = [
-  { href: 'https://www.instagram.com/cleveland4mt_01/', label: 'Instagram' },
-  { href: 'https://www.facebook.com/cleveland4mt01/', label: 'Facebook' },
-  { href: 'https://www.tiktok.com/@cleveland4mt_01', label: 'TikTok' },
-  { href: 'https://x.com/Cleveland4MT_01', label: 'X / Twitter' },
-  { href: 'https://www.youtube.com/@ClevelandforMontana', label: 'YouTube' },
-  { href: 'https://bsky.app/profile/russellcleveland.org', label: 'Bluesky' },
+  { href: 'https://www.facebook.com/cooscountyconservatives', label: 'Facebook' },
+  { href: 'mailto:party@coos.gop', label: 'Email' },
 ]
 
 export const metadata = {
-  title: 'Contact — Cleveland for Congress',
+  title: 'Contact · Coos County Republicans',
   description:
-    'Get in touch with the Russ Cleveland for Congress campaign. Email connect@russellcleveland.org or reach us at P.O. Box 691, Saint Regis, MT 59866.',
+    'Get in touch with Coos County Republicans. Email party@coos.gop, call (707) 357-6526, or visit HQ at 3229 Broadway Ave, Suite F, North Bend, OR.',
 }
 
 const ContactPage = () => {
@@ -28,59 +24,86 @@ const ContactPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
             <div className="tablet:col-span-7">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Contact
+                Contact
               </span>
               <h1 className="mt-8 font-display font-black leading-[0.94] tracking-[-0.03em] text-[clamp(3rem,9vw,7rem)]">
                 Drop a line.{' '}
                 <em className="font-italic not-italic text-ochre-600">We answer.</em>
               </h1>
               <p className="mt-10 max-w-[52ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
-                Questions, story tips, press requests, or just saying hello &mdash; email us at
-                the addresses below.
+                Questions, candidate filings, press requests, event hosting, or just saying
+                hello. Email us at the addresses below or use the form.
               </p>
             </div>
             <aside className="tablet:col-span-5 tablet:col-start-8">
               <div className="bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 relative before:content-[''] before:absolute before:top-0 before:left-10 before:right-10 before:h-[3px] before:bg-ochre-500">
                 <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
-                  — Direct
+                  Direct
                 </span>
                 <dl className="mt-6 flex flex-col gap-6">
                   <div>
                     <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                      — General
+                      General
                     </dt>
                     <dd className="mt-2">
                       <a
-                        href="mailto:connect@russellcleveland.org"
+                        href="mailto:party@coos.gop"
                         className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
-                        connect@russellcleveland.org
+                        party@coos.gop
                       </a>
                     </dd>
                   </div>
                   <div>
                     <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                      — Press
+                      Press
                     </dt>
                     <dd className="mt-2">
                       <a
-                        href="mailto:press@russellcleveland.org"
+                        href="mailto:press@coos.gop"
                         className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
-                        press@russellcleveland.org
+                        press@coos.gop
                       </a>
                     </dd>
                   </div>
                   <div>
                     <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
-                      — Mailing address
+                      Phone
+                    </dt>
+                    <dd className="mt-2">
+                      <a
+                        href="tel:+17073576526"
+                        className="font-display text-xl font-semibold text-ink-900 hover:text-ochre-600"
+                      >
+                        (707) 357-6526
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                      Mailing address
                     </dt>
                     <dd className="mt-2 font-display text-lg font-semibold text-ink-900 leading-snug">
-                      Cleveland for Congress
+                      Coos County Republicans
                       <br />
-                      P.O. Box 691
+                      PO Box 914
                       <br />
-                      Saint Regis, MT 59866
+                      Coos Bay, OR 97420
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-stone-400">
+                      Visit us
+                    </dt>
+                    <dd className="mt-2 font-display text-lg font-semibold text-ink-900 leading-snug">
+                      3229 Broadway Ave, Suite F
+                      <br />
+                      North Bend, OR 97459
+                      <br />
+                      <span className="font-italic italic font-normal text-stone-600">
+                        events by calendar
+                      </span>
                     </dd>
                   </div>
                 </dl>
@@ -93,15 +116,16 @@ const ContactPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-32 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Send a message
+                Send a message
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
                 Tell us what&rsquo;s on your{' '}
                 <em className="font-italic not-italic text-ochre-600">mind</em>.
               </h2>
               <p className="mt-6 max-w-[42ch] text-base md:text-lg leading-[1.65] text-stone-600">
-                Press requests, event hosting, story tips, or policy questions &mdash; use the
-                form or email us directly.
+                Press requests, event hosting, candidate filings, story tips, or policy
+                questions. Use the form, or email us directly. We answer everything we can
+                across Coos County.
               </p>
             </div>
 
@@ -113,11 +137,11 @@ const ContactPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-20 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16">
             <div className="tablet:col-span-5">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Social
+                Social
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(1.75rem,4vw,3rem)]">
-                Follow the{' '}
-                <em className="font-italic not-italic text-ochre-600">road</em>.
+                Follow{' '}
+                <em className="font-italic not-italic text-ochre-600">along online</em>.
               </h2>
             </div>
             <ul className="tablet:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">

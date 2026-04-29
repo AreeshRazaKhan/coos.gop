@@ -1,9 +1,9 @@
 const CREDENTIALS = [
-  'U.S. Navy Veteran',
-  'Father of Seven',
-  'No Corporate PAC',
-  'No AIPAC',
-  'FEC ID C00902395',
+  'Republican Committee',
+  'Locally Funded',
+  'Volunteer Powered',
+  'Constitution First',
+  'Oregon PAC #300',
 ]
 
 const CredentialStrip = () => {

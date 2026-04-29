@@ -5,29 +5,27 @@ import MagneticButton from '@/components/ui/magnetic-button'
 
 const NAV_COLUMNS = [
   {
-    label: 'Campaign',
+    label: 'Committee',
     links: [
-      { href: '/about', text: 'About Russ' },
+      { href: '/about', text: 'About' },
       { href: '/events', text: 'Events' },
-      { href: '/volunteer', text: 'Join Movement' },
+      { href: '/get-involved', text: 'Get Involved' },
     ],
   },
   {
     label: 'Give',
     links: [
-      { href: 'https://secure.actblue.com/donate/clevelandq12026', text: 'Donate' },
-      { href: 'https://secure.actblue.com/donate/russclevelandstore', text: 'Store' },
+      {
+        href: 'https://secure.anedot.com/friends-of-coos-county-republicans/donate',
+        text: 'Donate',
+      },
     ],
   },
   {
     label: 'Connect',
     links: [
-      { href: 'mailto:connect@russellcleveland.org', text: 'Email' },
-      { href: 'https://www.instagram.com/cleveland4mt_01/', text: 'Instagram' },
-      { href: 'https://www.facebook.com/cleveland4mt01/', text: 'Facebook' },
-      { href: 'https://www.tiktok.com/@cleveland4mt_01', text: 'TikTok' },
-      { href: 'https://x.com/Cleveland4MT_01', text: 'X / Twitter' },
-      { href: 'https://www.youtube.com/@ClevelandforMontana', text: 'YouTube' },
+      { href: 'mailto:party@coos.gop', text: 'Email' },
+      { href: 'https://www.facebook.com/cooscountyconservatives', text: 'Facebook' },
     ],
   },
 ]
@@ -38,10 +36,10 @@ const SiteFooter = () => {
       <div className="mx-auto max-w-[1440px] px-6 md:px-12 lg:px-16 pt-24 pb-12">
         <div className="grid grid-cols-2 gap-10 tablet:grid-cols-12 tablet:gap-12">
           <div className="col-span-2 tablet:col-span-5">
-            <Link href="/" aria-label="Russ Cleveland for U.S. House MT-01" className="inline-flex">
+            <Link href="/" aria-label="Coos County Republicans" className="inline-flex">
               <Image
                 src="/mt-us-house-logo.webp"
-                alt="Russ Cleveland · U.S. House MT-01"
+                alt="Coos County Republicans"
                 width={1060}
                 height={630}
                 className="h-auto w-full max-w-[96px] md:max-w-[110px] lg:max-w-[120px]"
@@ -49,20 +47,20 @@ const SiteFooter = () => {
             </Link>
 
             <p className="mt-6 max-w-[42ch] font-italic italic text-lg leading-[1.4] text-moonlight/80">
-              Independent spirit, democratic values.
+              Unapologetically American. Coos County First.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <MagneticButton
-                href="https://secure.actblue.com/donate/clevelandq12026"
+                href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
                 variant="rust"
                 size="md"
                 external
               >
                 Chip in
               </MagneticButton>
-              <MagneticButton href="/volunteer" variant="ghost-light" size="md">
-                Join the movement
+              <MagneticButton href="/get-involved" variant="ghost-light" size="md">
+                Join the fight
               </MagneticButton>
             </div>
           </div>
@@ -74,7 +72,7 @@ const SiteFooter = () => {
               className="tablet:col-span-2 flex flex-col gap-4"
             >
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                — {col.label}
+                {col.label}
               </span>
               <ul className="flex flex-col gap-3">
                 {col.links.map((link) => (
@@ -93,7 +91,7 @@ const SiteFooter = () => {
 
           <div className="col-span-2 tablet:col-span-1 flex tablet:flex-col gap-4 tablet:justify-start tablet:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
             <Link href="/ask" className="hover:text-ochre-400">
-              Ask Russ
+              Ask Us
             </Link>
             <Link href="/contact" className="hover:text-ochre-400">
               Contact
@@ -105,9 +103,9 @@ const SiteFooter = () => {
 
         <div className="mt-8 flex flex-col tablet:flex-row tablet:items-start tablet:justify-between gap-6">
           <p className="font-mono text-[11px] leading-[1.65] text-moonlight/60 max-w-[60ch]">
-            Paid for by Cleveland for Congress · FEC ID C00902395 · P.O. Box 691, Saint Regis,
-            MT 59866. Not authorized by any candidate or candidate&apos;s committee other than
-            Cleveland for Congress.
+            Paid for by the Coos County Republican Central Committee · Oregon PAC #300 · PO Box
+            914, Coos Bay, OR 97420. Not authorized by any candidate or candidate&apos;s
+            committee.
           </p>
           <div className="flex flex-col tablet:items-end gap-2">
             <Link
@@ -123,7 +121,7 @@ const SiteFooter = () => {
               Privacy Policy
             </Link>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
-              © 2026 Cleveland for Congress &apos;26
+              © 2026 Coos County Republicans
             </p>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
               Powered by{' '}

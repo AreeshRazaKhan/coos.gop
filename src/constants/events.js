@@ -1,53 +1,23 @@
 export const EVENTS = [
   {
-    id: 'stevensville-town-hall-may-2026',
-    name: 'Stevensville Town Hall',
-    date: 'Saturday, May 9, 2026',
-    time: '10:00 AM',
-    category: 'Town Hall',
-    location: 'Stevensville Community Center, Ravalli County',
+    id: 'saturday-coffee-and-chat',
+    name: 'Coffee & Chat with a Conservative',
+    date: 'Every Saturday',
+    time: '8:00 AM – 11:00 AM',
+    category: 'Weekly',
+    location: '3229 Broadway Ave, Suite F, North Bend, OR 97459',
     description:
-      'Russ takes questions live from the Bitterroot Valley. Affordability, healthcare, and public lands on the agenda — plus whatever Montanans want on the record.',
+      'Open-door morning at HQ. Free coffee, real conversation, candidates and committee members on hand. No RSVP needed. Walk in, introduce yourself, ask anything.',
   },
   {
-    id: 'missoula-meet-and-greet-may-2026',
-    name: 'Missoula Meet & Greet',
-    date: 'Thursday, May 14, 2026',
-    time: '6:30 PM',
-    category: 'Meet & Greet',
-    location: 'Caras Park Pavilion, Missoula',
+    id: 'wednesday-pizza-night',
+    name: 'Wednesday Pizza & Drinks',
+    date: 'Every Wednesday',
+    time: '7:00 PM – 9:00 PM',
+    category: 'Weekly',
+    location: '3229 Broadway Ave, Suite F, North Bend, OR 97459',
     description:
-      'Coffee, conversation, and a short remarks from Russ. Bring a question, bring a neighbor.',
-  },
-  {
-    id: 'kalispell-volunteer-kickoff-may-2026',
-    name: 'Flathead Valley Volunteer Kickoff',
-    date: 'Saturday, May 23, 2026',
-    time: '9:00 AM',
-    category: 'Volunteer',
-    location: 'IBEW Local 768 Hall, Kalispell',
-    description:
-      'Door-knocking orientation, phone bank setup, and a briefing on what the next 90 days look like in the Flathead.',
-  },
-  {
-    id: 'helena-farmers-market-june-2026',
-    name: 'Helena Farmers Market Meet & Greet',
-    date: 'Saturday, June 6, 2026',
-    time: '11:00 AM',
-    category: 'Community',
-    location: 'Fuller Avenue, Downtown Helena',
-    description:
-      'Find the campaign tent by the north end of the market. Russ will be around from 11 to 1 to talk corruption, affordability, and ranching.',
-  },
-  {
-    id: 'bozeman-town-hall-june-2026',
-    name: 'Bozeman Town Hall on Public Lands',
-    date: 'Wednesday, June 17, 2026',
-    time: '7:00 PM',
-    category: 'Town Hall',
-    location: 'The Emerson Center, Bozeman',
-    description:
-      'A focused town hall on public lands, water, and the roadless rule. Panelists from local conservation groups join Russ for Q&A.',
+      'Evening drop-in at HQ. Pizza, snacks, and easy conversation about issues currently in front of the county. First-timers welcome.',
   },
 ]
 

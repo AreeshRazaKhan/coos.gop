@@ -13,11 +13,11 @@ export const generateMetadata = async ({ params }) => {
   const event = getEventById(id)
   if (!event) {
     return {
-      title: 'Event not found — Cleveland for Congress',
+      title: 'Event not found · Coos County Republicans',
     }
   }
   return {
-    title: `${event.name} — Cleveland for Congress`,
+    title: `${event.name} · Coos County Republicans`,
     description: event.description || `${event.name} on ${event.date} in ${event.location}.`,
   }
 }

@@ -1,20 +1,20 @@
 const MARQUEE_CONTENT = (
   <>
-    The Montana Way <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    <em className="font-italic italic">Independent Spirit, Democratic Values</em>
-    <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    Not Bought. Not Backing Down.
-    <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
-    No Corporate PAC · No AIPAC
-    <span className="text-ochre-500 px-4" aria-hidden="true">✦</span>
+    Take Back Coos County <span className="text-ochre-400 px-4" aria-hidden="true">✦</span>
+    <em className="font-italic italic">Constitution. Community. Coos County.</em>
+    <span className="text-ochre-400 px-4" aria-hidden="true">✦</span>
+    Restore Liberty. Limit Government.
+    <span className="text-ochre-400 px-4" aria-hidden="true">✦</span>
+    One Vote. One Voice.
+    <span className="text-ochre-400 px-4" aria-hidden="true">✦</span>
   </>
 )
 
 const Marquee = () => {
   return (
     <div
-      className="overflow-hidden bg-ink-900 text-moonlight py-8 border-y border-ink-700"
-      aria-label="Campaign themes"
+      className="overflow-hidden bg-ochre-500 text-paper py-8 border-y border-ochre-600"
+      aria-label="Committee themes"
     >
       <div className="marquee-track flex whitespace-nowrap font-display text-4xl tablet:text-5xl lg:text-6xl font-black tracking-[-0.02em]">
         <span className="flex shrink-0 items-center pr-12">{MARQUEE_CONTENT}</span>

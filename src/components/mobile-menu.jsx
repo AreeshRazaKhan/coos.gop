@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 import MagneticButton from '@/components/ui/magnetic-button'
 
-const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
+const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
 
 const MobileMenu = ({ open, onClose, links }) => {
   useEffect(() => {
@@ -38,12 +38,12 @@ const MobileMenu = ({ open, onClose, links }) => {
         <Link
           href="/"
           onClick={onClose}
-          aria-label="Russ Cleveland for U.S. House MT-01"
+          aria-label="Coos County Republicans"
           className="flex items-center"
         >
           <Image
             src="/mt-us-house-logo.webp"
-            alt="Russ Cleveland · U.S. House MT-01"
+            alt="Coos County Republicans"
             width={1060}
             height={630}
             className="h-auto w-full max-w-[96px]"
@@ -72,7 +72,7 @@ const MobileMenu = ({ open, onClose, links }) => {
 
       <div className="h-[calc(100%-72px)] overflow-y-auto px-6 py-10">
         <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-          — Menu
+          Menu
         </span>
         <ul className="mt-8 flex flex-col">
           {links.map((link) => (
@@ -104,13 +104,13 @@ const MobileMenu = ({ open, onClose, links }) => {
           >
             Chip in
           </MagneticButton>
-          <MagneticButton href="/volunteer" variant="ochre" size="lg" onClick={onClose}>
-            Join the movement
+          <MagneticButton href="/get-involved" variant="ochre" size="lg" onClick={onClose}>
+            Join the fight
           </MagneticButton>
         </div>
 
         <p className="mt-10 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-moonlight/60">
-          — connect@russellcleveland.org
+          party@coos.gop
         </p>
       </div>
     </div>

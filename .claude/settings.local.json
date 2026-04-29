@@ -46,7 +46,17 @@
       "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
       "Bash(npx eslint *)",
       "Bash(echo \"exit=$?\")",
-      "WebFetch(domain:www.morseforidaho.com)"
+      "WebFetch(domain:www.morseforidaho.com)",
+      "Bash(where chrome *)",
+      "Bash(where msedge *)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Read(//c/Program Files \\(x86\\)/Microsoft/Edge/Application/**)",
+      "Read(//c/Program Files/Microsoft/Edge/Application/**)",
+      "Bash(\"/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe\" --headless=new --disable-gpu --no-pdf-header-footer --print-to-pdf=\"C:/Users/Dev/Documents/GitHub/russellcleveland/content-structure.pdf\" \"file:///C:/Users/Dev/Documents/GitHub/russellcleveland/content-structure.html\")",
+      "Bash(grep -qE \"Ready|started server|compiled successfully|Local:\" \"C:\\\\\\\\Users\\\\\\\\Dev\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Users-Dev-Documents-GitHub-russellcleveland\\\\\\\\02f1ddda-12fe-430b-81a8-ee5e5e17d5cf\\\\\\\\tasks\\\\\\\\bynbd0e6t.output\")",
+      "Bash(tail *)",
+      "Bash(python3 -c ' *)",
+      "WebFetch(domain:cooscountyconservatives.com)"
     ]
   }
 }

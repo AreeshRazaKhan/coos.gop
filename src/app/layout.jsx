@@ -1,29 +1,31 @@
-import { Fraunces, Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google'
+import { Crimson_Pro, JetBrains_Mono, Vollkorn } from 'next/font/google'
 import PropTypes from 'prop-types'
 
 import GrainOverlay from '@/components/grain-overlay'
 
 import './globals.css'
 
-const fraunces = Fraunces({
+const vollkorn = Vollkorn({
   variable: '--ff-display',
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
   display: 'swap',
 })
 
-const instrumentSerif = Instrument_Serif({
+const vollkornItalic = Vollkorn({
   variable: '--ff-italic',
   subsets: ['latin'],
-  weight: '400',
+  weight: ['400', '500', '600', '700'],
   style: 'italic',
   display: 'swap',
 })
 
-const inter = Inter({
+const crimsonPro = Crimson_Pro({
   variable: '--ff-body',
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
+  style: ['normal', 'italic'],
   display: 'swap',
 })
 
@@ -35,15 +37,16 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  title: "Russ Cleveland for Congress — MT-01 '26",
-  description: 'Independent spirit, democratic values. A Navy veteran and father of seven running to put Montana first.',
+  title: 'Coos County Republicans · Conservative Values, Coos County First',
+  description:
+    'The grassroots Republican community of Coos County, Oregon. Local control, lower taxes, public safety, and active stewardship. Oregon PAC #300.',
 }
 
 const RootLayout = ({ children }) => {
   const fontClasses = [
-    fraunces.variable,
-    instrumentSerif.variable,
-    inter.variable,
+    vollkorn.variable,
+    vollkornItalic.variable,
+    crimsonPro.variable,
     jetbrainsMono.variable,
   ].join(' ')
 

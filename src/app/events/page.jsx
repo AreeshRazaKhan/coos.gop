@@ -7,9 +7,9 @@ import { EVENTS } from '@/constants/events'
 import { CALENDAR_URL } from '@/lib/events'
 
 export const metadata = {
-  title: 'Events — Russ Cleveland for Congress',
+  title: 'Events · Coos County Republicans',
   description:
-    'Upcoming town halls, meet & greets, and community events across Montana. RSVP to reserve your spot.',
+    'Weekly meetings at HQ, candidate forums, GOTV drives, and community events across Coos County, Oregon. RSVP to reserve your spot.',
 }
 
 const EventsPage = () => {
@@ -21,27 +21,27 @@ const EventsPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
             <div className="tablet:col-span-8">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                — Events
+                Events
               </span>
               <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(3rem,10vw,9rem)]">
-                Where Russ will{' '}
+                Where the committee will{' '}
                 <em className="font-italic not-italic text-ochre-600">be</em>.
               </h1>
               <p className="mt-10 max-w-[58ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
-                In person. On the record. Town halls, meet &amp; greets, and community events
-                across Montana.
+                In person. On the record. Weekly meetings at HQ, candidate forums, GOTV drives,
+                and community events across Coos County.
               </p>
             </div>
             <aside className="tablet:col-span-4 tablet:col-start-9 flex flex-col items-start gap-4 justify-end">
               <MagneticButton href={CALENDAR_URL} variant="primary" size="lg" external>
-                Subscribe on Google Calendar
+                Subscribe to calendar
               </MagneticButton>
               <MagneticButton
-                href="mailto:connect@russellcleveland.org?subject=Host%20an%20event"
+                href="mailto:party@coos.gop?subject=Host%20a%20precinct%20event"
                 variant="ghost"
                 size="lg"
               >
-                Host an event in your county
+                Host an event in your precinct
               </MagneticButton>
             </aside>
           </div>
@@ -52,11 +52,11 @@ const EventsPage = () => {
             <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
               <div>
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-                  — Upcoming
+                  Upcoming
                 </span>
                 <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)] max-w-[22ch]">
                   Next on the{' '}
-                  <em className="font-italic not-italic text-ochre-600">road</em>.
+                  <em className="font-italic not-italic text-ochre-600">calendar</em>.
                 </h2>
               </div>
               <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-stone-400">
@@ -72,7 +72,7 @@ const EventsPage = () => {
                     className="group flex h-full flex-col gap-4 rounded-[4px] border border-bone-200 bg-white p-8 lg:p-10 transition-colors hover:border-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 relative before:content-[''] before:absolute before:top-0 before:left-10 before:right-10 before:h-[3px] before:bg-ochre-500"
                   >
                     <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
-                      — {event.category}
+                      {event.category}
                     </span>
                     <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.15] tracking-[-0.015em] text-ink-900 max-w-[26ch]">
                       {event.name}
@@ -98,7 +98,7 @@ const EventsPage = () => {
                       </div>
                     </dl>
                     <span className="mt-auto inline-flex items-center gap-2 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ink-900 group-hover:text-ochre-600">
-                      RSVP & details
+                      RSVP &amp; details
                       <span aria-hidden="true">→</span>
                     </span>
                   </Link>

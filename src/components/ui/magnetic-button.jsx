@@ -6,7 +6,7 @@ const VARIANT_CLASSES = {
   primary:
     'bg-ink-900 text-paper border-ink-900 hover:bg-ochre-500 hover:border-ochre-500 hover:text-ink-900',
   ochre:
-    'bg-ochre-500 text-ink-900 border-ochre-500 hover:bg-ochre-400 hover:border-ochre-400',
+    'bg-ochre-500 text-paper border-ochre-500 hover:bg-ochre-600 hover:border-ochre-600',
   ghost:
     'bg-transparent text-ink-900 border-ink-900 hover:bg-ink-900 hover:text-paper',
   'ghost-light':

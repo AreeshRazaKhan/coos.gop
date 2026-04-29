@@ -6,35 +6,35 @@ import MagneticButton from '@/components/ui/magnetic-button'
 
 const SECTIONS = [
   {
-    eyebrow: '— 01 · Loss',
-    title: 'A mission driven by loss',
-    body: 'Russ lost his oldest daughter, Madison, to leukemia at the age of thirteen. That loss drives this campaign. No parent should ever have to watch their child fight a deadly disease in a system rigged against them.',
+    eyebrow: '01 · Crisis',
+    title: 'A county under pressure',
+    body: 'Coos County families are squeezed by Salem mandates, federal land lockouts, and an Oregon tax structure that punishes work. Mills have closed. Boats stay tied up. Jobs that supported entire towns for generations have moved or vanished. We organized because the alternative is watching the county slip further every cycle.',
     accent: 'ochre',
   },
   {
-    eyebrow: '— 02 · Roots',
-    title: 'From a small farm in Stevensville',
-    body: 'Russ grew up on a small farm in Stevensville, Montana, with a deep respect for hard work and community. He is a father of seven, a coach, a finance professional, and a child care expert.',
+    eyebrow: '02 · Roots',
+    title: 'Built by timber, fishing, and family.',
+    body: 'Coos County was settled and shaped by working people. Loggers, mill hands, fishermen, ranchers, tradespeople, and small-business owners. The values that built this county are the same values that drive this committee. Hard work, faith, family, neighbors first, and government that knows its limits.',
     accent: 'sage',
   },
   {
-    eyebrow: '— 03 · Service',
-    title: 'Service to our country',
-    body: 'Russ is a proud U.S. Navy veteran who deeply values the oath he once took to defend our constitution. That experience taught him what it means to be accountable to something larger than himself, a value that has guided his life ever since.',
+    eyebrow: '03 · Service',
+    title: 'Built by volunteers, not professionals.',
+    body: 'Coos County Republicans is run by volunteers. Precinct committee persons, officers, and active members donate hours, miles, and money to keep the committee operating and the headquarters open. No one here makes a living off Republican politics in Coos County. We do this work because it matters, not because it pays.',
     accent: 'ink',
   },
   {
-    eyebrow: '— 04 · Why',
-    title: 'Why Congress?',
-    body: 'Russ is committed to a campaign that isn\u2019t about right versus left, but instead top versus bottom. His campaign is focused on fixing the things that negatively impact all Montanans: Healthcare, Affordability, and Corruption. This fight ahead is for the land we grew up on, the people who raised us, and the children who\u2019ll inherit what we leave behind. For Russ, this campaign is for Montana\u2019s rural towns as much as it is for the blue cities.',
+    eyebrow: '04 · Why',
+    title: 'Why local?',
+    body: 'Coos County Republicans organizes at the county level because that is where families feel policy first. School boards decide what your children learn. County commissioners decide land use, sheriff funding, and tax levies. State legislators decide PERS, regulations, and election law. Local elections are won and lost by dozens of votes, and most cycles, no one is doing the basic ground work to win them. We do that work. We recruit candidates, train volunteers, register voters, and run the long game between elections so Coos County is never an afterthought again.',
     accent: 'ochre',
   },
 ]
 
 export const metadata = {
-  title: 'About Russ Cleveland — From Montana, For Montana',
+  title: 'About Coos County Republicans · From Coos County, for Coos County',
   description:
-    'Navy veteran. Father of seven. Finance professional and child care expert. Raised on a small farm in Stevensville, Montana. Why Russ Cleveland is running for Congress in MT-01.',
+    'The grassroots Republican community of Coos County, Oregon. All-volunteer. Local. Organized to elect principled conservatives at every level of government.',
 }
 
 const AboutPage = () => {
@@ -46,16 +46,17 @@ const AboutPage = () => {
           <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-24 md:px-12 md:py-36 tablet:grid-cols-12 lg:px-16 lg:py-40">
             <div className="tablet:col-span-7 flex flex-col justify-center">
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                — About · MT-01 · 2026
+                About · Coos County · 2026
               </span>
               <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(3rem,9vw,8rem)]">
-                From Montana,{' '}
-                <em className="font-italic not-italic text-ochre-400">For Montana</em>.
+                From Coos County,{' '}
+                <em className="font-italic not-italic text-ochre-400">for Coos County</em>.
               </h1>
               <p className="mt-10 max-w-[60ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
-                Russ Cleveland is a father, coach, finance professional, and child care expert
-                who grew up on a small farm in Stevensville, Montana. He is also a proud U.S.
-                Navy veteran who deeply values the oath he once took to defend our constitution.
+                Coos County Republicans is the grassroots Republican community of Coos County,
+                Oregon. We are an all-volunteer body of neighbors, business owners, veterans,
+                parents, ranchers, fishermen, and tradespeople committed to electing principled
+                conservatives at every level of government across our county and state.
               </p>
             </div>
 
@@ -63,7 +64,7 @@ const AboutPage = () => {
               <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-700">
                 <Image
                   src="/russ-portrait.webp"
-                  alt="Portrait of Russ Cleveland"
+                  alt="Coos County coastline morning light, Oregon"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority
@@ -76,19 +77,19 @@ const AboutPage = () => {
                 <div className="absolute inset-0 flex items-end p-8">
                   <div>
                     <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                      — Stevensville, MT
+                      North Bend
                     </span>
                     <span className="mt-2 block font-display text-3xl font-black leading-tight text-moonlight tracking-[-0.02em]">
-                      Russ Cleveland
+                      Coos Republicans
                     </span>
                     <span className="mt-1 font-italic italic text-moonlight/75">
-                      Candidate · U.S. House, MT-01
+                      Republican Central Committee · Oregon PAC #300
                     </span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-4 right-4 tablet:-top-2 tablet:-right-4 z-10">
-                <span className="paper-stamp">Navy Veteran · Est. &apos;25</span>
+                <span className="paper-stamp">Coos County GOP · &apos;26</span>
               </div>
             </div>
           </div>
@@ -134,28 +135,28 @@ const AboutPage = () => {
               className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
             >
               <span className="font-display font-black text-[220px] md:text-[360px] leading-none tracking-[-0.04em] text-ochre-500/[.08] whitespace-nowrap -translate-x-10">
-                NOT BOUGHT.
+                TAKE BACK
               </span>
             </div>
             <div className="relative mx-auto max-w-[1440px] px-6 py-28 md:px-12 md:py-40 lg:px-16">
               <div className="max-w-[72ch]">
                 <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                  — 05 · The pledge
+                  05 · The pledge
                 </span>
                 <h2 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.025em] text-[clamp(3rem,8vw,7rem)]">
-                  Not bought.{' '}
-                  <em className="font-italic not-italic text-ochre-400">Not backing down.</em>
+                  Take back{' '}
+                  <em className="font-italic not-italic text-ochre-400">Coos County</em>.
                 </h2>
                 <p className="mt-10 font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85 max-w-[54ch]">
-                  Russ is the best choice for Montana because he is &ldquo;NOT BOUGHT. NOT
-                  BACKING DOWN.&rdquo;
+                  Coos County Republicans is the best path forward for this county because we
+                  are local, accountable, all-volunteer, and unwilling to back down.
                 </p>
                 <div className="mt-12 flex flex-wrap gap-4">
-                  <MagneticButton href="/volunteer" variant="ochre" size="lg">
-                    Join the movement
+                  <MagneticButton href="/get-involved" variant="ochre" size="lg">
+                    Join the fight
                   </MagneticButton>
                   <MagneticButton
-                    href="https://secure.actblue.com/donate/clevelandq12026"
+                    href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
                     variant="rust"
                     size="lg"
                     external

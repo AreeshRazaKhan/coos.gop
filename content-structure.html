@@ -1,0 +1,874 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Cleveland for Congress — Website Content Structure Brief</title>
+<style>
+  @page { size: Letter; margin: 16mm 14mm 18mm 14mm; }
+  :root{
+    --ink:#0E1B2C;
+    --ink-2:#1A2E49;
+    --ochre:#C8732B;
+    --ochre-dk:#A65E1F;
+    --brass:#8B4A12;
+    --paper:#F3EDE1;
+    --paper-2:#ECE4D3;
+    --bone:#D9CFB8;
+    --stone:#6B6760;
+    --ash:#4A4A48;
+    --sage:#6B7A5A;
+    --rust:#8B2E1F;
+  }
+  *{ box-sizing:border-box; }
+  html,body{
+    background:#fff;
+    color:var(--ink);
+    font-family:'Inter','Segoe UI',Helvetica,Arial,sans-serif;
+    font-size:10.5pt;
+    line-height:1.45;
+    margin:0;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces','Georgia',serif;
+    font-weight:800;
+    letter-spacing:-0.015em;
+    margin:0;
+  }
+  h1{ font-size:30pt; line-height:1; margin-bottom:6mm; }
+  h2{ font-size:18pt; line-height:1.05; margin-top:8mm; margin-bottom:3mm; padding-top:3mm; border-top:2px solid var(--ink); }
+  h3{ font-size:13pt; line-height:1.15; margin:6mm 0 2mm; color:var(--ink); }
+  h4{ font-size:11pt; line-height:1.2; margin:4mm 0 1.5mm; color:var(--ochre-dk); }
+  em.acc{ color:var(--ochre-dk); font-style:italic; font-family:'Instrument Serif','Georgia',serif; }
+  .mono{ font-family:'JetBrains Mono','Consolas',monospace; font-size:8.5pt; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); }
+  .mono.ochre{ color:var(--ochre-dk); }
+  .lede{ font-size:11pt; color:var(--ash); max-width:62em; }
+  .legend{
+    background:var(--paper);
+    border:1px solid var(--bone);
+    padding:5mm 6mm;
+    border-radius:3mm;
+    margin:5mm 0 8mm;
+  }
+  .legend p{ margin:1.5mm 0; }
+  .page-card{
+    border:1px solid var(--bone);
+    border-left:4px solid var(--ochre);
+    padding:5mm 6mm;
+    margin:5mm 0 6mm;
+    background:#fffbf3;
+    page-break-inside:avoid;
+  }
+  .page-card .meta{
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8.5pt;
+    color:var(--stone);
+    margin-top:1.5mm;
+  }
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:2mm 0 4mm;
+    font-size:10pt;
+    page-break-inside:auto;
+  }
+  table.spec th, table.spec td{
+    border:1px solid var(--bone);
+    padding:2.4mm 3mm;
+    vertical-align:top;
+    text-align:left;
+  }
+  table.spec th{
+    background:var(--paper-2);
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8.5pt;
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    color:var(--brass);
+    font-weight:600;
+  }
+  table.spec td.label{
+    width:26%;
+    font-weight:600;
+    color:var(--ink);
+  }
+  table.spec td.limit{
+    width:14%;
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:9.5pt;
+    color:var(--ochre-dk);
+    white-space:nowrap;
+  }
+  table.spec td.copy{
+    color:var(--ash);
+  }
+  table.spec td.copy em{ color:var(--ochre-dk); font-style:italic; }
+  table.img th, table.img td{
+    border:1px solid var(--bone);
+    padding:2mm 3mm;
+    font-size:9.5pt;
+    vertical-align:top;
+  }
+  table.img th{
+    background:#f3e9d3;
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8.2pt;
+    color:var(--brass);
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    text-align:left;
+  }
+  .kw{
+    display:inline-block;
+    background:var(--paper);
+    border:1px solid var(--bone);
+    border-radius:99px;
+    padding:0.6mm 2.6mm;
+    margin:0.4mm 1mm 0.4mm 0;
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8.2pt;
+    color:var(--ink);
+  }
+  .pill{
+    display:inline-block;
+    background:var(--ochre);
+    color:#fff;
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8pt;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    padding:0.6mm 2.6mm;
+    border-radius:99px;
+    margin-right:2mm;
+  }
+  .pill.dk{ background:var(--ink); }
+  .pill.rust{ background:var(--rust); }
+  .pill.sage{ background:var(--sage); }
+  .small{ font-size:9pt; color:var(--stone); }
+  .toc{ columns:2; column-gap:10mm; font-size:10pt; }
+  .toc a{ color:var(--ink); text-decoration:none; }
+  .toc li{ margin:1mm 0; list-style:square; color:var(--ochre-dk); }
+  .page-break{ page-break-before:always; }
+  .quote{
+    font-family:'Fraunces','Georgia',serif;
+    font-style:italic;
+    font-size:14pt;
+    color:var(--ink);
+    border-left:3px solid var(--ochre);
+    padding:1mm 5mm;
+    margin:3mm 0 5mm;
+    max-width:50em;
+  }
+  ul.compact{ margin:1mm 0 3mm; padding-left:5mm; }
+  ul.compact li{ margin:0.6mm 0; }
+  .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .note{
+    background:#fff8e6;
+    border:1px dashed var(--ochre);
+    padding:3mm 4mm;
+    border-radius:2mm;
+    font-size:9.5pt;
+    color:var(--ash);
+    margin:3mm 0 5mm;
+  }
+  .footer-band{
+    margin-top:10mm;
+    padding-top:4mm;
+    border-top:1px solid var(--bone);
+    font-family:'JetBrains Mono','Consolas',monospace;
+    font-size:8pt;
+    color:var(--stone);
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="mono">— Content Brief · Cleveland for Congress · MT-01 · 2026</span>
+  <h1>Website Content Structure <em class="acc">Replacement Brief</em>.</h1>
+  <p class="lede">Page-by-page, section-by-section content map for <strong>russellcleveland.org</strong>. Every text block lists a <strong>word-limit target</strong>, every image lists <strong>render dimensions</strong> + <strong>keyword suggestions</strong>. Replace copy directly into the slots below; staying within the listed word counts keeps the layout intact.</p>
+
+  <div class="legend">
+    <p><span class="mono ochre">— How to read this document</span></p>
+    <p><strong>Eyebrow</strong> — small uppercase mono label above a heading. Hard cap: <strong>5 words / 32 characters</strong> across the entire site.</p>
+    <p><strong>Heading</strong> — display Fraunces. Word limit shown per slot. The italic <em class="acc">accent word</em> must be emotionally loaded, never a neutral noun.</p>
+    <p><strong>Body / Lede</strong> — running paragraph copy. Word limit shown per slot. Body never drops below 16px on screen.</p>
+    <p><strong>Image</strong> — render width × height (in CSS pixels at 1× density). Suggested asset is 2× of the listed dimensions for retina. Keywords drive photo selection.</p>
+    <p><strong>CTA</strong> — button labels stay between 1–4 words.</p>
+  </div>
+
+  <h3>Pages covered</h3>
+  <ol class="toc">
+    <li><a href="#home">Home · /</a></li>
+    <li><a href="#about">About · /about</a></li>
+    <li><a href="#volunteer">Volunteer · /volunteer</a></li>
+    <li><a href="#events">Events page · /events</a></li>
+    <li><a href="#ask">Ask Russ · /ask</a></li>
+    <li><a href="#contact">Contact · /contact</a></li>
+    <li><a href="#terms">Terms &amp; Conditions · /terms-and-conditions</a></li>
+    <li><a href="#privacy">Privacy Policy · /privacy-policy</a></li>
+    <li><a href="#footer">Site-wide · Footer</a></li>
+    <li><a href="#forms">Form-field copy reference</a></li>
+  </ol>
+</header>
+
+<!-- ====================== HOME ====================== -->
+<section id="home">
+  <h2>1. Home · <em class="acc">/</em></h2>
+  <div class="page-card">
+    <p class="meta"><strong>Sections in render order:</strong> Hero → Credential Strip → Marquee → Manifesto → Pillars → Values → Meet Russ → Events CTA → FAQ → Donate / CTA → Footer.</p>
+  </div>
+
+  <!-- 1.1 HERO -->
+  <h3>1.1 · Hero (full-bleed, dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy / target</th></tr>
+    <tr><td class="label">Eyebrow (mono)</td><td class="limit">3–4 words</td><td class="copy">— The Montana Way</td></tr>
+    <tr><td class="label">H1 headline (with italic accent)</td><td class="limit">4–6 words · ≤ 48 characters</td><td class="copy">Independent Spirit, <em>Democratic Values</em>.</td></tr>
+    <tr><td class="label">Lede paragraph</td><td class="limit">28–36 words · 1 sentence preferred, max 2</td><td class="copy">Russ Cleveland is a father, coach, finance professional, and child care expert who grew up on a small farm in Stevensville, Montana. He is also a proud U.S. Navy veteran.</td></tr>
+    <tr><td class="label">Primary CTA button</td><td class="limit">2–3 words</td><td class="copy">Join the movement</td></tr>
+    <tr><td class="label">Secondary CTA button</td><td class="limit">1 word</td><td class="copy">Donate</td></tr>
+    <tr><td class="label">Compliance line (mono)</td><td class="limit">≤ 8 words</td><td class="copy">No Corporate PAC · No AIPAC · FEC ID C00902395</td></tr>
+    <tr><td class="label">Portrait caption — eyebrow</td><td class="limit">2–3 words</td><td class="copy">— Stevensville, Montana</td></tr>
+    <tr><td class="label">Portrait caption — name</td><td class="limit">2 words</td><td class="copy">Russ Cleveland</td></tr>
+    <tr><td class="label">Portrait caption — italic line</td><td class="limit">4–6 words</td><td class="copy">Navy Veteran · Father of seven</td></tr>
+    <tr><td class="label">Paper stamp badge</td><td class="limit">3–4 words</td><td class="copy">Navy Veteran · Est. ’25</td></tr>
+  </table>
+
+  <h4>Hero image</h4>
+  <table class="img">
+    <tr><th>Slot</th><th>Render width × height</th><th>Aspect</th><th>Keywords</th></tr>
+    <tr>
+      <td>Arched portrait (right column)</td>
+      <td>≈ 380 × 475 px (mobile) · ≈ 460 × 575 px (tablet) · ≈ 540 × 675 px (desktop)</td>
+      <td>4 / 5 portrait, top corners rounded 240px (arch mask)</td>
+      <td><span class="kw">Russ Cleveland portrait</span><span class="kw">Montana rancher</span><span class="kw">documentary headshot</span><span class="kw">golden hour candidate</span><span class="kw">navy veteran father</span><span class="kw">Stevensville Bitterroot</span></td>
+    </tr>
+  </table>
+  <p class="small">Asset: deliver at <strong>1080 × 1350 px</strong> (2×) in WebP. Leave negative space on the lower-left for the typographic overlay (gradient + caption).</p>
+
+  <!-- 1.2 CREDENTIAL STRIP -->
+  <h3>1.2 · Credential Strip (thin band)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Credential 1</td><td class="limit">2–3 words</td><td class="copy">U.S. Navy Veteran</td></tr>
+    <tr><td class="label">Credential 2</td><td class="limit">2–3 words</td><td class="copy">Father of Seven</td></tr>
+    <tr><td class="label">Credential 3</td><td class="limit">2–3 words</td><td class="copy">No Corporate PAC</td></tr>
+    <tr><td class="label">Credential 4</td><td class="limit">2 words</td><td class="copy">No AIPAC</td></tr>
+    <tr><td class="label">Credential 5</td><td class="limit">3 words</td><td class="copy">FEC ID C00902395</td></tr>
+  </table>
+  <p class="small">No images. Hard cap of 5 chips on this row — adding a 6th forces an ugly second-row wrap.</p>
+
+  <!-- 1.3 MARQUEE -->
+  <h3>1.3 · Marquee strip</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Marquee phrases (4 stars between)</td><td class="limit">4 phrases · 2–6 words each</td><td class="copy">The Montana Way ✦ <em>Independent Spirit, Democratic Values</em> ✦ Not Bought. Not Backing Down. ✦ No Corporate PAC · No AIPAC ✦</td></tr>
+  </table>
+
+  <!-- 1.4 MANIFESTO -->
+  <h3>1.4 · Manifesto (Why I'm running)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy / target</th></tr>
+    <tr><td class="label">Eyebrow (mono)</td><td class="limit">3–5 words</td><td class="copy">— 01 · Why I’m running</td></tr>
+    <tr><td class="label">Pull-quote H2 (italic)</td><td class="limit">≤ 8 words · 2 short lines</td><td class="copy"><em>"It's about us, not me."</em></td></tr>
+    <tr><td class="label">Manifesto paragraph</td><td class="limit">28–40 words · 1–2 sentences</td><td class="copy">The fight ahead isn’t left versus right, it is top versus bottom. It is time to reclaim our state, protect what is ours, and build a Montana that truly works for us all.</td></tr>
+    <tr><td class="label">Aside card 1 — eyebrow</td><td class="limit">2–3 words</td><td class="copy">— The frame</td></tr>
+    <tr><td class="label">Aside card 1 — headline</td><td class="limit">5–7 words</td><td class="copy">Not left versus right. <em>Top versus bottom.</em></td></tr>
+    <tr><td class="label">Aside card 1 — body</td><td class="limit">22–30 words</td><td class="copy">This campaign isn’t about expensive ads or hollow endorsements. It’s about real conversations driven by shared struggle and shared values.</td></tr>
+    <tr><td class="label">Aside card 2 — eyebrow</td><td class="limit">2–3 words</td><td class="copy">— The promise</td></tr>
+    <tr><td class="label">Aside card 2 — headline</td><td class="limit">3–5 words</td><td class="copy">No Corporate PAC. No AIPAC.</td></tr>
+    <tr><td class="label">Aside card 2 — body</td><td class="limit">18–25 words</td><td class="copy">A truly grassroots campaign, refusing corporate PAC, AIPAC, and other special interest money.</td></tr>
+    <tr><td class="label">Watermark text (background)</td><td class="limit">2 words · ALL CAPS</td><td class="copy">MONTANA FIRST</td></tr>
+  </table>
+  <p class="small">No images in this section — large typographic watermark only.</p>
+
+  <!-- 1.5 PILLARS -->
+  <h3>1.5 · Pillars (Bento — Healthcare / Affordability / Corruption)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">3–4 words</td><td class="copy">— 02 · The Platform</td></tr>
+    <tr><td class="label">Section H2</td><td class="limit">3–5 words · 1 italic accent</td><td class="copy">Healthcare. Affordability. <em>Corruption.</em></td></tr>
+    <tr><td class="label">Section lede</td><td class="limit">14–20 words</td><td class="copy">Russ is committed to fixing healthcare, improving affordability, and ending corruption.</td></tr>
+    <tr><td class="label">Tile 1 (Healthcare) — eyebrow</td><td class="limit">3 words</td><td class="copy">Pillar 01 / Healthcare</td></tr>
+    <tr><td class="label">Tile 1 — headline</td><td class="limit">5–7 words</td><td class="copy">Healthcare is a <em>human right</em>.</td></tr>
+    <tr><td class="label">Tile 1 — body</td><td class="limit">22–30 words</td><td class="copy">Too many Montanans are forced to choose between paying for healthcare and keeping a roof overhead. That is a broken system.</td></tr>
+    <tr><td class="label">Tile 2 (No PAC) — eyebrow</td><td class="limit">3 words</td><td class="copy">— No Corporate PAC</td></tr>
+    <tr><td class="label">Tile 2 — stat numeral</td><td class="limit">1–2 chars</td><td class="copy">$0</td></tr>
+    <tr><td class="label">Tile 2 — caption</td><td class="limit">5–7 words</td><td class="copy">from corporate PACs. <em>Ever.</em></td></tr>
+    <tr><td class="label">Tile 2 — fec line</td><td class="limit">3 words</td><td class="copy">FEC ID C00902395</td></tr>
+    <tr><td class="label">Tile 3 (Affordability) — eyebrow</td><td class="limit">3 words</td><td class="copy">Pillar 02 / Affordability</td></tr>
+    <tr><td class="label">Tile 3 — headline</td><td class="limit">6–8 words</td><td class="copy">Housing squeezed from <em>both ends</em>.</td></tr>
+    <tr><td class="label">Tile 3 — body</td><td class="limit">22–30 words</td><td class="copy">Rising housing costs and wages that haven’t kept up — because the system rewards the top at everyone else’s expense.</td></tr>
+    <tr><td class="label">Tile 4 (Corruption) — eyebrow</td><td class="limit">4 words</td><td class="copy">Pillar 03 / End Corruption</td></tr>
+    <tr><td class="label">Tile 4 — headline</td><td class="limit">5–7 words</td><td class="copy">End Citizens United. <em>Ban dark money.</em></td></tr>
+    <tr><td class="label">Tile 4 — body</td><td class="limit">22–32 words</td><td class="copy">Billionaires and corporations should not be able to buy our democracy. A truly grassroots campaign refuses corporate PAC, AIPAC, and special interest money.</td></tr>
+  </table>
+  <p class="small">No photographs in this bento — all type-driven. Tile 4 uses a giant "$" glyph as decoration.</p>
+
+  <!-- 1.6 VALUES -->
+  <h3>1.6 · Values (5-item accordion)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">3 words</td><td class="copy">— 04 · Platform</td></tr>
+    <tr><td class="label">Section H2</td><td class="limit">5–7 words</td><td class="copy">Values that drive Russell’s campaign:</td></tr>
+    <tr><td class="label">Section sub-lede</td><td class="limit">10–14 words</td><td class="copy">Five pillars. Each one a promise backed by policy, not slogans.</td></tr>
+    <tr><td class="label">Value 1 title</td><td class="limit">2–4 words</td><td class="copy">Healthcare for All</td></tr>
+    <tr><td class="label">Value 1 body (1 paragraph)</td><td class="limit">140–180 words</td><td class="copy">Personal stake (Madison) → Medicare for All → drug prices → rural clinics → research funding → Social Security/Medicare → veterans / VA. Keep one continuous paragraph.</td></tr>
+    <tr><td class="label">Value 2 title</td><td class="limit">2–4 words</td><td class="copy">A Fair Economy</td></tr>
+    <tr><td class="label">Value 2 body (2 paragraphs)</td><td class="limit">220–280 words total</td><td class="copy">Para 1: workers’ rights, collective bargaining, fair wages. Para 2: small business / agriculture / trades, build-here, technology serving Montana.</td></tr>
+    <tr><td class="label">Value 3 title</td><td class="limit">2–3 words</td><td class="copy">Protect Montana</td></tr>
+    <tr><td class="label">Value 3 body (2 paragraphs)</td><td class="limit">200–260 words total</td><td class="copy">Para 1: water, public lands, Tribal stewardship. Para 2: Last Best Place, MT Constitution, clean energy, jobs.</td></tr>
+    <tr><td class="label">Value 4 title</td><td class="limit">3–4 words</td><td class="copy">Freedom, Equality &amp; Justice</td></tr>
+    <tr><td class="label">Value 4 body (3 paragraphs)</td><td class="limit">160–220 words total</td><td class="copy">Para 1: equal rights / personal freedom. Para 2: Tribal sovereignty / MMIW. Para 3: humane immigration.</td></tr>
+    <tr><td class="label">Value 5 title</td><td class="limit">3 words</td><td class="copy">Peace and Democracy</td></tr>
+    <tr><td class="label">Value 5 body (2 paragraphs)</td><td class="limit">240–300 words total</td><td class="copy">Para 1: Citizens United, dark money, Montana Plan, no corp PAC, election integrity. Para 2: schools, universal Pre-K, teacher wages, peace over profit.</td></tr>
+  </table>
+
+  <!-- 1.7 MEET RUSS -->
+  <h3>1.7 · Meet Russ (split + duotone archival)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— 03 · Meet Russ</td></tr>
+    <tr><td class="label">H2</td><td class="limit">3–5 words</td><td class="copy">From Montana, <em>for Montana</em>.</td></tr>
+    <tr><td class="label">Lede paragraph</td><td class="limit">38–50 words</td><td class="copy">Russ Cleveland is a father, coach, finance professional, and child care expert who grew up on a small farm in Stevensville, Montana. He is also a proud U.S. Navy veteran who deeply values the oath he once took to defend our constitution.</td></tr>
+    <tr><td class="label">Secondary paragraph</td><td class="limit">28–36 words</td><td class="copy">He has since dedicated a life in service to others both through career and community, driven most recently by the loss of his oldest daughter Madison to leukemia at the age of thirteen.</td></tr>
+    <tr><td class="label">Bio fact 1 — label / value</td><td class="limit">1 word / 3–4 words</td><td class="copy">Service · U.S. Navy Veteran</td></tr>
+    <tr><td class="label">Bio fact 2 — label / value</td><td class="limit">1 word / 3 words</td><td class="copy">Family · Father of seven</td></tr>
+    <tr><td class="label">Bio fact 3 — label / value</td><td class="limit">1 word / 3–6 words</td><td class="copy">Roles · Finance · Child care · Coach</td></tr>
+    <tr><td class="label">Bio fact 4 — label / value</td><td class="limit">1 word / 3–5 words</td><td class="copy">Raised · Small farm in Stevensville</td></tr>
+    <tr><td class="label">Image overlay — eyebrow</td><td class="limit">2 words</td><td class="copy">— Archival · Duotone</td></tr>
+    <tr><td class="label">Image overlay — caption</td><td class="limit">3 words</td><td class="copy">U.S. Navy Veteran</td></tr>
+    <tr><td class="label">Paper stamp</td><td class="limit">2 words</td><td class="copy">Navy Veteran</td></tr>
+  </table>
+
+  <h4>Meet Russ — image</h4>
+  <table class="img">
+    <tr><th>Slot</th><th>Render width × height</th><th>Treatment</th><th>Keywords</th></tr>
+    <tr>
+      <td>Archival arched portrait</td>
+      <td>≈ 460 × 575 px (mobile) · ≈ 520 × 650 px (desktop) · 4/5 ratio</td>
+      <td>Grayscale + duotone overlay (ink 14,27,44 → ochre 200,115,43, 135° gradient, multiply blend) + 45° hairline pattern</td>
+      <td><span class="kw">young Russ Navy uniform</span><span class="kw">archival service photo</span><span class="kw">1990s sailor portrait</span><span class="kw">family farm childhood</span><span class="kw">Madison daughter</span><span class="kw">Stevensville archive</span></td>
+    </tr>
+  </table>
+  <p class="small">Asset: deliver 1040 × 1300 px grayscale source. Duotone is applied in-browser with CSS — do <strong>not</strong> bake the orange tint into the file.</p>
+
+  <!-- 1.8 EVENTS CTA -->
+  <h3>1.8 · Events CTA (homepage band)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— 05 · Events</td></tr>
+    <tr><td class="label">H2</td><td class="limit">3–5 words</td><td class="copy">View the <em>event calendar</em>.</td></tr>
+    <tr><td class="label">Lede</td><td class="limit">22–30 words</td><td class="copy">Real conversations, in person. Subscribe to the campaign calendar for meet &amp; greets, town halls, and community events across Montana.</td></tr>
+    <tr><td class="label">Calendar tile — eyebrow</td><td class="limit">2 words</td><td class="copy">— Google Calendar</td></tr>
+    <tr><td class="label">Calendar tile — headline</td><td class="limit">8–12 words</td><td class="copy">Where Russ will be — on the record, on the road.</td></tr>
+    <tr><td class="label">Calendar tile — body</td><td class="limit">14–20 words</td><td class="copy">Subscribe to the official campaign calendar to see upcoming events in your county.</td></tr>
+    <tr><td class="label">Calendar CTA button</td><td class="limit">2–3 words</td><td class="copy">View event calendar</td></tr>
+    <tr><td class="label">Host card — eyebrow</td><td class="limit">2–3 words</td><td class="copy">— Can’t make it?</td></tr>
+    <tr><td class="label">Host card — headline</td><td class="limit">7–9 words</td><td class="copy">Host a living-room event in <em>your county</em>.</td></tr>
+    <tr><td class="label">Host card — CTA</td><td class="limit">2 words</td><td class="copy">Start one</td></tr>
+  </table>
+  <p class="small">No images. Decoration is a giant outlined circle behind the calendar tile.</p>
+
+  <!-- 1.9 FAQ -->
+  <h3>1.9 · FAQ (19-item accordion, dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">3–4 words</td><td class="copy">— 07 · On the record</td></tr>
+    <tr><td class="label">Section H2</td><td class="limit">3–4 words</td><td class="copy">Frequently asked <em>questions</em>.</td></tr>
+    <tr><td class="label">Section lede</td><td class="limit">18–24 words</td><td class="copy">Straight answers, no hedging. Where Russ stands on the issues Montanans ask about most.</td></tr>
+    <tr><td class="label">Counter (mono)</td><td class="limit">2 words</td><td class="copy">19 answers</td></tr>
+    <tr><td class="label">FAQ question (each, ×19)</td><td class="limit">8–18 words · 1 sentence</td><td class="copy">Use plain-language framing — no hedging, no jargon.</td></tr>
+    <tr><td class="label">FAQ answer (each, ×19)</td><td class="limit">90–160 words · 1 paragraph preferred, 2 max</td><td class="copy">Lead with the position. Back with reason. Tie to a Montana-specific lever where possible.</td></tr>
+  </table>
+  <p class="small"><strong>Topics in current order (don't shuffle without redirects):</strong> 1) Reproductive freedom · 2) Palestine · 3) Data centers · 4) Term limits / stock trading · 5) LGBTQIA+ rights · 6) Gun violence / 2A · 7) Roadless rule · 8) Differentiation · 9) Affordability / housing for young people · 10) Immigration / ICE · 11) Post-Trump normal · 12) Background prep for Congress · 13) Climate crisis · 14) Student loans · 15) Federal trade / agriculture · 16) Keeping graduates in MT · 17) Housing crisis · 18) Sale of public lands · 19) School choice.</p>
+
+  <!-- 1.10 CTA -->
+  <h3>1.10 · CTA (Donate / Mailing card)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">3 words</td><td class="copy">— 05 · Join In</td></tr>
+    <tr><td class="label">H2 (huge display)</td><td class="limit">3–4 words</td><td class="copy">The time is <em>now</em>.</td></tr>
+    <tr><td class="label">Lede</td><td class="limit">22–30 words</td><td class="copy">Join the Cleveland for Congress grassroots movement by donating, volunteering, and joining our mailing and events list.</td></tr>
+    <tr><td class="label">Chip-in section eyebrow</td><td class="limit">2 words</td><td class="copy">— Chip in</td></tr>
+    <tr><td class="label">Donate tier values</td><td class="limit">4 chips · "$" + amount</td><td class="copy">$27 · $50 · $100 · $500</td></tr>
+    <tr><td class="label">Custom amount CTA</td><td class="limit">2 words</td><td class="copy">Custom amount</td></tr>
+    <tr><td class="label">Address card — eyebrow</td><td class="limit">2 words</td><td class="copy">— Mailing Address</td></tr>
+    <tr><td class="label">Address card — body</td><td class="limit">3 lines · ≤ 12 words</td><td class="copy">Cleveland for Congress / P.O. Box 691 / Saint Regis, MT 59866</td></tr>
+    <tr><td class="label">Address card — contact email</td><td class="limit">1 line</td><td class="copy">connect@russellcleveland.org</td></tr>
+    <tr><td class="label">FEC disclosure</td><td class="limit">22–28 words · mono</td><td class="copy">Paid for by Cleveland for Congress · FEC ID C00902395. Not authorized by any candidate or candidate’s committee other than Cleveland for Congress.</td></tr>
+    <tr><td class="label">Watermark text (background)</td><td class="limit">3 words · ALL CAPS</td><td class="copy">THE MONTANA WAY</td></tr>
+  </table>
+</section>
+
+<!-- ====================== ABOUT ====================== -->
+<section class="page-break" id="about">
+  <h2>2. About · <em class="acc">/about</em></h2>
+  <div class="page-card">
+    <p class="meta"><strong>Sections:</strong> Hero (dark) → Loss → Roots → Service → Why → Pledge band (dark).</p>
+  </div>
+
+  <h3>2.1 · About Hero (dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3–5 words</td><td class="copy">— About · MT-01 · 2026</td></tr>
+    <tr><td class="label">H1 display (huge)</td><td class="limit">3–5 words</td><td class="copy">From Montana, <em>For Montana</em>.</td></tr>
+    <tr><td class="label">Lede paragraph</td><td class="limit">38–48 words · 1–2 sentences</td><td class="copy">Russ Cleveland is a father, coach, finance professional, and child care expert who grew up on a small farm in Stevensville, Montana. He is also a proud U.S. Navy veteran who deeply values the oath he once took to defend our constitution.</td></tr>
+    <tr><td class="label">Portrait caption — eyebrow</td><td class="limit">2 words</td><td class="copy">— Stevensville, MT</td></tr>
+    <tr><td class="label">Portrait caption — name</td><td class="limit">2 words</td><td class="copy">Russ Cleveland</td></tr>
+    <tr><td class="label">Portrait caption — italic line</td><td class="limit">5–7 words</td><td class="copy">Candidate · U.S. House, MT-01</td></tr>
+    <tr><td class="label">Paper stamp</td><td class="limit">3–4 words</td><td class="copy">Navy Veteran · Est. ’25</td></tr>
+  </table>
+
+  <h4>About hero image</h4>
+  <table class="img">
+    <tr><th>Slot</th><th>Render width × height</th><th>Aspect</th><th>Keywords</th></tr>
+    <tr>
+      <td>Arched portrait (right column)</td>
+      <td>≈ 460 × 575 px (mobile) · ≈ 540 × 675 px (desktop)</td>
+      <td>4 / 5 portrait, arched mask (240px top corners)</td>
+      <td><span class="kw">candidate official portrait</span><span class="kw">Russ Cleveland Stevensville</span><span class="kw">Montana ranch backdrop</span><span class="kw">documentary candidate</span><span class="kw">veteran father seven</span></td>
+    </tr>
+  </table>
+
+  <h3>2.2 · Story sections (4 alternating bands)</h3>
+  <p class="small">Each section is a sticky-eyebrow + body block. Eyebrow + H2 left (col-span-4), body right (col-span-8). Alternating order on tablet.</p>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section 01 — eyebrow</td><td class="limit">2 words</td><td class="copy">— 01 · Loss</td></tr>
+    <tr><td class="label">Section 01 — H2</td><td class="limit">4–5 words</td><td class="copy">A mission driven by loss</td></tr>
+    <tr><td class="label">Section 01 — body</td><td class="limit">42–55 words</td><td class="copy">Russ lost his oldest daughter, Madison, to leukemia at the age of thirteen. That loss drives this campaign. No parent should ever have to watch their child fight a deadly disease in a system rigged against them.</td></tr>
+    <tr><td class="label">Section 02 — eyebrow</td><td class="limit">2 words</td><td class="copy">— 02 · Roots</td></tr>
+    <tr><td class="label">Section 02 — H2</td><td class="limit">5–7 words</td><td class="copy">From a small farm in Stevensville</td></tr>
+    <tr><td class="label">Section 02 — body</td><td class="limit">38–50 words</td><td class="copy">Russ grew up on a small farm in Stevensville, Montana, with a deep respect for hard work and community. He is a father of seven, a coach, a finance professional, and a child care expert.</td></tr>
+    <tr><td class="label">Section 03 — eyebrow</td><td class="limit">2 words</td><td class="copy">— 03 · Service</td></tr>
+    <tr><td class="label">Section 03 — H2</td><td class="limit">4–5 words</td><td class="copy">Service to our country</td></tr>
+    <tr><td class="label">Section 03 — body</td><td class="limit">48–60 words</td><td class="copy">Russ is a proud U.S. Navy veteran who deeply values the oath he once took to defend our constitution. That experience taught him what it means to be accountable to something larger than himself, a value that has guided his life ever since.</td></tr>
+    <tr><td class="label">Section 04 — eyebrow</td><td class="limit">2 words</td><td class="copy">— 04 · Why</td></tr>
+    <tr><td class="label">Section 04 — H2</td><td class="limit">2 words</td><td class="copy">Why Congress?</td></tr>
+    <tr><td class="label">Section 04 — body</td><td class="limit">85–105 words</td><td class="copy">Russ is committed to a campaign that isn’t about right versus left, but instead top versus bottom. His campaign is focused on fixing the things that negatively impact all Montanans: Healthcare, Affordability, and Corruption. This fight ahead is for the land we grew up on, the people who raised us, and the children who’ll inherit what we leave behind. For Russ, this campaign is for Montana’s rural towns as much as it is for the blue cities.</td></tr>
+  </table>
+  <div class="note"><strong>No images</strong> in the four story bands — keep them text-driven so they remain quick to update without an art-direction round.</div>
+
+  <h3>2.3 · Pledge band (closing CTA)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— 05 · The pledge</td></tr>
+    <tr><td class="label">H2 (huge)</td><td class="limit">3–5 words</td><td class="copy">Not bought. <em>Not backing down.</em></td></tr>
+    <tr><td class="label">Body</td><td class="limit">18–26 words</td><td class="copy">Russ is the best choice for Montana because he is "NOT BOUGHT. NOT BACKING DOWN."</td></tr>
+    <tr><td class="label">Primary CTA</td><td class="limit">2–3 words</td><td class="copy">Join the movement</td></tr>
+    <tr><td class="label">Secondary CTA</td><td class="limit">2 words</td><td class="copy">Chip in</td></tr>
+    <tr><td class="label">Watermark text</td><td class="limit">2 words · ALL CAPS</td><td class="copy">NOT BOUGHT.</td></tr>
+  </table>
+</section>
+
+<!-- ====================== VOLUNTEER ====================== -->
+<section class="page-break" id="volunteer">
+  <h2>3. Volunteer / Join the Movement · <em class="acc">/volunteer</em></h2>
+  <div class="page-card">
+    <p class="meta"><strong>Sections:</strong> Hero (dark) → Sign-up form → Four ways to help → Donor disclosure → Final CTA bar.</p>
+  </div>
+
+  <h3>3.1 · Volunteer Hero (dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— Join the movement</td></tr>
+    <tr><td class="label">H1 (massive)</td><td class="limit">3–4 words</td><td class="copy">The time is <em>now</em>.</td></tr>
+    <tr><td class="label">Lede</td><td class="limit">22–30 words</td><td class="copy">Join the Cleveland for Congress grassroots movement by donating, volunteering and then joining our mailing and events list.</td></tr>
+    <tr><td class="label">Watermark text</td><td class="limit">4 words · ALL CAPS</td><td class="copy">THE TIME IS NOW</td></tr>
+  </table>
+
+  <h3>3.2 · Sign-up form section</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">2 words</td><td class="copy">— Sign up</td></tr>
+    <tr><td class="label">H2</td><td class="limit">5–7 words</td><td class="copy">Tell us how you want to <em>help</em>.</td></tr>
+    <tr><td class="label">Sub-lede</td><td class="limit">14–20 words</td><td class="copy">Join our mailing and events list, and let us know how you’d like to pitch in.</td></tr>
+  </table>
+  <p class="small">Form fields: see <strong>§12 Form-field copy reference · Volunteer signup</strong> at the end of this brief.</p>
+
+  <h3>3.3 · Four ways to help</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">4 words</td><td class="copy">— Four ways to help</td></tr>
+    <tr><td class="label">Section H2</td><td class="limit">5–7 words</td><td class="copy">Donate. Volunteer. Join the <em>list</em>.</td></tr>
+    <tr><td class="label">Card 1 — title</td><td class="limit">1 word</td><td class="copy">Donate</td></tr>
+    <tr><td class="label">Card 1 — body</td><td class="limit">18–24 words</td><td class="copy">Every dollar comes from a person with a name. No corporate PAC, no AIPAC, no special interest money.</td></tr>
+    <tr><td class="label">Card 1 — CTA</td><td class="limit">1 word</td><td class="copy">Donate</td></tr>
+    <tr><td class="label">Card 2 — title</td><td class="limit">1 word</td><td class="copy">Volunteer</td></tr>
+    <tr><td class="label">Card 2 — body</td><td class="limit">14–22 words</td><td class="copy">Help us reach Montanans in every county. Sign up with the form above to join the field team.</td></tr>
+    <tr><td class="label">Card 2 — CTA</td><td class="limit">2 words</td><td class="copy">Sign up</td></tr>
+    <tr><td class="label">Card 3 — title</td><td class="limit">5–7 words</td><td class="copy">Join the mailing &amp; events list</td></tr>
+    <tr><td class="label">Card 3 — body</td><td class="limit">12–18 words</td><td class="copy">Get event notifications, campaign updates, and early invites in your inbox.</td></tr>
+    <tr><td class="label">Card 3 — CTA</td><td class="limit">1 word</td><td class="copy">Subscribe</td></tr>
+    <tr><td class="label">Card 4 — title</td><td class="limit">4 words</td><td class="copy">View the event calendar</td></tr>
+    <tr><td class="label">Card 4 — body</td><td class="limit">14–22 words</td><td class="copy">See where Russ will be next — town halls, meet &amp; greets, and community events across Montana.</td></tr>
+    <tr><td class="label">Card 4 — CTA</td><td class="limit">2 words</td><td class="copy">View calendar</td></tr>
+  </table>
+
+  <h3>3.4 · Donor disclosure</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">2 words</td><td class="copy">— Donor disclosure</td></tr>
+    <tr><td class="label">H2</td><td class="limit">5–7 words</td><td class="copy">By sending a contribution, <em>you confirm that</em>:</td></tr>
+    <tr><td class="label">Rule 01</td><td class="limit">18–28 words</td><td class="copy">You are a U.S. citizen or lawfully admitted permanent resident (green card holder).</td></tr>
+    <tr><td class="label">Rule 02</td><td class="limit">18–28 words</td><td class="copy">The contribution is made from your own personal funds and is not being provided by another person or entity.</td></tr>
+    <tr><td class="label">Rule 03</td><td class="limit">≤ 8 words</td><td class="copy">You are at least 18 years old.</td></tr>
+    <tr><td class="label">Rule 04</td><td class="limit">≤ 8 words</td><td class="copy">You are not a federal contractor.</td></tr>
+    <tr><td class="label">Rule 05</td><td class="limit">10–14 words</td><td class="copy">You are not using corporate, business, or foreign national funds.</td></tr>
+    <tr><td class="label">Rule 06</td><td class="limit">22–32 words</td><td class="copy">If you are an American living abroad, you are making this contribution while physically located in the United States.</td></tr>
+  </table>
+
+  <h3>3.5 · Final CTA bar (dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Body (oversize)</td><td class="limit">5–7 words</td><td class="copy">Already in? <em>Chip in a dollar.</em></td></tr>
+    <tr><td class="label">Primary CTA</td><td class="limit">1 word</td><td class="copy">Donate</td></tr>
+    <tr><td class="label">Secondary CTA</td><td class="limit">2 words</td><td class="copy">See events</td></tr>
+  </table>
+  <p class="small">No images on this page.</p>
+</section>
+
+<!-- ====================== EVENTS ====================== -->
+<section class="page-break" id="events">
+  <h2>4. Events page · <em class="acc">/events</em></h2>
+  <div class="page-card">
+    <p class="meta">Static page chrome only. The actual event entries (titles, dates, venues, descriptions) are pulled in dynamically and live in <span class="mono">src/constants/events.js</span> — they are not part of this content brief.</p>
+  </div>
+
+  <h3>4.1 · Events Hero (paper)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— Events</td></tr>
+    <tr><td class="label">H1</td><td class="limit">3–5 words</td><td class="copy">Where Russ will <em>be</em>.</td></tr>
+    <tr><td class="label">Lede</td><td class="limit">14–22 words</td><td class="copy">In person. On the record. Town halls, meet &amp; greets, and community events across Montana.</td></tr>
+    <tr><td class="label">Primary CTA</td><td class="limit">3–5 words</td><td class="copy">Subscribe on Google Calendar</td></tr>
+    <tr><td class="label">Secondary CTA</td><td class="limit">5–6 words</td><td class="copy">Host an event in your county</td></tr>
+  </table>
+
+  <h3>4.2 · Upcoming events — section header (chrome only)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Section eyebrow</td><td class="limit">1 word</td><td class="copy">— Upcoming</td></tr>
+    <tr><td class="label">Section H2</td><td class="limit">3–5 words</td><td class="copy">Next on the <em>road</em>.</td></tr>
+    <tr><td class="label">Counter (mono, dynamic)</td><td class="limit">≤ 4 words</td><td class="copy">N events scheduled</td></tr>
+  </table>
+  <p class="small">No images. Individual event cards below this header render dynamically and are not included in this brief.</p>
+</section>
+
+<!-- ====================== ASK RUSS ====================== -->
+<section class="page-break" id="ask">
+  <h2>5. Ask Russ · <em class="acc">/ask</em></h2>
+
+  <h3>5.1 · Ask Hero (dark)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">2 words</td><td class="copy">— Ask Russ</td></tr>
+    <tr><td class="label">H1 (massive)</td><td class="limit">2–4 words</td><td class="copy">On the <em>record</em>.</td></tr>
+    <tr><td class="label">Lede</td><td class="limit">22–30 words</td><td class="copy">Ask Russ a question. Every one reaches the team directly — nothing massaged, nothing poll-tested.</td></tr>
+    <tr><td class="label">Watermark text</td><td class="limit">4 words · ALL CAPS · italic accent allowed</td><td class="copy">ASK RUSS <em>on the record</em></td></tr>
+  </table>
+
+  <h3>5.2 · Submit a question section</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— Submit a question</td></tr>
+    <tr><td class="label">H2</td><td class="limit">4–6 words</td><td class="copy">Got one we haven’t <em>answered</em>?</td></tr>
+    <tr><td class="label">Sub-lede</td><td class="limit">22–32 words</td><td class="copy">Submit it here. Russ reads them directly and answers the most common ones at town halls across Montana.</td></tr>
+    <tr><td class="label">Success state — eyebrow</td><td class="limit">2 words</td><td class="copy">— Question received</td></tr>
+    <tr><td class="label">Success state — heading</td><td class="limit">3–5 words</td><td class="copy">Thanks for reaching out.</td></tr>
+    <tr><td class="label">Success state — body</td><td class="limit">14–22 words</td><td class="copy">Russ reads every question. The team may follow up directly if we need more context.</td></tr>
+  </table>
+  <p class="small">No images. Form fields: see <strong>§10 · Issue / Ask form</strong>.</p>
+</section>
+
+<!-- ====================== CONTACT ====================== -->
+<section class="page-break" id="contact">
+  <h2>6. Contact · <em class="acc">/contact</em></h2>
+  <div class="page-card">
+    <p class="meta"><strong>Sections:</strong> Hero (paper) + Direct contact card → Send-a-message form → Social.</p>
+  </div>
+
+  <h3>6.1 · Contact Hero</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— Contact</td></tr>
+    <tr><td class="label">H1</td><td class="limit">3–5 words</td><td class="copy">Drop a line. <em>We answer.</em></td></tr>
+    <tr><td class="label">Lede</td><td class="limit">18–26 words</td><td class="copy">Questions, story tips, press requests, or just saying hello — email us at the addresses below.</td></tr>
+    <tr><td class="label">Direct card — eyebrow</td><td class="limit">1 word</td><td class="copy">— Direct</td></tr>
+    <tr><td class="label">General label</td><td class="limit">1 word</td><td class="copy">— General</td></tr>
+    <tr><td class="label">General email</td><td class="limit">1 line</td><td class="copy">connect@russellcleveland.org</td></tr>
+    <tr><td class="label">Press label</td><td class="limit">1 word</td><td class="copy">— Press</td></tr>
+    <tr><td class="label">Press email</td><td class="limit">1 line</td><td class="copy">press@russellcleveland.org</td></tr>
+    <tr><td class="label">Mailing label</td><td class="limit">2 words</td><td class="copy">— Mailing address</td></tr>
+    <tr><td class="label">Mailing address</td><td class="limit">3 lines · ≤ 12 words</td><td class="copy">Cleveland for Congress / P.O. Box 691 / Saint Regis, MT 59866</td></tr>
+  </table>
+
+  <h3>6.2 · Send-a-message section</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">3 words</td><td class="copy">— Send a message</td></tr>
+    <tr><td class="label">H2</td><td class="limit">6–8 words</td><td class="copy">Tell us what’s on your <em>mind</em>.</td></tr>
+    <tr><td class="label">Sub-lede</td><td class="limit">22–32 words</td><td class="copy">Press requests, event hosting, story tips, or policy questions — use the form or email us directly.</td></tr>
+    <tr><td class="label">Success state — eyebrow</td><td class="limit">2 words</td><td class="copy">— Message sent</td></tr>
+    <tr><td class="label">Success state — heading</td><td class="limit">3–4 words</td><td class="copy">Thanks for reaching out.</td></tr>
+    <tr><td class="label">Success state — body</td><td class="limit">14–22 words</td><td class="copy">We read every message. Someone from the team will follow up as soon as we can.</td></tr>
+  </table>
+
+  <h3>6.3 · Social section</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— Social</td></tr>
+    <tr><td class="label">H2</td><td class="limit">3 words</td><td class="copy">Follow the <em>road</em>.</td></tr>
+    <tr><td class="label">Card label (each, ×6)</td><td class="limit">1–2 words</td><td class="copy">Instagram · Facebook · TikTok · X / Twitter · YouTube · Bluesky</td></tr>
+  </table>
+  <p class="small">No images. Tile decoration is an arrow → glyph that ochres on hover.</p>
+</section>
+
+<!-- ====================== TERMS ====================== -->
+<section class="page-break" id="terms">
+  <h2>7. Terms &amp; Conditions · <em class="acc">/terms-and-conditions</em></h2>
+
+  <h3>7.1 · Hero band</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— Legal</td></tr>
+    <tr><td class="label">H1</td><td class="limit">3 words</td><td class="copy">Terms &amp; <em>Conditions</em>.</td></tr>
+    <tr><td class="label">Sub-lede</td><td class="limit">≤ 8 words</td><td class="copy">Russ Cleveland for Congress ’26.</td></tr>
+  </table>
+
+  <h3>7.2 · Privacy callout block</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Callout body (legal)</td><td class="limit">42–55 words</td><td class="copy">PRIVACY POLICY: No mobile information will be shared by us with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</td></tr>
+  </table>
+
+  <h3>7.3 · Opt-in intro paragraph</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Intro paragraph</td><td class="limit">42–55 words</td><td class="copy">By requesting, joining, agreeing to, enrolling in, signing up for, acknowledging, or otherwise consenting to receive one or more text messages from Cleveland for U.S. Congress through messaging platform of www.russcleveland.org ("Platform"), you accept these Terms &amp; Conditions ("Opt-In").</td></tr>
+  </table>
+
+  <h3>7.4 · Section 01 · Opting In</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— 01</td></tr>
+    <tr><td class="label">H2</td><td class="limit">2 words</td><td class="copy">Opting <em>In</em>.</td></tr>
+    <tr><td class="label">Item 01</td><td class="limit">90–120 words · 1 paragraph</td><td class="copy">You authorize Sender to use auto dialer or non-auto dialer technology … you do not have to Opt-In as a condition of purchase.</td></tr>
+    <tr><td class="label">Item 02</td><td class="limit">28–40 words</td><td class="copy">You confirm that you are the subscriber to the relevant phone number or that you are the customary user of that number on a family or business plan and that you are authorized to Opt-In.</td></tr>
+    <tr><td class="label">Item 03</td><td class="limit">≤ 16 words</td><td class="copy">You consent to the use of an electronic record to document your Opt-In.</td></tr>
+    <tr><td class="label">Item 04</td><td class="limit">28–40 words</td><td class="copy">You agree that, in addition to the main messages that Sender may provide, you may receive one or more welcome messages or administrative messages, such as (in some cases) a request to confirm your Opt-In.</td></tr>
+  </table>
+
+  <h3>7.5 · Section 02 · About the Text Message Services and Opting Out</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— 02</td></tr>
+    <tr><td class="label">H2</td><td class="limit">7–9 words</td><td class="copy">About the Text Message Services and <em>Opting Out</em>.</td></tr>
+    <tr><td class="label">Item 01 (rates)</td><td class="limit">55–75 words</td><td class="copy">Message and data rates may apply. You must have a wireless device of your own, capable of two-way messaging … Check your phone capabilities for specific text messaging instructions.</td></tr>
+    <tr><td class="label">Item 02 (frequency / termination)</td><td class="limit">75–95 words</td><td class="copy">Unless otherwise noted, Sender may send multiple, recurring messages and frequency may vary … Your opt-out request will generate a confirmation text.</td></tr>
+    <tr><td class="label">Item 03 (privacy link)</td><td class="limit">22–30 words</td><td class="copy">You consent to the handling of your information as described in our Privacy Policy [LINK]. To contact Sender customer service, at [CONTACT].</td></tr>
+    <tr><td class="label">Item 04 (STOP / opt-out methods)</td><td class="limit">95–125 words</td><td class="copy">You may text STOP, END, CANCEL, UNSUBSCRIBE, or QUIT to opt-out … These Terms &amp; Conditions still will apply if you withdraw the consent mentioned above.</td></tr>
+    <tr><td class="label">Item 05 (paper copy / contact)</td><td class="limit">35–48 words</td><td class="copy">To request a free paper or email copy of the Opt-In, or to update our records with your contact information, or receive help with any messages, please contact us at [CONTACT]. Minimum technology requirements may apply for electronic records.</td></tr>
+    <tr><td class="label">Item 06 (age gate)</td><td class="limit">110–140 words</td><td class="copy">You may not use or engage with the Platform if you are under thirteen (13) years of age … you are permitted by your jurisdiction’s applicable laws, rules, and regulations to use and/or engage with the Platform.</td></tr>
+  </table>
+
+  <h3>7.6 · Footer block</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Copyright line</td><td class="limit">≤ 12 words</td><td class="copy">© 2026 Cleveland for Congress ’26. All Rights Reserved</td></tr>
+    <tr><td class="label">FEC line</td><td class="limit">≤ 8 words</td><td class="copy">Paid for by Cleveland for Congress, ID C00902395</td></tr>
+    <tr><td class="label">Address (3 lines)</td><td class="limit">≤ 10 words</td><td class="copy">P.O. Box 691 / Saint Regis, MT 59866 / connect@russellcleveland.org</td></tr>
+  </table>
+  <p class="small">No images on this page.</p>
+</section>
+
+<!-- ====================== PRIVACY ====================== -->
+<section class="page-break" id="privacy">
+  <h2>8. Privacy Policy · <em class="acc">/privacy-policy</em></h2>
+
+  <h3>8.1 · Hero band</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow</td><td class="limit">1 word</td><td class="copy">— Legal</td></tr>
+    <tr><td class="label">H1</td><td class="limit">2 words</td><td class="copy">Privacy <em>Policy</em>.</td></tr>
+    <tr><td class="label">Last-updated stamp</td><td class="limit">≤ 6 words</td><td class="copy">Last Updated · April 23, 2026</td></tr>
+  </table>
+
+  <h3>8.2 · Intro</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Intro paragraph</td><td class="limit">38–50 words</td><td class="copy">Cleveland for Congress ("the Campaign," "we," "us," or "our") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and safeguard your personal information when you visit our website or interact with our campaign.</td></tr>
+  </table>
+
+  <h3>8.3 · I · Information we collect</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 4 words</td><td class="copy">— I / Information we <em>collect</em>.</td></tr>
+    <tr><td class="label">Item 1 — label / body</td><td class="limit">2 words / 18–24 words</td><td class="copy">Contact Information — Name, email address, phone number, and mailing address you voluntarily provide through forms on our website.</td></tr>
+    <tr><td class="label">Item 2 — label / body</td><td class="limit">2 words / ≤ 16 words</td><td class="copy">Volunteer Preferences — Information about how you’d like to support the campaign.</td></tr>
+    <tr><td class="label">Item 3 — label / body</td><td class="limit">2 words / 28–38 words</td><td class="copy">Donation Information — Records of donations made through third-party payment platforms (ActBlue). We do not directly process or store payment card information.</td></tr>
+    <tr><td class="label">Item 4 — label / body</td><td class="limit">2 words / 28–38 words</td><td class="copy">Usage Data — Non-personal information such as browser type, device type, pages visited, and time spent on our site, collected through standard analytics tools.</td></tr>
+  </table>
+
+  <h3>8.4 · II · How we use your information</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 5 words</td><td class="copy">— II / How we <em>use</em> your information.</td></tr>
+    <tr><td class="label">Use 01</td><td class="limit">14–20 words</td><td class="copy">To communicate with you about campaign news, events, and volunteer opportunities.</td></tr>
+    <tr><td class="label">Use 02</td><td class="limit">14–20 words</td><td class="copy">To send you text messages and calls if you have opted in to receive them.</td></tr>
+    <tr><td class="label">Use 03</td><td class="limit">≤ 8 words</td><td class="copy">To process and acknowledge donations.</td></tr>
+    <tr><td class="label">Use 04</td><td class="limit">≤ 12 words</td><td class="copy">To comply with applicable campaign finance reporting requirements.</td></tr>
+    <tr><td class="label">Use 05</td><td class="limit">≤ 12 words</td><td class="copy">To improve our website and campaign outreach efforts.</td></tr>
+  </table>
+
+  <h3>8.5 · III · Text messaging &amp; TCPA consent</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 4–6 words</td><td class="copy">— III / Text messaging &amp; <em>TCPA consent</em>.</td></tr>
+    <tr><td class="label">Body paragraph</td><td class="limit">75–95 words</td><td class="copy">By providing your phone number and checking the consent box on our forms, you expressly consent to receive recurring autodialed or prerecorded calls and text messages from Cleveland for Congress at the phone number you provided. Message and data rates may apply. Message frequency varies. You may opt out at any time by replying STOP to any message. Consent is not a condition of any purchase, donation, or volunteering.</td></tr>
+  </table>
+
+  <h3>8.6 · IV · Information sharing</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 2 words</td><td class="copy">— IV / Information <em>sharing</em>.</td></tr>
+    <tr><td class="label">Para 1</td><td class="limit">≤ 16 words</td><td class="copy">We do not sell, rent, or trade your personal information to third parties.</td></tr>
+    <tr><td class="label">Para 2</td><td class="limit">28–38 words</td><td class="copy">Text Messaging Opt-In Data: We will not share or sell your text messaging opt-in data, consent, or related personal information with any third parties, unless required by law.</td></tr>
+    <tr><td class="label">Para 3</td><td class="limit">38–48 words</td><td class="copy">We may share your information with trusted service providers who assist us in operating our website and conducting campaign activities, subject to confidentiality obligations. We may also disclose information as required by law, including campaign finance disclosure requirements.</td></tr>
+  </table>
+
+  <h3>8.7 · V · Data security</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 2 words</td><td class="copy">— V / Data <em>security</em>.</td></tr>
+    <tr><td class="label">Body</td><td class="limit">38–52 words</td><td class="copy">We implement reasonable administrative, technical, and physical safeguards to protect your personal information. However, no method of transmission over the Internet or electronic storage is completely secure, and we cannot guarantee absolute security.</td></tr>
+  </table>
+
+  <h3>8.8 · VI · Your rights</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 2 words</td><td class="copy">— VI / Your <em>rights</em>.</td></tr>
+    <tr><td class="label">Lead-in</td><td class="limit">≤ 6 words</td><td class="copy">You have the right to:</td></tr>
+    <tr><td class="label">Right 01</td><td class="limit">10–14 words</td><td class="copy">Request access to the personal information we hold about you.</td></tr>
+    <tr><td class="label">Right 02</td><td class="limit">10–14 words</td><td class="copy">Request correction or deletion of your personal information.</td></tr>
+    <tr><td class="label">Right 03</td><td class="limit">18–26 words</td><td class="copy">Opt out of receiving communications at any time by contacting us or replying STOP to text messages.</td></tr>
+  </table>
+
+  <h3>8.9 · VII · Contact us</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Eyebrow / H2</td><td class="limit">1 word / 2 words</td><td class="copy">— VII / Contact <em>us</em>.</td></tr>
+    <tr><td class="label">Lead-in</td><td class="limit">14–22 words</td><td class="copy">If you have questions about this Privacy Policy or your personal information, please contact us at:</td></tr>
+    <tr><td class="label">Address block</td><td class="limit">3 lines + email</td><td class="copy">Cleveland for Congress / P.O. Box 691 / Saint Regis, MT 59866 / connect@russellcleveland.org</td></tr>
+  </table>
+  <p class="small">No images on this page.</p>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<section class="page-break" id="footer">
+  <h2>9. Site-wide · <em class="acc">Footer</em></h2>
+
+  <h3>9.1 · Logo + tagline column</h3>
+  <table class="img">
+    <tr><th>Slot</th><th>Render width × height</th><th>Asset</th><th>Keywords</th></tr>
+    <tr>
+      <td>Footer logo</td>
+      <td>96 × 57 px (mobile) · 110 × 65 px (md) · 120 × 71 px (lg)</td>
+      <td>1060 × 630 px · <span class="mono">mt-us-house-logo.webp</span></td>
+      <td><span class="kw">cleveland congress logo</span><span class="kw">mt-01 wordmark</span></td>
+    </tr>
+  </table>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Italic tagline</td><td class="limit">3–5 words</td><td class="copy">Independent spirit, democratic values.</td></tr>
+    <tr><td class="label">Primary CTA (rust)</td><td class="limit">2 words</td><td class="copy">Chip in</td></tr>
+    <tr><td class="label">Secondary CTA</td><td class="limit">3 words</td><td class="copy">Join the movement</td></tr>
+  </table>
+
+  <h3>9.2 · Link columns (3)</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Column 1 label</td><td class="limit">1 word</td><td class="copy">— Campaign</td></tr>
+    <tr><td class="label">Col 1 links</td><td class="limit">1–2 words each</td><td class="copy">About Russ · Events · Join Movement</td></tr>
+    <tr><td class="label">Column 2 label</td><td class="limit">1 word</td><td class="copy">— Give</td></tr>
+    <tr><td class="label">Col 2 links</td><td class="limit">1 word each</td><td class="copy">Donate · Store</td></tr>
+    <tr><td class="label">Column 3 label</td><td class="limit">1 word</td><td class="copy">— Connect</td></tr>
+    <tr><td class="label">Col 3 links</td><td class="limit">1–2 words each</td><td class="copy">Email · Instagram · Facebook · TikTok · X / Twitter · YouTube</td></tr>
+    <tr><td class="label">Right-rail link 1</td><td class="limit">2 words</td><td class="copy">Ask Russ</td></tr>
+    <tr><td class="label">Right-rail link 2</td><td class="limit">1 word</td><td class="copy">Contact</td></tr>
+  </table>
+
+  <h3>9.3 · Legal sub-band</h3>
+  <table class="spec">
+    <tr><th>Slot</th><th>Word limit</th><th>Current copy</th></tr>
+    <tr><td class="label">FEC + address line</td><td class="limit">28–34 words</td><td class="copy">Paid for by Cleveland for Congress · FEC ID C00902395 · P.O. Box 691, Saint Regis, MT 59866. Not authorized by any candidate or candidate’s committee other than Cleveland for Congress.</td></tr>
+    <tr><td class="label">Terms link</td><td class="limit">2 words</td><td class="copy">Terms &amp; Conditions</td></tr>
+    <tr><td class="label">Privacy link</td><td class="limit">2 words</td><td class="copy">Privacy Policy</td></tr>
+    <tr><td class="label">Copyright</td><td class="limit">≤ 8 words</td><td class="copy">© 2026 Cleveland for Congress ’26</td></tr>
+    <tr><td class="label">Powered by</td><td class="limit">≤ 4 words</td><td class="copy">Powered by Operation 1776</td></tr>
+  </table>
+</section>
+
+<!-- ====================== FORMS REFERENCE ====================== -->
+<section class="page-break" id="forms">
+  <h2>10. Form-field copy reference</h2>
+  <p class="lede">Every form on the site uses the shared <strong>FormField</strong> component (mono uppercase label, paper-bg input, 4px radius, ochre focus ring). Word limits below cover labels, placeholders, helper text, success/error states.</p>
+
+  <h3>10.1 · Contact form (/contact)</h3>
+  <table class="spec">
+    <tr><th>Field</th><th>Label / placeholder limit</th><th>Current copy</th></tr>
+    <tr><td class="label">First name (required)</td><td class="limit">2 words / 2 words</td><td class="copy">Label: First name · Placeholder: First name</td></tr>
+    <tr><td class="label">Last name (required)</td><td class="limit">2 words / 2 words</td><td class="copy">Label: Last name · Placeholder: Last name</td></tr>
+    <tr><td class="label">Email (required)</td><td class="limit">1 word / 1 line</td><td class="copy">Label: Email · Placeholder: you@email.com</td></tr>
+    <tr><td class="label">Phone (optional)</td><td class="limit">2 words / 1 line</td><td class="copy">Label: Phone (optional) · Placeholder: +1 (406) 555-0123</td></tr>
+    <tr><td class="label">Message (required, textarea 5 rows)</td><td class="limit">1 word / 12–18 words</td><td class="copy">Label: Message · Placeholder: Press request, event hosting, story tip, or a question for Russ…</td></tr>
+    <tr><td class="label">SMS Updates consent</td><td class="limit">A2P required · ~50 words</td><td class="copy">By checking this box, I consent to receive campaign updates from Cleveland for Congress via automated text messages at the phone number provided. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help. View our Privacy Policy and Terms of Service.</td></tr>
+    <tr><td class="label">SMS Promo consent</td><td class="limit">A2P required · ~45 words</td><td class="copy">By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.</td></tr>
+    <tr><td class="label">Submit button</td><td class="limit">2 words</td><td class="copy">Send message (loading: Sending…)</td></tr>
+  </table>
+
+  <h3>10.2 · Volunteer signup (/volunteer)</h3>
+  <table class="spec">
+    <tr><th>Field</th><th>Label limit</th><th>Current copy</th></tr>
+    <tr><td class="label">First / Last name (required)</td><td class="limit">2 words each</td><td class="copy">First name · Last name</td></tr>
+    <tr><td class="label">Email (required)</td><td class="limit">1 word</td><td class="copy">Email · placeholder you@email.com</td></tr>
+    <tr><td class="label">Phone (optional)</td><td class="limit">2 words</td><td class="copy">Phone (optional) · placeholder +1 (406) 555-0123</td></tr>
+    <tr><td class="label">ZIP code (optional)</td><td class="limit">2 words</td><td class="copy">ZIP code (optional) · placeholder 59866</td></tr>
+    <tr><td class="label">County select (optional)</td><td class="limit">2 words</td><td class="copy">County (optional) · 36 Montana counties</td></tr>
+    <tr><td class="label">Region select (required)</td><td class="limit">1 word</td><td class="copy">Region · 6 options (Western, Central, Eastern, North-central, Southwest, Tribal Nations — current data)</td></tr>
+    <tr><td class="label">Registered voter (required)</td><td class="limit">5 words</td><td class="copy">Registered to vote in Montana? · Yes / No</td></tr>
+    <tr><td class="label">Campaign experience (required)</td><td class="limit">3 words</td><td class="copy">Prior campaign experience · 6 levels</td></tr>
+    <tr><td class="label">"How would you like to help?" — fieldset legend</td><td class="limit">5 words</td><td class="copy">How would you like to help? *</td></tr>
+    <tr><td class="label">Help options (multi-check)</td><td class="limit">2–4 words each</td><td class="copy">Host a Fundraiser · Phone Banking · Volunteer Coordination · Digital/Social Media · Door Knocking · Host a Meet &amp; Greet · Event Planning · Media</td></tr>
+    <tr><td class="label">Availability (required)</td><td class="limit">1 word</td><td class="copy">Availability · 6 options</td></tr>
+    <tr><td class="label">Issues (required, textarea 3 rows)</td><td class="limit">7 words</td><td class="copy">What issue(s) matter most to you? · Placeholder: Healthcare, affordability, public lands — whatever drives you.</td></tr>
+    <tr><td class="label">Anything else (optional, textarea 3 rows)</td><td class="limit">5 words</td><td class="copy">Anything else to share? (optional) · Placeholder: Skills, schedule quirks, questions — anything helpful.</td></tr>
+    <tr><td class="label">Submit button</td><td class="limit">3 words</td><td class="copy">Sign me up (loading: Signing you up…)</td></tr>
+    <tr><td class="label">Success eyebrow / heading / body</td><td class="limit">2 / 3 / 14 words</td><td class="copy">— You’re in / Welcome to the movement. / A team member will follow up shortly with next steps in your region.</td></tr>
+  </table>
+
+  <h3>10.3 · Issue / Ask Russ form (/ask)</h3>
+  <table class="spec">
+    <tr><th>Field</th><th>Label limit</th><th>Current copy</th></tr>
+    <tr><td class="label">Full name (required)</td><td class="limit">2 words</td><td class="copy">Label: Full name · Placeholder: Full name</td></tr>
+    <tr><td class="label">Email (required)</td><td class="limit">1 word</td><td class="copy">Email · you@email.com</td></tr>
+    <tr><td class="label">Phone (optional)</td><td class="limit">2 words</td><td class="copy">Phone (optional) · +1 (406) 555-0123</td></tr>
+    <tr><td class="label">Category (required)</td><td class="limit">1 word</td><td class="copy">Category · uses ISSUE_CATEGORIES list</td></tr>
+    <tr><td class="label">Location (optional)</td><td class="limit">2 words</td><td class="copy">Location (optional) · placeholder County, town, or neighborhood</td></tr>
+    <tr><td class="label">Subject (required)</td><td class="limit">1 word</td><td class="copy">Subject · placeholder e.g., Wage stagnation in the Bitterroot</td></tr>
+    <tr><td class="label">Question (required, textarea 6 rows)</td><td class="limit">4 words</td><td class="copy">Your question or story · placeholder Tell the story in your own words. We read every one.</td></tr>
+    <tr><td class="label">Submit button</td><td class="limit">2 words</td><td class="copy">Submit question (loading: Submitting…)</td></tr>
+  </table>
+
+  <div class="note"><strong>Form legal line</strong> appears below every form's submit button. Word limit ≈ 28–36 words. Current copy: "By submitting this form, you agree to our Terms &amp; Conditions and Privacy Policy. We will only contact you about this campaign and you can unsubscribe at any time."</div>
+</section>
+
+<footer class="footer-band">
+  Paid for by Cleveland for Congress · FEC ID C00902395 · P.O. Box 691, Saint Regis, MT 59866 · Generated content brief, internal use.
+</footer>
+
+</body>
+</html>

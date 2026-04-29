@@ -9,30 +9,27 @@ import MagneticButton from '@/components/ui/magnetic-button'
 
 const NAV_LINKS = [
   { href: '/about', label: 'About' },
+  { href: '/elections', label: 'Elections' },
   { href: '/events', label: 'Events' },
-  { href: '/volunteer', label: 'Volunteer' },
-  { href: '/ask', label: 'Ask Russ' },
-  {
-    href: 'https://secure.actblue.com/donate/russclevelandstore',
-    label: 'Store',
-    external: true,
-  },
+  { href: '/articles', label: 'Articles' },
+  { href: '/get-involved', label: 'Get Involved' },
+  { href: '/ask', label: 'Ask Us' },
   { href: '/contact', label: 'Contact' },
 ]
 
-const DONATE_URL = 'https://secure.actblue.com/donate/clevelandq12026'
+const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
 
 const SiteHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 border-b border-bone-200 bg-paper/80 backdrop-blur-[14px] text-ink-900">
+      <header className="fixed top-0 left-0 right-0 z-40 border-b border-bone-200 bg-paper/80 backdrop-blur-[14px] text-ink-900 before:content-[''] before:block before:h-[3px] before:w-full before:bg-ochre-500">
         <div className="mx-auto max-w-[1440px] flex items-center justify-between gap-4 px-6 py-4 md:px-12 lg:px-16">
-          <Link href="/" aria-label="Russ Cleveland for U.S. House MT-01" className="flex items-center">
+          <Link href="/" aria-label="Coos County Republicans" className="flex items-center">
             <Image
               src="/mt-us-house-logo.webp"
-              alt="Russ Cleveland · U.S. House MT-01"
+              alt="Coos County Republicans"
               width={1060}
               height={630}
               priority

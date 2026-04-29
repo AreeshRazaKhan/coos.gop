@@ -5,7 +5,7 @@ import FAQ from '@/components/home/faq'
 import Hero from '@/components/home/hero'
 import Manifesto from '@/components/home/manifesto'
 import Marquee from '@/components/home/marquee'
-import MeetRuss from '@/components/home/meet-russ'
+import MeetCommittee from '@/components/home/meet-russ'
 import Pillars from '@/components/home/pillars'
 import SiteFooter from '@/components/home/site-footer'
 import Values from '@/components/home/values'
@@ -20,7 +20,7 @@ const Home = () => {
         <Manifesto />
         <Pillars />
         <Values />
-        <MeetRuss />
+        <MeetCommittee />
         <Events />
         <FAQ />
         <CtaSection />

@@ -10,10 +10,10 @@ import { formatPhoneInput } from '@/lib/phone'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 const SMS_UPDATES_COPY =
-  'By checking this box, I consent to receive campaign updates from Cleveland for Congress via automated text messages at the phone number provided. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help. View our Privacy Policy and Terms of Service.'
+  'By checking this box, I consent to receive recurring auto-dialed campaign updates from Coos County Republicans via text message at the phone number provided. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
 
 const SMS_PROMO_COPY =
-  'By checking this box, I consent to receive promotional messages, event invitations, and fundraising communications from Cleveland for Congress via automated text messages. Message frequency may vary. Message and data rates may apply. Text STOP to opt out or HELP for help.'
+  'By checking this box, I consent to receive recurring promotional messages, event invitations, and fundraising communications from Coos County Republicans via auto-dialed text messages. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
 
 const INITIAL_STATE = {
   firstName: '',
@@ -116,7 +116,7 @@ const ContactForm = () => {
         className="tablet:col-span-7 bg-white border border-bone-200 rounded-[4px] p-8 lg:p-10 flex flex-col gap-4 relative before:content-[''] before:absolute before:top-0 before:left-10 before:right-10 before:h-[3px] before:bg-ochre-500"
       >
         <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
-          — Message sent
+          Message sent
         </span>
         <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.15] tracking-[-0.02em] text-ink-900">
           Thanks for reaching out.
@@ -169,7 +169,7 @@ const ContactForm = () => {
         type="tel"
         label="Phone (optional)"
         autoComplete="tel"
-        placeholder="+1 (406) 555-0123"
+        placeholder="+1 (541) 555-0123"
         value={values.phone}
         onChange={handlePhoneChange}
         error={errors.phone}
@@ -181,7 +181,7 @@ const ContactForm = () => {
           rows={5}
           label="Message"
           required
-          placeholder="Press request, event hosting, story tip, or a question for Russ…"
+          placeholder="Press request, event hosting, story tip, or a question for the committee…"
           value={values.message}
           onChange={handleChange}
           error={errors.message}

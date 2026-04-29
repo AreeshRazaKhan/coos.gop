@@ -9,14 +9,14 @@ const Manifesto = () => {
         className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
       >
         <span className="font-display font-black text-[200px] md:text-[280px] lg:text-[360px] leading-none tracking-[-0.04em] text-ink-900/[.045] whitespace-nowrap -translate-x-6">
-          MONTANA FIRST <em className="font-italic not-italic text-ochre-500/[.18]">montana first</em>
+          COOS COUNTY <em className="font-italic not-italic text-ochre-500/[.18]">coos county</em>
         </span>
       </div>
 
       <div className="relative mx-auto max-w-[1440px] px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44 grid grid-cols-1 gap-10 tablet:grid-cols-12">
         <div className="tablet:col-span-8 relative">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
-            — 01 · Why I&apos;m running
+            01 · Why we fight
           </span>
 
           <blockquote className="mt-10 font-display text-[clamp(2.5rem,6.5vw,5.25rem)] font-normal leading-[1.04] tracking-[-0.025em] text-ink-900">
@@ -24,52 +24,53 @@ const Manifesto = () => {
               &ldquo;It&apos;s about us,
             </em>
             <br />
-            <em className="font-italic not-italic text-ochre-600">not me.&rdquo;</em>
+            <em className="font-italic not-italic text-ochre-600">not Salem.&rdquo;</em>
           </blockquote>
 
           <p className="mt-10 max-w-[56ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-ash">
-            The fight ahead isn&apos;t left versus right, it is top versus bottom. It is time
-            to reclaim our state, protect what is ours, and build a Montana that truly works
-            for us all.
+            The fight ahead is local first. Coos County is being squeezed by Salem mandates,
+            federal land lockouts, and a tax code rigged against working families. We exist to
+            take it back.
           </p>
 
           <div className="mt-10 flex items-center gap-4">
             <span className="h-[2px] w-16 bg-ochre-500" aria-hidden="true" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-brass">
-              — From russellcleveland.org
+              From coos.gop
             </span>
           </div>
         </div>
 
         <aside className="tablet:col-span-4 tablet:pt-20 flex flex-col gap-6">
-          <div className="relative bg-ink-900 text-moonlight rounded-[28px] p-8 lg:p-10 overflow-hidden">
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-              — The frame
+          <div className="relative bg-ochre-500 text-paper rounded-[28px] p-8 lg:p-10 overflow-hidden">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-paper/85">
+              The frame
             </span>
             <p className="mt-6 font-display text-2xl font-extrabold leading-[1.15] tracking-[-0.015em]">
-              Not left versus right.{' '}
-              <em className="font-italic not-italic text-ochre-400">Top versus bottom.</em>
+              Local control over{' '}
+              <em className="font-italic not-italic text-ochre-400">Salem mandates</em>.
             </p>
-            <p className="mt-6 text-sm leading-[1.65] text-moonlight/75">
-              This campaign isn&apos;t about expensive ads or hollow endorsements. It&apos;s about
-              real conversations driven by shared struggle and shared values.
+            <p className="mt-6 text-sm leading-[1.65] text-paper/85">
+              This committee isn&apos;t about chasing endorsements or polling well in Portland.
+              It&apos;s about recruiting principled local Republicans and giving them the ground
+              game to win at home.
             </p>
             <div
               aria-hidden="true"
-              className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border-[1.5px] border-ochre-500/25"
+              className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full border-[1.5px] border-ochre-400/40"
             />
           </div>
 
           <div className="bg-paper-2 border border-bone-200 rounded-[20px] p-6 flex flex-col gap-3">
             <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-brass">
-              — The promise
+              The promise
             </span>
             <p className="font-display text-xl font-extrabold leading-tight text-ink-900">
-              No Corporate PAC. No AIPAC.
+              Locally funded. Locally led.
             </p>
             <p className="text-sm leading-[1.55] text-stone-600">
-              A truly grassroots campaign, refusing corporate PAC, AIPAC, and other special
-              interest money.
+              A volunteer-powered committee that answers to neighbors, not lobbyists. Every
+              dollar and every vote stays focused on Coos County and Oregon.
             </p>
           </div>
         </aside>
