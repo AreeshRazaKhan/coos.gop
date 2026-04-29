@@ -56,7 +56,10 @@
       "Bash(grep -qE \"Ready|started server|compiled successfully|Local:\" \"C:\\\\\\\\Users\\\\\\\\Dev\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\C--Users-Dev-Documents-GitHub-russellcleveland\\\\\\\\02f1ddda-12fe-430b-81a8-ee5e5e17d5cf\\\\\\\\tasks\\\\\\\\bynbd0e6t.output\")",
       "Bash(tail *)",
       "Bash(python3 -c ' *)",
-      "WebFetch(domain:cooscountyconservatives.com)"
+      "WebFetch(domain:cooscountyconservatives.com)",
+      "Read(//c/tmp/**)",
+      "Bash(find /c -name \"coos-elections.txt\")",
+      "Bash(find /c -name \"coos-elections.json\")"
     ]
   }
 }

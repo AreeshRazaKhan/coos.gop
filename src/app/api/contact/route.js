@@ -2,7 +2,7 @@ import { normalizePhoneForSubmit } from '@/lib/phone'
 
 const WEBHOOK_URLS = [
   process.env.GHL_CONTACT_WEBHOOK ||
-    'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/cf2eced9-14ad-4109-ba4f-fd244858af10',
+    'https://services.leadconnectorhq.com/hooks/XVFl34pDIwwm1Hr3qXss/webhook-trigger/qUea5iHfnUuhdJnbFAy6',
   process.env.GHL_COMPLIANCE_WEBHOOK ||
     'https://services.leadconnectorhq.com/hooks/HK7KWJYbw33yisOBMGEO/webhook-trigger/00000000-0000-0000-0000-000000000000',
 ]

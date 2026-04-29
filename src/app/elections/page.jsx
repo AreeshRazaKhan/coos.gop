@@ -27,7 +27,7 @@ const TIMELINE_EVENTS = [
     iso: '2026-03-14',
     date: 'March 14, 2026',
     title: 'Governor Debate in Coos Bay',
-    cta: { label: 'RSVP', href: 'mailto:party@coos.gop?subject=Governor%20Debate%20RSVP' },
+    cta: { label: 'RSVP', href: 'https://www.facebook.com/events/1454880579319714' },
   },
   {
     iso: '2026-04-28',
@@ -64,58 +64,95 @@ const RACES = [
   },
   {
     office: 'U.S. House Representative · Oregon CD-4',
+    note: 'Candidates attending forum on Saturday March 14th at 5PM.',
     candidates: [
       { name: 'Monique DeSpain', href: 'https://moniqueforcongress.com/' },
     ],
   },
   {
     office: 'U.S. Senator · Oregon',
+    note: 'Candidates attending forum on Saturday March 14th at 5PM.',
     candidates: [
       { name: 'Jo Rae Perkins', href: 'https://joraeperkins.com' },
     ],
   },
   {
     office: 'County Commissioner, Position 2',
+    description:
+      'County Commissioners (4 year term) are responsible for a wide range of duties, primarily focused on local governance and administration. They act as the legislative body for the county, establishing laws and policies, overseeing the county budget, and managing county affairs. They also play a crucial role in community development, public health, and infrastructure, ensuring the smooth operation of county services and advocating for the county’s interests.',
+    statute: { label: 'See ORS 203.240', href: 'https://oregon.public.law/statutes/ors_203.240' },
     candidates: [
-      { name: 'John Sweet', tag: 'Incumbent' },
+      {
+        name: 'John Sweet',
+        tag: 'Incumbent',
+        href: 'https://www.facebook.com/johnsweetcooscounty',
+      },
       { name: 'Brandi Martindale', href: 'https://www.brandiforcoos.com' },
     ],
   },
   {
     office: 'County Commissioner, Position 3',
+    description:
+      'County Commissioners (4 year term) are responsible for a wide range of duties, primarily focused on local governance and administration. They act as the legislative body for the county, establishing laws and policies, overseeing the county budget, and managing county affairs. They also play a crucial role in community development, public health, and infrastructure, ensuring the smooth operation of county services and advocating for the county’s interests.',
+    statute: { label: 'See ORS 203.240', href: 'https://oregon.public.law/statutes/ors_203.240' },
     candidates: [
-      { name: 'Richard Coleman' },
+      {
+        name: 'Richard Coleman',
+        href: 'https://www.facebook.com/profile.php?id=61575001173061',
+      },
       { name: 'Rick Osborn', href: 'https://osborn4coos.com' },
     ],
   },
   {
     office: 'Sheriff',
+    description:
+      'A county Sheriff is the chief law enforcement officer, with a broad range of responsibilities including law enforcement, criminal investigation, search and rescue, and jail operations within their county. They also handle legal processes, mental patient transportation, and provide police protection to unincorporated areas.',
+    statute: { label: 'See ORS 206.010', href: 'https://oregon.public.law/statutes/ors_206.010' },
     candidates: [
-      { name: 'Mike Kinnaird' },
-      { name: 'Gabe Fabrizio', tag: 'Incumbent' },
+      { name: 'Mike Kinnaird', href: 'https://www.co.coos.or.us/media/62306' },
+      {
+        name: 'Gabe Fabrizio',
+        tag: 'Incumbent',
+        href: 'https://www.co.coos.or.us/media/61946',
+      },
     ],
   },
   {
     office: 'Clerk',
+    description:
+      'A county Clerk’s responsibilities typically include managing elections, maintaining public records, and handling property tax appeals. They are also responsible for recording documents like deeds and marriage licenses, and they serve as the chief election official for their county. Additionally, they may be involved in issuing marriage licenses, recording military discharges, and providing access to archived records.',
+    statute: { label: 'See ORS 205.110', href: 'https://oregon.public.law/statutes/ors_205.110' },
     candidates: [
-      { name: 'Julie Brecke', tag: 'Incumbent' },
+      {
+        name: 'Julie Brecke',
+        tag: 'Incumbent',
+        href: 'https://www.co.coos.or.us/media/61941',
+      },
       { name: 'Marty Kuhrt', href: 'https://kuhrt4clerk.org' },
       { name: 'Pam Lewis', href: 'https://lewis4clerk.org' },
     ],
   },
   {
     office: 'Precinct Committee Person (PCP)',
-    note: 'Open seats in most Coos County precincts. The lowest-level elected official in the Republican Party. Two-year term, nominal filing fee.',
+    description:
+      'To make a real impact, start by engaging with your County Republican Party. It’s the first level of Oregon’s political leadership structure. And consider becoming a Precinct Committeeperson. Real change happens at the local level, in your neighborhoods, precincts, and counties. County Republican Parties are where volunteers organize events, register voters, support candidates, and connect directly with their communities.',
+    note: 'You can file at the county elections office or online at the Oregon Secretary of State.',
     candidates: [
       {
-        name: 'File with Oregon Secretary of State',
+        name: 'File online with Oregon SOS',
         href: 'https://sos.oregon.gov/elections/Pages/candidate-filing-precinct-committeeperson-sel-105.aspx',
+      },
+      {
+        name: 'View current PCP candidates (Coos County)',
+        href: 'https://www.co.coos.or.us/media/62376',
       },
     ],
   },
   {
     office: 'City Councilor (November)',
-    note: 'November ballot. Positions determined by September. Check back for filings.',
+    description:
+      'City Councilors are primarily responsible for representing their constituents’ interests, setting city policy, and overseeing the city’s operations. This includes identifying community needs, establishing goals, adopting ordinances and resolutions, approving the city budget, and representing the city in regional affairs. They also play a role in contract review, land use appeals, and may serve as the Urban Renewal Agency Board.',
+    note: 'Every city in the county will have city council positions available. Exact counts for each city are confirmed toward the end of September.',
     candidates: [],
   },
 ]
@@ -271,8 +308,26 @@ const ElectionsPage = () => {
                     <h3 className="font-display text-2xl md:text-[28px] font-extrabold leading-[1.15] tracking-[-0.015em] text-ink-900 max-w-[26ch]">
                       {race.office}
                     </h3>
+                    {race.description && (
+                      <p className="text-base leading-[1.6] text-stone-600 max-w-[52ch]">
+                        {race.description}
+                        {race.statute && (
+                          <>
+                            {' '}
+                            <Link
+                              href={race.statute.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-mono text-[11px] uppercase tracking-[0.18em] text-ochre-600 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-500"
+                            >
+                              {race.statute.label}
+                            </Link>
+                          </>
+                        )}
+                      </p>
+                    )}
                     {race.note && (
-                      <p className="text-sm md:text-base italic font-italic leading-[1.55] text-stone-600 max-w-[44ch]">
+                      <p className="text-sm italic font-italic leading-[1.55] text-stone-600/90 max-w-[52ch]">
                         {race.note}
                       </p>
                     )}
