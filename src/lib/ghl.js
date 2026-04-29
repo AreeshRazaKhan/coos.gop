@@ -1,6 +1,9 @@
+import { parse as parseHTML } from 'node-html-parser'
+
 const GHL_BASE_URL = 'https://services.leadconnectorhq.com'
 const GHL_API_KEY = process.env.GHL_API_KEY
 const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID
+const PUBLIC_BLOG_ORIGIN = process.env.GHL_PUBLIC_BLOG_ORIGIN || 'https://coos.gop'
 
 const buildHeaders = () => ({
   Authorization: `Bearer ${GHL_API_KEY}`,
@@ -147,6 +150,209 @@ export const fetchGHLEvents = async () => {
     console.error('[fetchGHLEvents]:', error)
     return []
   }
+}
+
+// ============================================================================
+//  Blog posts — /blogs/posts/list
+//
+//  Notes from API exploration:
+//  - The list endpoint is the only one this Private Integration Token can hit.
+//    GET /blogs/posts/{id} returns 401 ("This route is not yet supported by the
+//    IAM Service") with a PIT, so we cannot fetch a single post directly.
+//  - The list endpoint accepts only locationId, blogId, limit (≤ 10), offset.
+//    `urlSlug`, `postId`, `content`, `includeContent` are all rejected as
+//    unknown properties.
+//  - The `content` field comes back as an empty string from the list endpoint
+//    regardless of API version, so the body must be rendered from `description`
+//    (or readers can click out to the GHL-hosted `canonicalLink`).
+// ============================================================================
+
+const formatPostDate = (iso) => {
+  if (!iso) return ''
+  const d = new Date(iso)
+  if (Number.isNaN(d.getTime())) return ''
+  return d.toLocaleDateString('en-US', {
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric',
+  })
+}
+
+const PLACEHOLDER_DESCRIPTION = /^new blog post description$/i
+
+const normalizePost = (post) => {
+  const minutes = Math.max(1, Math.round(post.readTimeInMinutes ?? 1))
+  const description = post.description || ''
+  const isPlaceholderDescription =
+    description && PLACEHOLDER_DESCRIPTION.test(description.trim())
+  // Body source priority:
+  //   1. `content` (rich HTML from GHL editor — only returned by the single-post
+  //      endpoint, which is currently IAM-blocked but will flow through here
+  //      automatically once GHL unlocks it for PITs)
+  //   2. `description` (always returned by the list endpoint, plain-text field
+  //      filled in via GHL's blog editor)
+  //   3. empty string
+  const body = (post.content && post.content.trim()) ? post.content
+    : (description && !isPlaceholderDescription) ? description
+    : ''
+  const isHtml = !!(post.content && post.content.trim())
+
+  return {
+    id: post.urlSlug || post._id,
+    slug: post.urlSlug,
+    _id: post._id,
+    blogId: post.blogId,
+    title: post.title || '',
+    description: isPlaceholderDescription ? '' : description,
+    body,
+    bodyIsHtml: isHtml,
+    image: post.imageUrl || '/placeholder-post.svg',
+    imageAlt: post.imageAltText || post.title || '',
+    author: post.author?.name && post.author.name !== 'untitled' ? post.author.name : 'Coos County Republicans',
+    category:
+      post.categories?.[0]?.label && post.categories[0].label !== 'untitled'
+        ? post.categories[0].label
+        : 'Article',
+    publishedAt: post.publishedAt,
+    publishedDate: formatPostDate(post.publishedAt),
+    readTime: `${minutes} min read`,
+    canonicalLink: post.canonicalLink || '',
+    source: 'ghl',
+  }
+}
+
+// Scrape the rich-text body from the public GHL-hosted blog page. The
+// API does not expose `content` to PIT auth (single-post endpoint is
+// IAM-blocked), but the public Sites Builder URL `coos.gop/post/{slug}`
+// renders the full body server-side. We extract the inner HTML of the
+// `#blogPostContent` container — the wrapper GHL's blog template uses.
+const fetchGHLPostBodyHtml = async (slug) => {
+  if (!slug) return ''
+  try {
+    const res = await fetch(`${PUBLIC_BLOG_ORIGIN}/post/${slug}`, {
+      headers: {
+        'User-Agent':
+          'Mozilla/5.0 (compatible; CoosCountyRepublicans/1.0; +https://coos.gop)',
+      },
+      next: { revalidate: 60 },
+    })
+    if (!res.ok) return ''
+    const html = await res.text()
+    const root = parseHTML(html)
+    const container = root.querySelector('#blogPostContent')
+    if (!container) return ''
+    // Drop the H1 (we render our own H1 from the post title)
+    const h1 = container.querySelector('h1')
+    if (h1) h1.remove()
+    // Strip Squarespace inline styles + class names so our .article-body
+    // typography (Vollkorn / Crimson Pro / brand colors) applies cleanly.
+    container.querySelectorAll('*').forEach((el) => {
+      el.removeAttribute('style')
+      el.removeAttribute('class')
+      el.removeAttribute('data-indent')
+      el.removeAttribute('data-toc-id')
+      el.removeAttribute('id')
+    })
+    // Unwrap <span> tags — once styles are stripped they're empty wrappers.
+    return container
+      .innerHTML.trim()
+      .replace(/<span\b[^>]*>/gi, '')
+      .replace(/<\/span>/gi, '')
+  } catch (error) {
+    console.error('[fetchGHLPostBodyHtml]:', error)
+    return ''
+  }
+}
+
+const fetchGHLPostById = async (id) => {
+  // Tries the single-post endpoint first. Returns the post if successful, null
+  // otherwise. Currently 401s for PITs ("This route is not yet supported by
+  // the IAM Service"); the moment GHL flips that route to IAM, this starts
+  // returning full content with zero code changes.
+  if (!GHL_API_KEY || !GHL_LOCATION_ID || !id) return null
+  try {
+    const res = await fetch(
+      `${GHL_BASE_URL}/blogs/posts/${id}?locationId=${GHL_LOCATION_ID}`,
+      { headers: buildHeaders(), next: { revalidate: 60 } },
+    )
+    if (!res.ok) return null
+    const data = await res.json()
+    const record = data.blogPost ?? data.post ?? data
+    if (!record?._id) return null
+    return record
+  } catch {
+    return null
+  }
+}
+
+export const fetchGHLPosts = async () => {
+  if (!GHL_API_KEY || !GHL_LOCATION_ID) {
+    console.warn('[fetchGHLPosts]: GHL credentials missing')
+    return []
+  }
+  const collected = []
+  let offset = 0
+  const limit = 10
+  // Hard cap at 200 posts (20 pages) to avoid runaway pagination.
+  for (let page = 0; page < 20; page += 1) {
+    try {
+      const url = `${GHL_BASE_URL}/blogs/posts/list?locationId=${GHL_LOCATION_ID}&limit=${limit}&offset=${offset}`
+      const res = await fetch(url, { headers: buildHeaders(), next: { revalidate: 60 } })
+      if (!res.ok) {
+        console.error('[fetchGHLPosts]: non-2xx', res.status, await res.text())
+        break
+      }
+      const data = await res.json()
+      const batch = data.blogPosts ?? []
+      collected.push(...batch)
+      const total = data.count ?? batch.length
+      if (batch.length === 0 || collected.length >= total) break
+      offset += limit
+    } catch (error) {
+      console.error('[fetchGHLPosts]:', error)
+      break
+    }
+  }
+  return collected
+    .map(normalizePost)
+    .filter((post) => post.title)
+    .sort((a, b) => {
+      const da = a.publishedAt ? new Date(a.publishedAt).getTime() : 0
+      const db = b.publishedAt ? new Date(b.publishedAt).getTime() : 0
+      return db - da
+    })
+}
+
+export const fetchGHLPost = async (slugOrId) => {
+  if (!slugOrId) return null
+  // First, find the post in the list (the only source of truth for its _id
+  // and full metadata when the slug is the route param).
+  const all = await fetchGHLPosts()
+  const fromList = all.find(
+    (post) => post.slug === slugOrId || post._id === slugOrId,
+  )
+  if (!fromList) return null
+
+  // Two body sources — both run in parallel:
+  //   1. /blogs/posts/{id} (IAM-blocked today, will start working when GHL
+  //      enables IAM on this route — at which point we get rich HTML directly
+  //      from the API).
+  //   2. Scrape the public coos.gop blog page for #blogPostContent (works
+  //      today since the GHL Sites Builder template is published).
+  const [richRecord, scrapedBody] = await Promise.all([
+    fetchGHLPostById(fromList._id),
+    fetchGHLPostBodyHtml(fromList.slug),
+  ])
+
+  if (richRecord && richRecord.content && richRecord.content.trim()) {
+    return normalizePost(richRecord)
+  }
+
+  if (scrapedBody) {
+    return { ...fromList, body: scrapedBody, bodyIsHtml: true }
+  }
+
+  return fromList
 }
 
 export const fetchGHLEvent = async (eventId) => {

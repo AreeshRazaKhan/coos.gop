@@ -63,7 +63,10 @@
       "Bash(where gh *)",
       "Read(//c/Program Files/GitHub CLI/**)",
       "Read(//c/Users/Dev/AppData/Local/GitHubCLI/**)",
-      "Read(//c/Program Files \\(x86\\)/GitHub CLI/**)"
+      "Read(//c/Program Files \\(x86\\)/GitHub CLI/**)",
+      "Bash(grep -oE '\"content\":\"[^\"]{30,500}\"')",
+      "Bash(npm ls *)",
+      "Bash(grep -oE 'article-body[^\"]*\"[^>]*>[^<]{0,60}|City of North Bend has been promoting')"
     ]
   }
 }
