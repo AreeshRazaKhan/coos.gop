@@ -67,29 +67,31 @@ const SiteFooter = () => {
             </div>
           </div>
 
-          {NAV_COLUMNS.map((col) => (
-            <nav
-              key={col.label}
-              aria-label={col.label}
-              className="tablet:col-span-2 last:tablet:col-span-3 flex flex-col gap-4"
-            >
-              <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
-                {col.label}
-              </span>
-              <ul className="flex flex-col gap-3">
-                {col.links.map((link) => (
-                  <li key={link.text}>
-                    <Link
-                      href={link.href}
-                      className="font-display text-base font-medium text-moonlight/85 hover:text-ochre-400 transition-colors"
-                    >
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          ))}
+          <div className="col-span-2 tablet:col-span-7 flex flex-col gap-10 tablet:flex-row tablet:justify-between tablet:gap-12">
+            {NAV_COLUMNS.map((col) => (
+              <nav
+                key={col.label}
+                aria-label={col.label}
+                className="flex flex-col gap-4"
+              >
+                <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
+                  {col.label}
+                </span>
+                <ul className="flex flex-col gap-3">
+                  {col.links.map((link) => (
+                    <li key={link.text}>
+                      <Link
+                        href={link.href}
+                        className="font-display text-base font-medium text-moonlight/85 hover:text-ochre-400 transition-colors"
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
 
         <hr className="mt-16 border-t border-ink-700" />
@@ -114,7 +116,7 @@ const SiteFooter = () => {
               Privacy Policy
             </Link>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
-              © 2026 Coos County Republicans
+              © 2026 Coos County Republican Central Committee
             </p>
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/50">
               Powered by{' '}
