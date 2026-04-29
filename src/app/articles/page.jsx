@@ -28,7 +28,7 @@ const ArticlesPage = async () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Articles
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(3rem,10vw,9rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(2.5rem,8vw,7rem)]">
                 On the{' '}
                 <em className="font-italic not-italic text-ochre-600">record</em>.
               </h1>

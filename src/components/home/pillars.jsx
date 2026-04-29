@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const Pillars = () => {
   return (
     <section
@@ -34,9 +36,13 @@ const Pillars = () => {
               Oregon families are taxed out of their homes while PERS bleeds the budget. We back
               leaders who cut spending, slash regulations, and keep dollars in Coos County.
             </p>
-            <div
+            <Image
+              src="/coos-county-republicans-logo-white.webp"
+              alt=""
               aria-hidden="true"
-              className="absolute -bottom-12 -right-12 h-64 w-64 rounded-full border-[1.5px] border-ochre-500/20"
+              width={4167}
+              height={3505}
+              className="pointer-events-none select-none absolute -bottom-16 -right-16 w-[400px] md:w-[520px] lg:w-[620px] h-auto opacity-[0.05]"
             />
           </article>
 

@@ -97,7 +97,7 @@ const TermsOfServicesPage = () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Legal
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(2.5rem,8vw,6.5rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(2.25rem,6vw,5rem)]">
                 Terms of{' '}
                 <em className="font-italic not-italic text-ochre-600">Services</em>.
               </h1>

@@ -27,7 +27,7 @@ const AskPage = () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Ask us
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(3rem,10vw,9rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(2.5rem,8vw,7rem)]">
                 On the{' '}
                 <em className="font-italic not-italic text-ochre-400">record</em>.
               </h1>

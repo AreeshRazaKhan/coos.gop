@@ -110,7 +110,7 @@ const MobileMenu = ({ open, onClose, links }) => {
         </div>
 
         <p className="mt-10 font-mono text-[11px] font-semibold uppercase tracking-[0.22em] text-moonlight/60">
-          party@coos.gop
+          chris.castleman@coos.gop
         </p>
       </div>
     </div>

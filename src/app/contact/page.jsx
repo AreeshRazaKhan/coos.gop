@@ -6,13 +6,13 @@ import SiteHeader from '@/components/site-header'
 
 const SOCIAL_LINKS = [
   { href: 'https://www.facebook.com/cooscountyconservatives', label: 'Facebook' },
-  { href: 'mailto:party@coos.gop', label: 'Email' },
+  { href: 'mailto:chris.castleman@coos.gop', label: 'Email' },
 ]
 
 export const metadata = {
   title: 'Contact · Coos County Republicans',
   description:
-    'Get in touch with Coos County Republicans. Email party@coos.gop, call (707) 357-6526, or visit HQ at 3229 Broadway Ave, Suite F, North Bend, OR.',
+    'Get in touch with Coos County Republicans. Email chris.castleman@coos.gop, call (707) 357-6526, or visit HQ at 3229 Broadway Ave, Suite F, North Bend, OR.',
 }
 
 const ContactPage = () => {
@@ -26,7 +26,7 @@ const ContactPage = () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Contact
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.94] tracking-[-0.03em] text-[clamp(3rem,9vw,7rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.94] tracking-[-0.03em] text-[clamp(2.5rem,7vw,5.5rem)]">
                 Drop a line.{' '}
                 <em className="font-italic not-italic text-ochre-600">We answer.</em>
               </h1>
@@ -47,10 +47,10 @@ const ContactPage = () => {
                     </dt>
                     <dd className="mt-2">
                       <a
-                        href="mailto:party@coos.gop"
+                        href="mailto:chris.castleman@coos.gop"
                         className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
-                        party@coos.gop
+                        chris.castleman@coos.gop
                       </a>
                     </dd>
                   </div>

@@ -66,7 +66,7 @@ const Events = async () => {
             </p>
             <div className="mt-2 w-fit">
               <MagneticButton
-                href="mailto:party@coos.gop?subject=Host%20a%20precinct%20meeting"
+                href="mailto:chris.castleman@coos.gop?subject=Host%20a%20precinct%20meeting"
                 variant="ghost"
                 size="md"
               >

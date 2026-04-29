@@ -18,7 +18,7 @@ const CtaSection = () => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 flex items-center overflow-hidden h-32 md:h-44 lg:h-56"
       >
-        <span className="font-display font-black text-[140px] md:text-[220px] lg:text-[280px] leading-[0.88] tracking-[-0.04em] text-paper/[.08] whitespace-nowrap -translate-x-10 translate-y-6 md:translate-y-10 lg:translate-y-14">
+        <span className="font-display font-black text-[140px] md:text-[220px] lg:text-[280px] leading-[0.88] tracking-[-0.04em] text-paper/[.08] whitespace-nowrap -translate-x-10 translate-y-1 md:translate-y-2 lg:translate-y-3">
           COOS COUNTY FIRST
         </span>
       </div>

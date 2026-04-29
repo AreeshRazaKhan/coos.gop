@@ -51,7 +51,7 @@ const ArticleDetailPage = async ({ params }) => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 {article.category}
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.03em] text-[clamp(2.5rem,7vw,5.5rem)] text-ink-900">
+              <h1 className="mt-8 font-display font-black leading-[0.96] tracking-[-0.03em] text-[clamp(2.25rem,6vw,4.5rem)] text-ink-900">
                 {article.title}
               </h1>
               {article.description && (

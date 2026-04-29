@@ -31,7 +31,7 @@ const EventsPage = async () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
                 Events
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(3rem,10vw,9rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.92] tracking-[-0.03em] text-[clamp(2.5rem,8vw,7rem)]">
                 Where the committee will{' '}
                 <em className="font-italic not-italic text-ochre-600">be</em>.
               </h1>
@@ -42,7 +42,7 @@ const EventsPage = async () => {
             </div>
             <aside className="tablet:col-span-4 tablet:col-start-9 flex flex-col items-start gap-4 justify-end">
               <MagneticButton
-                href="mailto:party@coos.gop?subject=Host%20a%20precinct%20event"
+                href="mailto:chris.castleman@coos.gop?subject=Host%20a%20precinct%20event"
                 variant="primary"
                 size="lg"
               >

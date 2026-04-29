@@ -77,7 +77,7 @@ const GetInvolvedPage = () => {
               <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 Join the fight
               </span>
-              <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(3.5rem,12vw,10rem)]">
+              <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(3rem,9vw,7.5rem)]">
                 The time is{' '}
                 <em className="font-italic not-italic text-ochre-400">now</em>.
               </h1>

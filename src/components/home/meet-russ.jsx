@@ -17,7 +17,7 @@ const MeetCommittee = () => {
         <div className="relative tablet:col-span-5 tablet:order-2 max-w-[460px] tablet:max-w-none">
           <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-900">
             <Image
-              src="https://picsum.photos/seed/coos-bay-historic-harbor/800/1000"
+              src="/coos-gop-meet-committee.webp"
               alt="Archival Coos Bay harbor and timber heritage"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
