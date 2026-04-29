@@ -24,6 +24,8 @@ const NAV_COLUMNS = [
   {
     label: 'Connect',
     links: [
+      { href: '/ask', text: 'Ask Us' },
+      { href: '/contact', text: 'Contact' },
       { href: 'mailto:party@coos.gop', text: 'Email' },
       { href: 'https://www.facebook.com/cooscountyconservatives', text: 'Facebook' },
     ],
@@ -69,7 +71,7 @@ const SiteFooter = () => {
             <nav
               key={col.label}
               aria-label={col.label}
-              className="tablet:col-span-2 flex flex-col gap-4"
+              className="tablet:col-span-2 last:tablet:col-span-3 flex flex-col gap-4"
             >
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-400">
                 {col.label}
@@ -88,15 +90,6 @@ const SiteFooter = () => {
               </ul>
             </nav>
           ))}
-
-          <div className="col-span-2 tablet:col-span-1 flex tablet:flex-col gap-4 tablet:justify-start tablet:items-end text-moonlight/70 font-mono text-[10px] font-semibold uppercase tracking-[0.22em]">
-            <Link href="/ask" className="hover:text-ochre-400">
-              Ask Us
-            </Link>
-            <Link href="/contact" className="hover:text-ochre-400">
-              Contact
-            </Link>
-          </div>
         </div>
 
         <hr className="mt-16 border-t border-ink-700" />

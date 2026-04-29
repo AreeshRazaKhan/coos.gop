@@ -63,8 +63,8 @@ const AboutPage = () => {
             <div className="relative tablet:col-span-5 tablet:flex tablet:items-end max-w-[460px] tablet:max-w-none">
               <div className="arch-mask relative w-full aspect-[4/5] overflow-hidden bg-ink-700">
                 <Image
-                  src="/russ-portrait.webp"
-                  alt="Coos County coastline morning light, Oregon"
+                  src="/coos-gop-hero-about.webp"
+                  alt="Coos County, Oregon"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   priority

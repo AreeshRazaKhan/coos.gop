@@ -3,7 +3,6 @@ import Link from 'next/link'
 import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 import MagneticButton from '@/components/ui/magnetic-button'
-import { CALENDAR_URL } from '@/lib/events'
 import { fetchGHLEvents } from '@/lib/ghl'
 
 export const metadata = {
@@ -42,12 +41,9 @@ const EventsPage = async () => {
               </p>
             </div>
             <aside className="tablet:col-span-4 tablet:col-start-9 flex flex-col items-start gap-4 justify-end">
-              <MagneticButton href={CALENDAR_URL} variant="primary" size="lg" external>
-                Subscribe to calendar
-              </MagneticButton>
               <MagneticButton
                 href="mailto:party@coos.gop?subject=Host%20a%20precinct%20event"
-                variant="ghost"
+                variant="primary"
                 size="lg"
               >
                 Host an event in your precinct

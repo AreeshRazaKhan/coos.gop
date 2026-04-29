@@ -121,7 +121,7 @@ const FAQItem = ({ q, a }) => {
       >
         <div className="min-h-0 overflow-hidden">
           <div className="pb-8 pr-12">
-            <p className="max-w-[64ch] text-base md:text-[17px] leading-[1.7] text-moonlight/80">
+            <p className="w-full text-base md:text-[17px] leading-[1.7] text-moonlight/80">
               {a}
             </p>
           </div>
@@ -138,7 +138,7 @@ const FAQ = () => {
       className="bg-ink-900 text-moonlight px-6 py-24 md:px-12 md:py-36 lg:px-16 lg:py-44"
     >
       <div className="mx-auto max-w-[1440px] grid grid-cols-1 gap-12 tablet:grid-cols-12 tablet:gap-16">
-        <header className="tablet:col-span-5">
+        <header className="tablet:col-span-5 tablet:sticky tablet:top-32 tablet:self-start">
           <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-ochre-400">
             07 · On the record
           </span>

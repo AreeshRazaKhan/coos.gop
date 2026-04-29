@@ -81,7 +81,7 @@ const ValueItem = ({ title, paragraphs }) => {
             {paragraphs.map((p, j) => (
               <p
                 key={j}
-                className="max-w-[72ch] text-base md:text-[17px] leading-[1.7] text-ash"
+                className="w-full text-base md:text-[17px] leading-[1.7] text-ash"
               >
                 {p}
               </p>
@@ -101,7 +101,7 @@ const Values = () => {
     >
       <div className="mx-auto max-w-[1440px]">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-[32ch]">
+          <div className="max-w-[60ch] md:flex-1">
             <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-brass">
               04 · Platform
             </span>

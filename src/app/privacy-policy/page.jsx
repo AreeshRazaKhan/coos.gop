@@ -2,9 +2,9 @@ import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 
 export const metadata = {
-  title: 'Privacy Policy · Coos County Republican Central Committee DBA Coos GOP',
+  title: 'Privacy Policy · Coos County Republican Central Committee',
   description:
-    'How Coos County Republican Central Committee DBA Coos GOP collects, uses, and safeguards personal information from visitors and supporters.',
+    'How Coos County Republican Central Committee collects, uses, and safeguards personal information from visitors and supporters.',
 }
 
 const INFORMATION_WE_COLLECT = [
@@ -66,7 +66,7 @@ const PrivacyPolicyPage = () => {
           <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-12 md:py-28 lg:px-16">
             <div className="max-w-[72ch]">
               <p className="text-base md:text-[17px] leading-[1.75] text-ash">
-                Coos County Republican Central Committee DBA Coos GOP (&ldquo;the
+                Coos County Republican Central Committee (&ldquo;the
                 Committee,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is
                 committed to protecting your privacy. This Privacy Policy describes how we
                 collect, use, and safeguard your personal information when you visit our
@@ -144,7 +144,7 @@ const PrivacyPolicyPage = () => {
               <p className="text-base md:text-[17px] leading-[1.7] text-ash max-w-[72ch]">
                 By providing your phone number and checking the consent box on our forms, you
                 expressly consent to receive recurring autodialed or prerecorded calls and text
-                messages from Coos County Republican Central Committee DBA Coos GOP at the
+                messages from Coos County Republican Central Committee at the
                 phone number you provided. Message and data rates may apply. Message frequency
                 varies. You may opt out at any time by replying STOP to any message. Consent is
                 not a condition of any purchase, donation, or volunteering.
@@ -256,7 +256,7 @@ const PrivacyPolicyPage = () => {
               </p>
               <address className="not-italic flex flex-col gap-1 font-mono text-[13px] leading-[1.7] text-ink-900">
                 <span className="font-display text-lg font-semibold leading-tight">
-                  Coos County Republican Central Committee DBA Coos GOP
+                  Coos County Republican Central Committee
                 </span>
                 <span>PO Box 914</span>
                 <span>Coos Bay, OR 97420</span>

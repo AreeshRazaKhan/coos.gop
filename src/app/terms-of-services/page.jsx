@@ -2,9 +2,9 @@ import SiteFooter from '@/components/home/site-footer'
 import SiteHeader from '@/components/site-header'
 
 export const metadata = {
-  title: 'Terms of Services · Coos County Republican Central Committee DBA Coos GOP',
+  title: 'Terms of Services · Coos County Republican Central Committee',
   description:
-    'Terms of Services governing your use of coos.gop, operated by Coos County Republican Central Committee DBA Coos GOP.',
+    'Terms of Services governing your use of coos.gop, operated by Coos County Republican Central Committee.',
 }
 
 const USE_RESTRICTIONS = [
@@ -47,7 +47,7 @@ const SMS_KEY_TERMS = [
   'You may opt out at any time by replying STOP to any message.',
   'For assistance, reply HELP or contact us at chris.castleman@coos.gop or call (707) 357-6526.',
   'Consent to receive SMS messages is not a condition of any purchase, donation, or volunteering.',
-  'Coos County Republican Central Committee DBA Coos GOP does not sell or share mobile information or opt-in consent data with third parties for marketing or promotional purposes.',
+  'Coos County Republican Central Committee does not sell or share mobile information or opt-in consent data with third parties for marketing or promotional purposes.',
 ]
 
 const NumberedList = ({ items }) => (
@@ -114,9 +114,9 @@ const TermsOfServicesPage = () => {
               <p className="text-base md:text-[17px] leading-[1.75] text-ash">
                 These Terms of Services (&ldquo;Agreement&rdquo;) set forth the legally
                 binding terms governing your access to and use of the Coos County Republican
-                Central Committee DBA Coos GOP website located at coos.gop (&ldquo;the
-                Website&rdquo;), operated by Coos County Republican Central Committee DBA
-                Coos GOP (&ldquo;the Committee,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+                Central Committee website located at coos.gop (&ldquo;the
+                Website&rdquo;), operated by Coos County Republican Central Committee
+                (&ldquo;the Committee,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
                 &ldquo;our&rdquo;). By accessing or using the Website, you (&ldquo;you&rdquo;
                 or &ldquo;User&rdquo;) agree to be bound by this Agreement. If you do not
                 agree to these terms, please do not use the Website.
@@ -128,7 +128,7 @@ const TermsOfServicesPage = () => {
         <Section romanNumeral="I" title="About the" accent="Website">
           <Para>
             The Website is the official website of Coos County Republican Central Committee
-            DBA Coos GOP, the grassroots Republican party committee for Coos County, Oregon
+           , the grassroots Republican party committee for Coos County, Oregon
             (Oregon PAC #300). The Website provides committee information, volunteer sign-up
             opportunities, donation instructions, and committee updates. The Website does not
             sell products or services, does not offer memberships or subscriptions, and does
@@ -164,7 +164,7 @@ const TermsOfServicesPage = () => {
 
         <Section romanNumeral="V" title="SMS and Text Message" accent="Communications">
           <Para>
-            Coos County Republican Central Committee DBA Coos GOP offers an SMS messaging
+            Coos County Republican Central Committee offers an SMS messaging
             program for individuals who voluntarily opt in to receive text messages. End
             users provide consent by selecting an optional, unchecked SMS consent checkbox on
             the forms located at coos.gop. Providing a phone number alone does not constitute
@@ -203,7 +203,7 @@ const TermsOfServicesPage = () => {
             All content on the Website, including but not limited to text, graphics,
             photographs, logos, committee materials, and the overall design and layout of the
             Website (&ldquo;Committee Content&rdquo;), is the property of Coos County
-            Republican Central Committee DBA Coos GOP or its licensors and is protected by
+            Republican Central Committee or its licensors and is protected by
             applicable copyright, trademark, and other intellectual property laws.
           </Para>
           <Para>
@@ -226,7 +226,7 @@ const TermsOfServicesPage = () => {
         <Section romanNumeral="VIII" title="" accent="Disclaimer">
           <Para>
             The Website is provided for informational and committee purposes only. Coos
-            County Republican Central Committee DBA Coos GOP makes no representations or
+            County Republican Central Committee makes no representations or
             warranties of any kind, express or implied, regarding the operation of the
             Website or the accuracy, completeness, or reliability of any information on the
             Website.
@@ -235,7 +235,7 @@ const TermsOfServicesPage = () => {
             THE WEBSITE AND ALL CONTENT ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS
             AVAILABLE&rdquo; WITHOUT ANY WARRANTY OF ANY KIND, INCLUDING BUT NOT LIMITED TO
             IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
-            NON-INFRINGEMENT. COOS COUNTY REPUBLICAN CENTRAL COMMITTEE DBA COOS GOP DOES NOT
+            NON-INFRINGEMENT. COOS COUNTY REPUBLICAN CENTRAL COMMITTEE DOES NOT
             WARRANT THAT THE WEBSITE WILL BE UNINTERRUPTED, ERROR-FREE, OR FREE OF VIRUSES OR
             OTHER HARMFUL COMPONENTS.
           </Para>
@@ -248,13 +248,13 @@ const TermsOfServicesPage = () => {
         <Section romanNumeral="IX" title="Limitation of" accent="Liability">
           <Para>
             TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, COOS COUNTY REPUBLICAN CENTRAL
-            COMMITTEE DBA COOS GOP, ITS OFFICERS, VOLUNTEERS, AGENTS, AND AFFILIATES SHALL
+            COMMITTEE, ITS OFFICERS, VOLUNTEERS, AGENTS, AND AFFILIATES SHALL
             NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE
             DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE WEBSITE,
             EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
           </Para>
           <Para>
-            IN NO EVENT SHALL COOS COUNTY REPUBLICAN CENTRAL COMMITTEE DBA COOS GOP&rsquo;S
+            IN NO EVENT SHALL COOS COUNTY REPUBLICAN CENTRAL COMMITTEE&rsquo;S
             TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING OUT OF OR RELATED TO THE WEBSITE OR
             THIS AGREEMENT EXCEED ONE HUNDRED DOLLARS ($100.00).
           </Para>
@@ -263,7 +263,7 @@ const TermsOfServicesPage = () => {
         <Section romanNumeral="X" title="" accent="Indemnification">
           <Para>
             You agree to indemnify and hold harmless Coos County Republican Central Committee
-            DBA Coos GOP, its officers, volunteers, agents, and affiliates from any claims,
+           , its officers, volunteers, agents, and affiliates from any claims,
             liabilities, damages, losses, costs, or expenses (including reasonable
             attorneys&rsquo; fees) arising out of or related to: (a) your use of the Website;
             (b) your violation of this Agreement; (c) your violation of any applicable law or
@@ -277,7 +277,7 @@ const TermsOfServicesPage = () => {
             The Website may contain links to third-party websites or services, including but
             not limited to payment platforms (Anedot), social media platforms (Facebook, X),
             and government websites. These links are provided for your convenience only. Coos
-            County Republican Central Committee DBA Coos GOP does not control, endorse, or
+            County Republican Central Committee does not control, endorse, or
             assume responsibility for the content, privacy policies, or practices of any
             third-party websites or services. Your use of third-party websites is at your
             own risk and subject to their respective terms and conditions.
@@ -286,7 +286,7 @@ const TermsOfServicesPage = () => {
 
         <Section romanNumeral="XII" title="Modifications to This" accent="Agreement">
           <Para>
-            Coos County Republican Central Committee DBA Coos GOP may modify this Agreement
+            Coos County Republican Central Committee may modify this Agreement
             from time to time. When we make changes, we will update the &ldquo;Last
             Updated&rdquo; date at the top of this page. Your continued use of the Website
             after any modification constitutes your acceptance of the revised Agreement. We
@@ -330,7 +330,7 @@ const TermsOfServicesPage = () => {
           </Para>
           <Para>
             PLEASE READ THIS SECTION CAREFULLY. BY AGREEING TO ARBITRATION, YOU AND COOS
-            COUNTY REPUBLICAN CENTRAL COMMITTEE DBA COOS GOP ARE EACH WAIVING THE RIGHT TO A
+            COUNTY REPUBLICAN CENTRAL COMMITTEE ARE EACH WAIVING THE RIGHT TO A
             TRIAL BY JURY AND THE RIGHT TO PARTICIPATE IN A CLASS ACTION.
           </Para>
           <Para>
@@ -359,8 +359,8 @@ const TermsOfServicesPage = () => {
         <Section romanNumeral="XVII" title="Entire" accent="Agreement">
           <Para>
             This Agreement, together with the Privacy Policy, represents the entire
-            understanding between you and Coos County Republican Central Committee DBA Coos
-            GOP relating to the Website. This Agreement supersedes any prior or
+            understanding between you and Coos County Republican Central Committee
+            relating to the Website. This Agreement supersedes any prior or
             contemporaneous communications, whether oral or written, regarding the subject
             matter herein.
           </Para>
@@ -383,7 +383,7 @@ const TermsOfServicesPage = () => {
               </Para>
               <address className="not-italic flex flex-col gap-1 font-mono text-[13px] leading-[1.7] text-ink-900">
                 <span className="font-display text-lg font-semibold leading-tight">
-                  Coos County Republican Central Committee DBA Coos GOP
+                  Coos County Republican Central Committee
                 </span>
                 <span>PO Box 914</span>
                 <span>Coos Bay, OR 97420</span>
