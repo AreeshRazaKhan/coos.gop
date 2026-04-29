@@ -18,7 +18,7 @@ const CtaSection = () => {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 flex items-center overflow-hidden h-32 md:h-44 lg:h-56"
       >
-        <span className="font-display font-black text-[140px] md:text-[220px] lg:text-[280px] leading-[0.88] tracking-[-0.04em] text-paper/[.08] whitespace-nowrap -translate-x-10 -translate-y-4">
+        <span className="font-display font-black text-[140px] md:text-[220px] lg:text-[280px] leading-[0.88] tracking-[-0.04em] text-paper/[.08] whitespace-nowrap -translate-x-10 translate-y-6 md:translate-y-10 lg:translate-y-14">
           COOS COUNTY FIRST
         </span>
       </div>
@@ -84,10 +84,10 @@ const CtaSection = () => {
               Contact
             </span>
             <Link
-              href="mailto:party@coos.gop"
+              href="mailto:chris.castleman@coos.gop"
               className="font-mono text-sm text-paper underline decoration-ochre-400/70 underline-offset-4 hover:text-ochre-400"
             >
-              party@coos.gop
+              chris.castleman@coos.gop
             </Link>
           </div>
           <hr className="border-t border-ink-700" />
