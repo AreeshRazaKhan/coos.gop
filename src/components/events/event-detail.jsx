@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import Link from 'next/link'
 import PropTypes from 'prop-types'
+import { useState } from 'react'
 
 import FormField from '@/components/ui/form-field'
 import FormLegalLine from '@/components/ui/form-legal-line'
@@ -10,19 +11,12 @@ import { formatPhoneInput } from '@/lib/phone'
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-const SMS_UPDATES_COPY =
-  'By checking this box, I consent to receive recurring auto-dialed campaign updates from Coos County Republicans via text message at the phone number provided. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
-
-const SMS_PROMO_COPY =
-  'By checking this box, I consent to receive recurring promotional messages, event invitations, and fundraising communications from Coos County Republicans via auto-dialed text messages. Msg frequency varies. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of any donation or volunteering. View our Privacy Policy and Terms of Service.'
-
 const INITIAL_RSVP_STATE = {
   firstName: '',
   lastName: '',
   email: '',
   phone: '',
   smsUpdates: false,
-  smsPromo: false,
 }
 
 const validate = (values) => {
@@ -58,7 +52,7 @@ const RsvpForm = ({ event }) => {
     const formatted = formatPhoneInput(changeEvent.target.value)
     setValues((prev) => {
       if (formatted.trim().length === 0) {
-        return { ...prev, phone: formatted, smsUpdates: false, smsPromo: false }
+        return { ...prev, phone: formatted, smsUpdates: false }
       }
       return { ...prev, phone: formatted }
     })
@@ -89,7 +83,6 @@ const RsvpForm = ({ event }) => {
           eventTime: event.time,
           eventCategory: event.type,
           sms_updates: values.smsUpdates ? 'Yes' : 'No',
-          sms_promo: values.smsPromo ? 'Yes' : 'No',
         }),
       })
 
@@ -182,6 +175,9 @@ const RsvpForm = ({ event }) => {
       </div>
 
       <div className="md:col-span-2 flex flex-col gap-3 border-t border-bone-200 pt-5">
+        <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-ochre-600">
+          SMS Consent
+        </span>
         <label
           className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
             hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
@@ -193,26 +189,21 @@ const RsvpForm = ({ event }) => {
             checked={values.smsUpdates}
             onChange={handleChange}
             disabled={!hasPhone}
-            required={hasPhone}
             className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
           />
-          <span>{SMS_UPDATES_COPY}</span>
-        </label>
-        <label
-          className={`flex items-start gap-3 font-mono text-[11px] leading-[1.6] ${
-            hasPhone ? 'text-stone-600 cursor-pointer' : 'text-stone-600/50 cursor-not-allowed'
-          }`}
-        >
-          <input
-            type="checkbox"
-            name="smsPromo"
-            checked={values.smsPromo}
-            onChange={handleChange}
-            disabled={!hasPhone}
-            required={hasPhone}
-            className="mt-1 accent-ochre-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ochre-500 disabled:opacity-40 disabled:cursor-not-allowed"
-          />
-          <span>{SMS_PROMO_COPY}</span>
+          <span>
+            By providing your phone number, you consent to receive calls and text messages
+            from Coos County Republican Central Committee, Msg &amp; data rates may apply.
+            Msg frequency may vary. Messaging may include requests for donation. Reply STOP
+            to unsubscribe or HELP for help. View{' '}
+            <Link
+              href="/privacy-policy"
+              className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
+            >
+              Privacy Policy
+            </Link>{' '}
+            for more info.
+          </span>
         </label>
       </div>
 

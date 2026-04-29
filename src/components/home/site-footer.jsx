@@ -109,10 +109,10 @@ const SiteFooter = () => {
           </p>
           <div className="flex flex-col tablet:items-end gap-2">
             <Link
-              href="/terms-and-conditions"
+              href="/terms-of-services"
               className="font-mono text-[10px] font-semibold uppercase tracking-[0.22em] text-moonlight/70 hover:text-ochre-400 transition-colors"
             >
-              Terms &amp; Conditions
+              Terms of Services
             </Link>
             <Link
               href="/privacy-policy"

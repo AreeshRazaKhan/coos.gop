@@ -45,8 +45,8 @@ const Hero = () => {
         <div className="relative mt-2 tablet:mt-0 tablet:col-span-5 tablet:flex tablet:items-center">
           <div className="arch-mask relative w-full max-w-[380px] tablet:max-w-none tablet:ml-auto tablet:w-[82%] aspect-[4/5] bg-ink-700 overflow-hidden ring-1 ring-moonlight/10">
             <Image
-              src="/russ-portrait.webp"
-              alt="Coos County coastline and timber forest, Oregon"
+              src="/coos-gop-hero-home.webp"
+              alt="Coos County, Oregon — Republican community"
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
               priority
