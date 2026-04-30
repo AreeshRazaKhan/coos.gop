@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 
 import MagneticButton from '@/components/ui/magnetic-button'
 
-const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
+const DONATE_URL = 'https://secure.anedot.com/coos-county-republican-party-/donate'
 
 const MobileMenu = ({ open, onClose, links }) => {
   useEffect(() => {

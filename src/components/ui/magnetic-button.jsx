@@ -11,7 +11,7 @@ const VARIANT_CLASSES = {
     'bg-transparent text-ink-900 border-ink-900 hover:bg-ink-900 hover:text-paper',
   'ghost-light':
     'bg-transparent text-moonlight border-moonlight/70 hover:bg-moonlight hover:text-ink-900 hover:border-moonlight',
-  rust: 'bg-rust text-paper border-rust hover:bg-ink-900 hover:border-ink-900',
+  rust: 'bg-rust text-paper border-rust hover:bg-[#6e2418] hover:border-[#6e2418]',
 }
 
 const SIZE_CLASSES = {

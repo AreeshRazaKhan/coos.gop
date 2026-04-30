@@ -3,7 +3,7 @@ import Image from 'next/image'
 import SiteHeader from '@/components/site-header'
 import MagneticButton from '@/components/ui/magnetic-button'
 
-const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
+const DONATE_URL = 'https://secure.anedot.com/coos-county-republican-party-/donate'
 
 const Hero = () => {
   return (

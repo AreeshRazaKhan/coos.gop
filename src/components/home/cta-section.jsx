@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import MagneticButton from '@/components/ui/magnetic-button'
 
-const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
+const DONATE_URL = 'https://secure.anedot.com/coos-county-republican-party-/donate'
 
 const DONATE_TIERS = [
   { amount: 25, label: '$25' },

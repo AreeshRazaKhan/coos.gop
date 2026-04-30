@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { href: '/contact', label: 'Contact' },
 ]
 
-const DONATE_URL = 'https://secure.anedot.com/friends-of-coos-county-republicans/donate'
+const DONATE_URL = 'https://secure.anedot.com/coos-county-republican-party-/donate'
 
 const SiteNav = () => {
   const [menuOpen, setMenuOpen] = useState(false)

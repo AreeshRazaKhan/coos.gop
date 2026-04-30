@@ -6,7 +6,8 @@ import SiteHeader from '@/components/site-header'
 
 const SOCIAL_LINKS = [
   { href: 'https://www.facebook.com/cooscountyconservatives', label: 'Facebook' },
-  { href: 'mailto:chris.castleman@coos.gop', label: 'Email' },
+  { href: 'https://www.youtube.com/@CitizenCouncil', label: 'YouTube' },
+  { href: 'https://x.com/RobTaylorReport', label: 'X' },
 ]
 
 export const metadata = {
@@ -144,7 +145,7 @@ const ContactPage = () => {
                 <em className="font-italic not-italic text-ochre-600">along online</em>.
               </h2>
             </div>
-            <ul className="tablet:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3">
+            <ul className="tablet:col-span-7 tablet:self-end grid grid-cols-2 sm:grid-cols-3 gap-3">
               {SOCIAL_LINKS.map((social) => (
                 <li key={social.label}>
                   <Link

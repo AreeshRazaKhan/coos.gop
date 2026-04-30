@@ -16,7 +16,7 @@ const NAV_COLUMNS = [
     label: 'Give',
     links: [
       {
-        href: 'https://secure.anedot.com/friends-of-coos-county-republicans/donate',
+        href: 'https://secure.anedot.com/coos-county-republican-party-/donate',
         text: 'Donate',
       },
     ],
@@ -119,7 +119,7 @@ const SiteFooter = () => {
 
             <div className="mt-10 flex flex-wrap gap-3">
               <MagneticButton
-                href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
+                href="https://secure.anedot.com/coos-county-republican-party-/donate"
                 variant="rust"
                 size="md"
                 external

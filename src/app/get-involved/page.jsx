@@ -10,7 +10,7 @@ const WAYS_TO_HELP = [
     title: 'Donate',
     body: 'Every dollar comes from a person with a name. Locally raised, locally spent, on Coos County races and ground game.',
     accent: 'rust',
-    href: 'https://secure.anedot.com/friends-of-coos-county-republicans/donate',
+    href: 'https://secure.anedot.com/coos-county-republican-party-/donate',
     cta: 'Donate',
   },
   {
@@ -184,7 +184,7 @@ const GetInvolvedPage = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <MagneticButton
-                href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
+                href="https://secure.anedot.com/coos-county-republican-party-/donate"
                 variant="rust"
                 size="lg"
                 external

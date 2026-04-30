@@ -42,7 +42,7 @@ const ArticlesPage = async () => {
                 Join the fight
               </MagneticButton>
               <MagneticButton
-                href="https://secure.anedot.com/friends-of-coos-county-republicans/donate"
+                href="https://secure.anedot.com/coos-county-republican-party-/donate"
                 variant="ghost"
                 size="lg"
                 external
