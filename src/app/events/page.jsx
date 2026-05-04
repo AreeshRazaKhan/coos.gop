@@ -42,7 +42,7 @@ const EventsPage = async () => {
             </div>
             <aside className="tablet:col-span-4 tablet:col-start-9 flex flex-col items-start gap-4 justify-end">
               <MagneticButton
-                href="mailto:chris.castleman@coos.gop?subject=Host%20a%20precinct%20event"
+                href="mailto:party@coos.gop?subject=Host%20a%20precinct%20event"
                 variant="primary"
                 size="lg"
               >

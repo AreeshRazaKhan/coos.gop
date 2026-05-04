@@ -274,10 +274,10 @@ const PrivacyPolicyPage = () => {
                   <span>PO Box 914</span>
                   <span>Coos Bay, OR 97420</span>
                   <a
-                    href="mailto:chris.castleman@coos.gop"
+                    href="mailto:party@coos.gop"
                     className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
                   >
-                    chris.castleman@coos.gop
+                    party@coos.gop
                   </a>
                 </address>
               </div>

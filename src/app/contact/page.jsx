@@ -13,7 +13,7 @@ const SOCIAL_LINKS = [
 export const metadata = {
   title: 'Contact · Coos County Republicans',
   description:
-    'Get in touch with Coos County Republicans. Email chris.castleman@coos.gop, call +1 541-982-6793, or visit HQ at 3229 Broadway Ave, Suite F, North Bend, OR.',
+    'Get in touch with Coos County Republicans. Email party@coos.gop, call +1 541-982-6793, or visit HQ at 3229 Broadway Ave, Suite F, North Bend, OR.',
 }
 
 const ContactPage = () => {
@@ -48,10 +48,10 @@ const ContactPage = () => {
                     </dt>
                     <dd className="mt-2">
                       <a
-                        href="mailto:chris.castleman@coos.gop"
+                        href="mailto:party@coos.gop"
                         className="font-display text-xl font-semibold text-ink-900 underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600 break-all"
                       >
-                        chris.castleman@coos.gop
+                        party@coos.gop
                       </a>
                     </dd>
                   </div>

@@ -84,10 +84,10 @@ const CtaSection = () => {
               Contact
             </span>
             <Link
-              href="mailto:chris.castleman@coos.gop"
+              href="mailto:party@coos.gop"
               className="font-mono text-sm text-paper underline decoration-ochre-400/70 underline-offset-4 hover:text-ochre-400"
             >
-              chris.castleman@coos.gop
+              party@coos.gop
             </Link>
           </div>
           <hr className="border-t border-ink-700" />

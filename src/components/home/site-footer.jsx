@@ -161,11 +161,11 @@ const SiteFooter = () => {
                 Reach
               </span>
               <Link
-                href="mailto:chris.castleman@coos.gop"
+                href="mailto:party@coos.gop"
                 className="inline-flex items-center gap-2 font-display text-base font-medium text-moonlight/85 hover:text-ochre-400 transition-colors break-all"
               >
                 <MailIcon className="h-4 w-4 shrink-0 text-ochre-400" />
-                chris.castleman@coos.gop
+                party@coos.gop
               </Link>
               <Link
                 href="tel:+15419826793"

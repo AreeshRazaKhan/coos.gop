@@ -45,7 +45,7 @@ const SMS_KEY_TERMS = [
   'Message frequency varies based on committee activity but typically ranges from 1 to 4 messages per week.',
   'Message and data rates may apply depending on your mobile carrier plan.',
   'You may opt out at any time by replying STOP to any message.',
-  'For assistance, reply HELP or contact us at chris.castleman@coos.gop or call +1 541-982-6793.',
+  'For assistance, reply HELP or contact us at party@coos.gop or call +1 541-982-6793.',
   'Consent to receive SMS messages is not a condition of any purchase, donation, or volunteering.',
   'Coos County Republican Central Committee does not sell or share mobile information or opt-in consent data with third parties for marketing or promotional purposes.',
 ]
@@ -391,10 +391,10 @@ const TermsOfServicesPage = () => {
                   <span>PO Box 914</span>
                   <span>Coos Bay, OR 97420</span>
                   <a
-                    href="mailto:chris.castleman@coos.gop"
+                    href="mailto:party@coos.gop"
                     className="underline decoration-ochre-500/60 underline-offset-4 hover:text-ochre-600"
                   >
-                    chris.castleman@coos.gop
+                    party@coos.gop
                   </a>
                   <a
                     href="tel:+15419826793"
