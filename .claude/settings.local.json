@@ -66,7 +66,11 @@
       "Read(//c/Program Files \\(x86\\)/GitHub CLI/**)",
       "Bash(grep -oE '\"content\":\"[^\"]{30,500}\"')",
       "Bash(npm ls *)",
-      "Bash(grep -oE 'article-body[^\"]*\"[^>]*>[^<]{0,60}|City of North Bend has been promoting')"
+      "Bash(grep -oE 'article-body[^\"]*\"[^>]*>[^<]{0,60}|City of North Bend has been promoting')",
+      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/lynn.jpg\" C:/Users/Dev/Documents/GitHub/russellcleveland/public/voter-guide/lynn.jpg)",
+      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/martindale.png\" C:/Users/Dev/Documents/GitHub/russellcleveland/public/voter-guide/martindale.png)",
+      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/lynn.jpg\" C:/Users/Dev/Documents/GitHub/russellcleveland/candidates/lynn.jpg)",
+      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/martindale.png\" C:/Users/Dev/Documents/GitHub/russellcleveland/candidates/martindale.png)"
     ]
   }
 }

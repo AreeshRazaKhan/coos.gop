@@ -1,25 +1,28 @@
-import SiteFooter from '@/components/home/site-footer'
-import IssueForm from '@/components/issues/issue-form'
-import SiteHeader from '@/components/site-header'
+import SiteFooter from "@/components/home/site-footer";
+import IssueForm from "@/components/issues/issue-form";
+import SiteHeader from "@/components/site-header";
 
 export const metadata = {
-  title: 'Ask Us · Submit a question to Coos County Republicans',
+  title: "Ask Us · Submit a question to Coos County Republicans",
   description:
-    'Submit a question to the Coos County Republicans committee. Every question reaches the team directly.',
-}
+    "Submit a question to the Coos County Republicans committee. Every question reaches the team directly.",
+};
 
 const AskPage = () => {
   return (
     <>
       <SiteHeader />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 ">
         <section className="bg-ink-900 text-moonlight relative overflow-hidden">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 flex items-center overflow-hidden"
           >
             <span className="font-display font-black text-[200px] md:text-[340px] leading-none tracking-[-0.04em] text-moonlight/[.04] whitespace-nowrap -translate-x-6">
-              ASK US <em className="font-italic not-italic text-ochre-500/[.18]">on the record</em>
+              ASK US{" "}
+              <em className="font-italic not-italic text-ochre-500/[.18]">
+                on the record
+              </em>
             </span>
           </div>
           <div className="relative mx-auto max-w-[1440px] grid grid-cols-1 gap-10 px-6 py-16 md:px-12 md:py-28 tablet:grid-cols-12 lg:px-16 lg:py-28">
@@ -28,13 +31,16 @@ const AskPage = () => {
                 Ask us
               </span>
               <h1 className="mt-8 font-display font-black leading-[0.9] tracking-[-0.03em] text-[clamp(2.5rem,8vw,7rem)]">
-                On the{' '}
-                <em className="font-italic not-italic text-ochre-400">record</em>.
+                On the{" "}
+                <em className="font-italic not-italic text-ochre-400">
+                  record
+                </em>
+                .
               </h1>
               <p className="mt-10 max-w-[54ch] font-display text-xl md:text-2xl font-normal leading-[1.35] text-moonlight/85">
-                Got a question for the committee? Submit it here. Every one reaches the team
-                directly. We answer the most common ones at meetings, candidate forums, and in
-                newsletters.
+                Got a question for the committee? Submit it here. Every one
+                reaches the team directly. We answer the most common ones at
+                meetings, candidate forums, and in newsletters.
               </p>
             </div>
           </div>
@@ -47,24 +53,26 @@ const AskPage = () => {
                 Submit a question
               </span>
               <h2 className="mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.025em] text-[clamp(2rem,5vw,3.75rem)]">
-                Got one we haven&rsquo;t{' '}
-                <em className="font-italic not-italic text-ochre-600">answered</em>?
+                Got one we haven&rsquo;t{" "}
+                <em className="font-italic not-italic text-ochre-600">
+                  answered
+                </em>
+                ?
               </h2>
               <p className="mt-6 max-w-[42ch] text-base md:text-lg leading-[1.65] text-stone-600">
-                Submit it here. Officers read every question and respond directly to the most
-                common ones at weekly meetings, candidate forums, and in committee newsletters
-                across Coos County.
+                Submit it here. Officers read every question and respond
+                directly to the most common ones at weekly meetings, candidate
+                forums, and in committee newsletters across Coos County.
               </p>
             </div>
 
             <IssueForm />
           </div>
         </section>
-
       </main>
       <SiteFooter />
     </>
-  )
-}
+  );
+};
 
-export default AskPage
+export default AskPage;
