@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>feed-07 · Testimonial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink-900:#181820;--red-500:#882028;--red-600:#6E1A20;--gold:#C09828;--paper:#F8F6F0;--paper-2:#F0EBDB;--bone-100:#E8DFCA;--bone-200:#D9CFB4;--stone-400:#6E6A60;--stone-600:#4A463F;--ff-display:'Vollkorn',Georgia,serif;--ff-body:'Crimson Pro',Georgia,serif;--ff-mono:'JetBrains Mono',Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:var(--paper);color:var(--ink-900);font-family:var(--ff-body)}
+.post{background:var(--paper);color:var(--ink-900);font-family:var(--ff-body);position:absolute;left:50%;top:50%;width:1080px;height:1080px;overflow:hidden;transform:translate(-50%,-50%) scale(var(--s,1))}
+.grain{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.portrait{position:absolute;left:84px;top:150px;width:380px;height:560px;background:linear-gradient(160deg,var(--bone-100),var(--bone-200));border-radius:240px 240px 28px 28px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+.portrait .ph-star{font-size:64px;color:var(--stone-400)}
+.portrait .ph-label{font-family:var(--ff-mono);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone-400)}
+.stamp{position:absolute;left:316px;top:648px;display:inline-flex;background:var(--paper);border:2px solid var(--ink-900);font-family:var(--ff-mono);font-weight:600;font-size:13px;letter-spacing:.18em;text-transform:uppercase;padding:13px 22px;border-radius:999px;transform:rotate(5deg);z-index:5}
+.quote{position:absolute;left:540px;right:84px;top:170px}
+.qmark{font-family:var(--ff-display);font-weight:900;font-size:150px;line-height:.6;color:var(--red-500)}
+.headline{margin-top:34px;font-family:var(--ff-display);font-style:italic;font-weight:500;font-size:47px;line-height:1.25;letter-spacing:-.01em}
+.attrib{margin-top:44px}
+.attrib .name{font-family:var(--ff-mono);font-weight:600;font-size:16px;letter-spacing:.2em;text-transform:uppercase;color:var(--red-500)}
+.attrib .role{margin-top:8px;font-family:var(--ff-mono);font-weight:400;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone-400)}
+.divider{position:absolute;left:84px;right:84px;bottom:230px;height:1.5px;background:var(--bone-200)}
+.divider::after{content:'✦';position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--paper);padding:0 18px;color:var(--gold);font-size:20px}
+.foot{position:absolute;left:84px;right:84px;bottom:74px;display:flex;align-items:center;justify-content:space-between}
+.logo-slot{display:inline-flex;align-items:center;gap:14px}
+.logo-badge{width:56px;height:56px;border:2px solid var(--ink-900);border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:23px;color:var(--red-500)}
+.logo-name{font-family:var(--ff-display);font-weight:800;font-size:19px;line-height:1.05}
+.logo-name span{display:block;font-family:var(--ff-mono);font-weight:600;font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--red-500);margin-top:4px}
+.handle{font-family:var(--ff-mono);font-weight:500;font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone-400)}
+.eyebrow{position:absolute;top:74px;left:84px;font-family:var(--ff-mono);font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone-400)}
+</style>
+</head>
+<body>
+<div class="post">
+  <p class="eyebrow">— Lorem voices</p>
+  <div class="portrait" aria-hidden="true"><span class="ph-star">✦</span><span class="ph-label">Photo slot</span></div>
+  <span class="stamp">Lorem ✦ Member</span>
+  <main class="quote">
+    <div class="qmark" aria-hidden="true">&ldquo;</div>
+    <blockquote class="headline">Lorem ipsum dolor sit amet, consectetur adipiscing elit &mdash; sed do eiusmod tempor incididunt ut labore et dolore.</blockquote>
+    <div class="attrib"><div class="name">Dolor S. Amet</div><div class="role">Lorem · Ipsum County</div></div>
+  </main>
+  <div class="divider" aria-hidden="true"></div>
+  <footer class="foot">
+    <div class="logo-slot"><div class="logo-badge">✦</div><div class="logo-name">Lorem Ipsum<span>County Party</span></div></div>
+    <span class="handle">@loremipsum.county ✦</span>
+  </footer>
+  <div class="grain" aria-hidden="true"></div>
+</div>
+<script>(function(){var f=function(){document.documentElement.style.setProperty('--s',Math.min(innerWidth/1080,innerHeight/1080,1))};addEventListener('resize',f);f()})()</script>
+</body>
+</html>

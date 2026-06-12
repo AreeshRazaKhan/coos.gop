@@ -70,7 +70,9 @@
       "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/lynn.jpg\" C:/Users/Dev/Documents/GitHub/russellcleveland/public/voter-guide/lynn.jpg)",
       "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/martindale.png\" C:/Users/Dev/Documents/GitHub/russellcleveland/public/voter-guide/martindale.png)",
       "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/lynn.jpg\" C:/Users/Dev/Documents/GitHub/russellcleveland/candidates/lynn.jpg)",
-      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/martindale.png\" C:/Users/Dev/Documents/GitHub/russellcleveland/candidates/martindale.png)"
+      "Bash(cp \"C:/Users/Dev/Downloads/voter-guide/candidates/martindale.png\" C:/Users/Dev/Documents/GitHub/russellcleveland/candidates/martindale.png)",
+      "Bash(npx kill-port *)",
+      "Bash(powershell -Command 'Get-NetTCPConnection -LocalPort 3177 -State Listen | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force }')"
     ]
   }
 }

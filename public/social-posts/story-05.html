@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>story-05 · Event</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital,wght@0,400..900;1,400..900&family=Crimson+Pro:ital,wght@0,300..700;1,300..700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink-900:#181820;--red-500:#882028;--gold:#C09828;--paper:#F8F6F0;--paper-2:#F0EBDB;--bone-100:#E8DFCA;--bone-200:#D9CFB4;--stone-400:#6E6A60;--stone-600:#4A463F;--ff-display:'Vollkorn',Georgia,serif;--ff-body:'Crimson Pro',Georgia,serif;--ff-mono:'JetBrains Mono',Menlo,monospace}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden}
+body{background:var(--paper-2);color:var(--ink-900);font-family:var(--ff-body)}
+.post{background:var(--paper-2);color:var(--ink-900);font-family:var(--ff-body);position:absolute;left:50%;top:50%;width:1080px;height:1920px;overflow:hidden;transform:translate(-50%,-50%) scale(var(--s,1))}
+.grain{position:absolute;inset:0;z-index:60;pointer-events:none;opacity:.06;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.4 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.topbar{position:absolute;top:0;left:0;right:0;height:8px;background:var(--red-500)}
+.logo-slot{position:absolute;top:296px;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:15px}
+.logo-badge{width:60px;height:60px;border:2px solid var(--ink-900);border-radius:999px;display:flex;align-items:center;justify-content:center;font-size:25px;color:var(--red-500)}
+.logo-name{font-family:var(--ff-display);font-weight:800;font-size:21px;line-height:1.05}
+.logo-name span{display:block;font-family:var(--ff-mono);font-weight:600;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--red-500);margin-top:4px}
+.eyebrow{position:absolute;top:452px;left:0;right:0;text-align:center;font-family:var(--ff-mono);font-weight:600;font-size:17px;letter-spacing:.3em;text-transform:uppercase;color:var(--red-500)}
+.datebox{position:absolute;top:540px;left:50%;transform:translateX(-50%);width:420px;background:var(--ink-900);color:var(--paper);border-radius:28px;padding:46px 24px;text-align:center}
+.datebox .mo{font-family:var(--ff-mono);font-weight:600;font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.datebox .day{font-family:var(--ff-display);font-weight:900;font-size:180px;line-height:1;margin-top:10px}
+.datebox .yr{font-family:var(--ff-mono);font-weight:500;font-size:16px;letter-spacing:.26em;margin-top:12px;color:rgba(248,246,240,.7)}
+.stage{position:absolute;left:96px;right:96px;top:1010px;text-align:center}
+.headline{font-family:var(--ff-display);font-weight:900;font-size:96px;line-height:.96;letter-spacing:-.02em}
+.headline em{font-style:italic;font-weight:500;color:var(--red-500)}
+.meta{margin-top:54px;display:flex;justify-content:center;gap:0;border-top:1.5px solid var(--bone-200);border-bottom:1.5px solid var(--bone-200)}
+.meta div{flex:1;padding:28px 10px}
+.meta div + div{border-left:1.5px solid var(--bone-200)}
+.meta .k{font-family:var(--ff-mono);font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone-400)}
+.meta .v{margin-top:10px;font-family:var(--ff-display);font-weight:700;font-size:30px}
+.stamp{position:absolute;left:50%;transform:translateX(-50%) rotate(-3deg);bottom:368px;display:inline-flex;align-items:center;background:var(--paper);color:var(--ink-900);border:2px solid var(--ink-900);font-family:var(--ff-mono);font-weight:600;font-size:15px;letter-spacing:.18em;text-transform:uppercase;padding:16px 30px;border-radius:999px;white-space:nowrap}
+.fine{position:absolute;left:0;right:0;bottom:300px;text-align:center;font-family:var(--ff-mono);font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--stone-400)}
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="topbar" aria-hidden="true"></div>
+  <div class="logo-slot"><div class="logo-badge">✦</div><div class="logo-name">Lorem Ipsum<span>County Party</span></div></div>
+  <p class="eyebrow">✦ Lorem event ✦</p>
+  <div class="datebox"><div class="mo">Lorem</div><div class="day">24</div><div class="yr">MMXXVI</div></div>
+  <main class="stage">
+    <h1 class="headline">Lorem <em>town hall</em> ipsum.</h1>
+    <div class="meta">
+      <div><div class="k">Doors</div><div class="v">6:00 PM</div></div>
+      <div><div class="k">Where</div><div class="v">Lorem Hall</div></div>
+      <div><div class="k">City</div><div class="v">Ipsum, OR</div></div>
+    </div>
+  </main>
+  <span class="stamp">Free &amp; open ✦ Lorem</span>
+  <span class="fine">@loremipsum.county · lorem ipsum dolor</span>
+  <div class="grain" aria-hidden="true"></div>
+</div>
+<script>(function(){var f=function(){document.documentElement.style.setProperty('--s',Math.min(innerWidth/1080,innerHeight/1920,1))};addEventListener('resize',f);f()})()</script>
+</body>
+</html>
