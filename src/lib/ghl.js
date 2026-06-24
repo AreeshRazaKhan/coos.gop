@@ -3,7 +3,14 @@ import { parse as parseHTML } from 'node-html-parser'
 const GHL_BASE_URL = 'https://services.leadconnectorhq.com'
 const GHL_API_KEY = process.env.GHL_API_KEY
 const GHL_LOCATION_ID = process.env.GHL_LOCATION_ID
-const PUBLIC_BLOG_ORIGIN = process.env.GHL_PUBLIC_BLOG_ORIGIN || 'https://coos.gop'
+// GHL Sites "preview" host for the blog funnel — server-renders every published
+// post body (the #blogPostContent container) with no auth required. The trailing
+// path segment is the blog site/funnel ID. Override per-environment via
+// GHL_PUBLIC_BLOG_ORIGIN. Note: the custom domain (coos.gop) now serves this
+// Next.js app, not the GHL blog, so the preview host is the body source.
+const PUBLIC_BLOG_ORIGIN =
+  process.env.GHL_PUBLIC_BLOG_ORIGIN ||
+  'https://app.gohighlevel.com/v2/preview/lvpm1Si0B2uJN5bV7PKW'
 
 const buildHeaders = () => ({
   Authorization: `Bearer ${GHL_API_KEY}`,
@@ -221,15 +228,16 @@ const normalizePost = (post) => {
   }
 }
 
-// Scrape the rich-text body from the public GHL-hosted blog page. The
-// API does not expose `content` to PIT auth (single-post endpoint is
-// IAM-blocked), but the public Sites Builder URL `coos.gop/post/{slug}`
-// renders the full body server-side. We extract the inner HTML of the
+// Scrape the rich-text body from the GHL Sites preview page. The API does not
+// expose `content` to PIT auth (single-post endpoint is IAM-blocked), and the
+// custom domain (coos.gop) now serves this Next.js app rather than the GHL blog.
+// The GHL preview host still server-renders every published post at
+// `/post-preview/{urlSlug}`, so we extract the inner HTML of the
 // `#blogPostContent` container — the wrapper GHL's blog template uses.
 const fetchGHLPostBodyHtml = async (slug) => {
   if (!slug) return ''
   try {
-    const res = await fetch(`${PUBLIC_BLOG_ORIGIN}/post/${slug}`, {
+    const res = await fetch(`${PUBLIC_BLOG_ORIGIN}/post-preview/${slug}`, {
       headers: {
         'User-Agent':
           'Mozilla/5.0 (compatible; CoosCountyRepublicans/1.0; +https://coos.gop)',
