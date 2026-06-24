@@ -141,11 +141,25 @@ export const fetchGHLEvents = async () => {
     }
     const data = await res.json()
     const records = data.records ?? []
-    return records.map(normalizeEvent).sort((a, b) => {
-      const da = a.date.raw ? new Date(a.date.raw) : new Date(0)
-      const db = b.date.raw ? new Date(b.date.raw) : new Date(0)
-      return da - db
-    })
+
+    // Hide events that have already happened. A multi-day event stays
+    // "upcoming" until its end date passes; single-day events drop off the
+    // day after they occur. Malformed dates are kept so they surface in GHL.
+    const today = new Date()
+    today.setHours(0, 0, 0, 0)
+
+    return records
+      .map(normalizeEvent)
+      .filter((event) => {
+        const ref = event.endDate?.raw || event.date.raw
+        if (!ref) return true
+        return new Date(`${ref}T00:00:00`) >= today
+      })
+      .sort((a, b) => {
+        const da = a.date.raw ? new Date(a.date.raw) : new Date(0)
+        const db = b.date.raw ? new Date(b.date.raw) : new Date(0)
+        return da - db
+      })
   } catch (error) {
     console.error('[fetchGHLEvents]:', error)
     return []
